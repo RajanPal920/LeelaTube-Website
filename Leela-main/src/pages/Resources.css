@@ -1,0 +1,16 @@
+.resources-grid {
+  display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px;
+}
+.resource-card {
+  padding: 28px; display: flex; flex-direction: column; gap: 16px;
+}
+.resource-card--available { border-top: 3px solid var(--green-brand); }
+.resource-card--available-request { border-top: 3px solid var(--steel-gray); }
+.resource-card__icon { font-size: 2.2rem; }
+.resource-card__body { flex: 1; }
+.resource-card__title { margin-bottom: 8px; }
+.resource-card__desc  { line-height: 1.65; }
+.resource-card__btn   { font-size: 0.78rem; padding: 10px 18px; }
+
+@media (max-width: 900px) { .resources-grid { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 560px) { .resources-grid { grid-template-columns: 1fr; } }

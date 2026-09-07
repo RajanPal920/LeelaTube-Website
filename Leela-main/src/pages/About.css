@@ -1,0 +1,49 @@
+.about-story__grid {
+  display: grid; grid-template-columns: 1fr 1fr; gap: 72px; align-items: center;
+}
+.about-story__img { width: 100%; border-radius: var(--radius-lg); object-fit: cover; aspect-ratio: 4/3; }
+.about-story__content .body-lg + .body-lg { margin-top: 16px; }
+.about-story__content h2 { margin: 12px 0 24px; }
+
+.about-infra__header { text-align: center; margin-bottom: 48px; }
+.about-infra__grid {
+  display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px;
+}
+.infra-card {
+  background: var(--white); padding: 32px 24px; border-radius: var(--radius-md);
+  border: 1px solid rgba(0,0,0,0.06); box-shadow: var(--shadow-sm);
+  transition: box-shadow var(--transition), transform var(--transition);
+}
+.infra-card:hover { box-shadow: var(--shadow-md); transform: translateY(-3px); }
+.infra-card__icon { font-size: 2rem; margin-bottom: 16px; }
+.infra-card__title { margin-bottom: 10px; }
+.infra-card__desc  { line-height: 1.65; }
+
+.about-values__grid {
+  display: grid; grid-template-columns: 1fr 1.5fr; gap: 72px; align-items: start;
+}
+.about-values__grid h2 { margin-top: 12px; }
+.about-values__list { display: flex; flex-direction: column; gap: 28px; }
+.values-item { display: flex; gap: 16px; }
+.values-item__check {
+  flex-shrink: 0; width: 24px; height: 24px; border-radius: 50%;
+  background: var(--green-pale); color: var(--green-brand);
+  display: flex; align-items: center; justify-content: center; margin-top: 2px;
+}
+.values-item__title { font-weight: 700; margin-bottom: 6px; color: var(--dark-gray); }
+.values-item__desc  { font-size: 0.9rem; color: var(--mid-gray); line-height: 1.65; }
+
+.about-cta { background: var(--green-dark); }
+.about-cta__inner { display: flex; align-items: center; justify-content: space-between; gap: 32px; flex-wrap: wrap; }
+.about-cta__heading { color: var(--white); }
+.about-cta__btns { display: flex; gap: 16px; flex-wrap: wrap; }
+
+@media (max-width: 900px) {
+  .about-story__grid { grid-template-columns: 1fr; gap: 36px; }
+  .about-infra__grid { grid-template-columns: repeat(2, 1fr); }
+  .about-values__grid { grid-template-columns: 1fr; gap: 36px; }
+  .about-cta__inner { flex-direction: column; align-items: flex-start; }
+}
+@media (max-width: 640px) {
+  .about-infra__grid { grid-template-columns: 1fr; }
+}

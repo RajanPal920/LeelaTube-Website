@@ -1,0 +1,49 @@
+.quote-main__grid { display: grid; grid-template-columns: 300px 1fr; gap: 40px; align-items: start; }
+
+/* Sidebar */
+.quote-sidebar { display: flex; flex-direction: column; gap: 20px; position: sticky; top: 100px; }
+.quote-sidebar__card { padding: 24px; }
+.quote-sidebar__item { display: flex; gap: 10px; align-items: flex-start; padding: 8px 0; border-bottom: 1px solid var(--light-gray); font-size: 0.88rem; color: var(--mid-gray); line-height: 1.5; }
+.quote-sidebar__item:last-child { border-bottom: none; }
+.quote-sidebar__dot { flex-shrink: 0; width: 6px; height: 6px; border-radius: 50%; background: var(--green-brand); margin-top: 7px; }
+.quote-sidebar__contact { display: flex; flex-direction: column; }
+.quote-sidebar__email { display: flex; align-items: center; gap: 8px; font-size: 0.88rem; font-weight: 600; color: var(--green-brand); }
+
+/* Form */
+.quote-form { padding: 36px; display: flex; flex-direction: column; gap: 0; }
+.quote-fieldset { border: none; padding: 0; margin: 0 0 28px 0; display: flex; flex-direction: column; gap: 0; }
+.quote-legend {
+  font-size: 0.72rem; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase;
+  color: var(--steel-gray); margin-bottom: 18px; padding-bottom: 10px;
+  border-bottom: 1px solid var(--light-gray); width: 100%;
+}
+.form-grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-bottom: 16px; }
+
+/* File upload */
+.file-upload-wrap { display: flex; align-items: center; gap: 12px; }
+.file-upload-btn {
+  display: inline-flex; align-items: center; gap: 8px;
+  padding: 10px 16px; border-radius: var(--radius-sm);
+  border: 1.5px solid #D1D5DB; background: var(--off-white);
+  font-size: 0.84rem; font-weight: 600; color: var(--dark-gray);
+  cursor: pointer; transition: border-color var(--transition), background var(--transition);
+  flex-shrink: 0;
+}
+.file-upload-btn:hover { border-color: var(--green-brand); background: var(--green-pale); color: var(--green-brand); }
+.file-upload-name { font-size: 0.84rem; color: var(--mid-gray); }
+
+.quote-form__submit { align-self: flex-start; padding: 14px 32px; font-size: 0.9rem; }
+.quote-form__note { margin-top: 14px; color: var(--steel-gray) !important; }
+
+/* Success */
+.quote-success-icon {
+  width: 72px; height: 72px; border-radius: 50%;
+  background: var(--green-brand); color: var(--white);
+  font-size: 2rem; font-weight: 900;
+  display: flex; align-items: center; justify-content: center;
+  margin: 0 auto;
+}
+
+@media (max-width: 1024px) { .quote-main__grid { grid-template-columns: 260px 1fr; } }
+@media (max-width: 860px)  { .quote-main__grid { grid-template-columns: 1fr; } .quote-sidebar { position: static; order: 2; } .quote-form-wrap { order: 1; } }
+@media (max-width: 560px)  { .form-grid-2 { grid-template-columns: 1fr; } .quote-form { padding: 24px; } }
