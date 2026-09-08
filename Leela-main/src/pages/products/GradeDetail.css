@@ -4,6 +4,8 @@
 
 .grade-detail-page {
   background: var(--white, #ffffff);
+  width: 100%;
+  overflow: hidden;
 }
 
 /* ============================================
@@ -15,6 +17,21 @@
   grid-template-columns: 1fr 1fr;
   gap: 48px;
   margin-top: 32px;
+  width: 100%;
+  max-width: 100%;
+}
+
+/* Left Column - Main Content */
+.grade-detail-main {
+  width: 100%;
+  max-width: 100%;
+  overflow: hidden;
+}
+
+/* Right Column - Sidebar */
+.grade-detail-sidebar {
+  width: 100%;
+  max-width: 100%;
 }
 
 /* ============================================
@@ -27,6 +44,7 @@
   border-radius: var(--radius-md, 12px);
   overflow: hidden;
   box-shadow: var(--shadow-sm, 0 4px 24px rgba(0, 0, 0, 0.06));
+  width: 100%;
 }
 
 .grade-product-image {
@@ -34,6 +52,7 @@
   height: auto;
   display: block;
   transition: transform 0.3s ease;
+  max-width: 100%;
 }
 
 .grade-product-image:hover {
@@ -60,6 +79,7 @@
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 10px;
+  width: 100%;
 }
 
 .grade-properties-list li {
@@ -71,6 +91,8 @@
   border-left: 3px solid var(--green-brand, #1a7a5a);
   display: flex;
   align-items: center;
+  word-break: break-word;
+  max-width: 100%;
 }
 
 .grade-properties-list li::before {
@@ -78,6 +100,7 @@
   color: var(--green-brand, #1a7a5a);
   font-weight: 700;
   margin-right: 10px;
+  flex-shrink: 0;
 }
 
 /* Applications Tags */
@@ -85,6 +108,7 @@
   display: flex;
   flex-wrap: wrap;
   gap: 10px;
+  width: 100%;
 }
 
 .grade-application-tag {
@@ -95,6 +119,8 @@
   color: var(--dark-gray, #1a1a2e);
   border: 1px solid var(--light-gray, #eef0f2);
   transition: all 0.2s ease;
+  word-break: break-word;
+  max-width: 100%;
 }
 
 .grade-application-tag:hover {
@@ -116,6 +142,8 @@
   background: var(--off-white, #f7f9fc);
   border-radius: var(--radius-sm, 10px);
   padding: 20px;
+  width: 100%;
+  box-sizing: border-box;
 }
 
 .grade-spec-item {
@@ -140,6 +168,7 @@
   font-size: 0.95rem;
   font-weight: 500;
   color: var(--dark-gray, #1a1a2e);
+  word-break: break-word;
 }
 
 /* ============================================
@@ -153,6 +182,8 @@
   background: var(--off-white, #f7f9fc);
   border-radius: var(--radius-sm, 10px);
   padding: 20px;
+  width: 100%;
+  box-sizing: border-box;
 }
 
 .grade-mechanical-item {
@@ -177,6 +208,7 @@
   font-size: 0.95rem;
   font-weight: 500;
   color: var(--dark-gray, #1a1a2e);
+  word-break: break-word;
 }
 
 /* ============================================
@@ -190,6 +222,8 @@
   background: var(--off-white, #f7f9fc);
   border-radius: var(--radius-sm, 10px);
   padding: 16px 20px;
+  width: 100%;
+  box-sizing: border-box;
 }
 
 .grade-equivalent-item {
@@ -199,6 +233,7 @@
   background: var(--white, #ffffff);
   border-radius: 6px;
   border-bottom: 1px solid var(--light-gray, #eef0f2);
+  gap: 12px;
 }
 
 .grade-equivalent-item:last-child {
@@ -208,15 +243,288 @@
 .grade-equivalent-standard {
   font-weight: 600;
   color: var(--dark-gray, #1a1a2e);
+  flex-shrink: 0;
 }
 
 .grade-equivalent-value {
   color: var(--steel-gray, #4a4a5a);
   font-weight: 500;
+  word-break: break-word;
+  text-align: right;
 }
 
 /* ============================================
-   PRODUCT TYPES
+   SCHEDULE CHART
+   ============================================ */
+
+.grade-schedule-wrapper {
+  overflow-x: auto;
+  background: var(--off-white, #f7f9fc);
+  border-radius: var(--radius-sm, 10px);
+  padding: 16px;
+  width: 100%;
+  -webkit-overflow-scrolling: touch;
+  box-sizing: border-box;
+}
+
+.grade-schedule-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.9rem;
+  min-width: 500px;
+}
+
+.grade-schedule-table thead th {
+  background: var(--green-brand, #1a7a5a);
+  color: var(--white, #ffffff);
+  padding: 10px 12px;
+  text-align: center;
+  font-weight: 600;
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  white-space: nowrap;
+}
+
+.grade-schedule-table tbody td {
+  padding: 8px 12px;
+  text-align: center;
+  border-bottom: 1px solid var(--light-gray, #eef0f2);
+  color: var(--dark-gray, #1a1a2e);
+}
+
+.grade-schedule-table tbody tr:hover {
+  background: var(--green-pale, rgba(26, 122, 90, 0.05));
+}
+
+.grade-schedule-table .schedule-size {
+  font-weight: 600;
+  color: var(--dark-gray, #1a1a2e);
+  text-align: left;
+  white-space: nowrap;
+}
+
+.grade-schedule-table tbody td:not(.schedule-size) {
+  color: var(--green-brand, #1a7a5a);
+  font-weight: 700;
+  text-align: center;
+}
+
+/* ============================================
+   WEIGHT CHART
+   ============================================ */
+
+.grade-weight-wrapper {
+  overflow-x: auto;
+  background: var(--off-white, #f7f9fc);
+  border-radius: var(--radius-sm, 10px);
+  padding: 16px;
+  width: 100%;
+  -webkit-overflow-scrolling: touch;
+  box-sizing: border-box;
+}
+
+.grade-weight-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.85rem;
+  min-width: 600px;
+}
+
+.grade-weight-table thead th {
+  background: var(--green-brand, #1a7a5a);
+  color: var(--white, #ffffff);
+  padding: 8px 10px;
+  text-align: center;
+  font-weight: 600;
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  white-space: nowrap;
+}
+
+.grade-weight-table tbody td {
+  padding: 6px 10px;
+  text-align: center;
+  border-bottom: 1px solid var(--light-gray, #eef0f2);
+  color: var(--dark-gray, #1a1a2e);
+}
+
+.grade-weight-table tbody tr:hover {
+  background: var(--green-pale, rgba(26, 122, 90, 0.05));
+}
+
+.grade-weight-table tbody td:first-child {
+  font-weight: 600;
+}
+
+/* ============================================
+   PRESSURE RATING
+   ============================================ */
+
+.grade-pressure-wrapper {
+  background: var(--off-white, #f7f9fc);
+  border-radius: var(--radius-sm, 10px);
+  padding: 16px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.grade-pressure-note {
+  background: var(--green-pale, rgba(26, 122, 90, 0.08));
+  padding: 10px 16px;
+  border-radius: 6px;
+  margin-bottom: 16px;
+  border-left: 3px solid var(--green-brand, #1a7a5a);
+}
+
+.grade-pressure-note p {
+  margin: 0;
+  color: var(--steel-gray, #4a4a5a);
+}
+
+.grade-pressure-size-group {
+  margin-bottom: 20px;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  width: 100%;
+}
+
+.grade-pressure-size-group:last-child {
+  margin-bottom: 0;
+}
+
+.grade-pressure-size-title {
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--dark-gray, #1a1a2e);
+  margin-bottom: 8px;
+  padding: 6px 12px;
+  background: var(--white, #ffffff);
+  border-radius: 6px;
+  display: inline-block;
+}
+
+.grade-pressure-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.85rem;
+  min-width: 600px;
+}
+
+.grade-pressure-table thead th {
+  background: var(--green-brand, #1a7a5a);
+  color: var(--white, #ffffff);
+  padding: 8px 10px;
+  text-align: center;
+  font-weight: 600;
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  white-space: nowrap;
+}
+
+.grade-pressure-table tbody td {
+  padding: 6px 10px;
+  text-align: center;
+  border-bottom: 1px solid var(--light-gray, #eef0f2);
+  color: var(--dark-gray, #1a1a2e);
+}
+
+.grade-pressure-table tbody tr:hover {
+  background: var(--green-pale, rgba(26, 122, 90, 0.05));
+}
+
+.grade-pressure-table .schedule-label {
+  font-weight: 600;
+  color: var(--dark-gray, #1a1a2e);
+}
+
+/* ============================================
+   TYPES OF PIPES SECTION WITH IMAGES
+   ============================================ */
+
+.grade-types-of-pipes {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+  background: var(--off-white, #f7f9fc);
+  border-radius: var(--radius-md, 12px);
+  padding: 20px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.grade-type-group {
+  background: var(--white, #ffffff);
+  border-radius: var(--radius-sm, 10px);
+  padding: 16px 20px;
+  border-left: 4px solid var(--green-brand, #1a7a5a);
+  transition: all 0.3s ease;
+  box-shadow: var(--shadow-sm, 0 2px 8px rgba(0, 0, 0, 0.04));
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.grade-type-group:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-md, 0 8px 24px rgba(0, 0, 0, 0.1));
+}
+
+.grade-type-group-image {
+  width: 100%;
+  height: 210px;
+  overflow: hidden;
+  border-radius: 6px;
+  margin-bottom: 12px;
+  background: var(--off-white, #f7f9fc);
+}
+
+.grade-type-group-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.grade-type-group:hover .grade-type-group-image img {
+  transform: scale(1.05);
+}
+
+.grade-type-group-title {
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--green-brand, #1a7a5a);
+  margin-bottom: 10px;
+  padding-bottom: 8px;
+  border-bottom: 2px solid var(--green-pale, rgba(26, 122, 90, 0.15));
+}
+
+.grade-type-group-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.grade-type-group-list li {
+  padding: 4px 0 4px 20px;
+  font-size: 0.9rem;
+  color: var(--dark-gray, #1a1a2e);
+  position: relative;
+  line-height: 1.4;
+  word-break: break-word;
+}
+
+.grade-type-group-list li::before {
+  content: "▸";
+  color: var(--green-brand, #1a7a5a);
+  font-weight: 700;
+  position: absolute;
+  left: 0;
+}
+
+/* ============================================
+   PRODUCT TYPES (ORIGINAL LIST)
    ============================================ */
 
 .grade-types-list {
@@ -228,6 +536,8 @@
   background: var(--off-white, #f7f9fc);
   border-radius: var(--radius-sm, 10px);
   padding: 16px 20px;
+  width: 100%;
+  box-sizing: border-box;
 }
 
 .grade-types-list li {
@@ -239,6 +549,7 @@
   border-left: 3px solid #74c69d;
   position: relative;
   padding-left: 16px;
+  word-break: break-word;
 }
 
 .grade-types-list li::before {
@@ -247,6 +558,100 @@
   font-weight: 700;
   position: absolute;
   left: 4px;
+}
+
+/* ============================================
+   CHEMICAL COMPOSITION
+   ============================================ */
+
+.grade-composition-card {
+  padding: 20px;
+  background: var(--white, #ffffff);
+  border-radius: var(--radius-md, 12px);
+  border: 1px solid var(--light-gray, #eef0f2);
+  width: 100%;
+  box-sizing: border-box;
+  overflow-x: auto;
+}
+
+.grade-composition-table {
+  width: 100%;
+  border-collapse: collapse;
+  min-width: 300px;
+}
+
+.grade-composition-table tr {
+  border-bottom: 1px solid var(--light-gray, #eef0f2);
+}
+
+.grade-composition-table tr:last-child {
+  border-bottom: none;
+}
+
+.grade-composition-table td {
+  padding: 10px 12px;
+  font-size: 0.95rem;
+}
+
+.grade-composition-element {
+  font-weight: 600;
+  color: var(--dark-gray, #1a1a2e);
+  white-space: nowrap;
+  padding-right: 20px;
+}
+
+.grade-composition-value {
+  text-align: right;
+  color: var(--steel-gray, #4a4a5a);
+  font-weight: 500;
+  white-space: nowrap;
+}
+
+/* ============================================
+   PHYSICAL PROPERTIES
+   ============================================ */
+
+.grade-physical-card {
+  padding: 20px;
+  background: var(--white, #ffffff);
+  border-radius: var(--radius-md, 12px);
+  border: 1px solid var(--light-gray, #eef0f2);
+  width: 100%;
+  box-sizing: border-box;
+  overflow-x: auto;
+}
+
+.grade-physical-table {
+  width: 100%;
+  border-collapse: collapse;
+  min-width: 300px;
+}
+
+.grade-physical-table tr {
+  border-bottom: 1px solid var(--light-gray, #eef0f2);
+}
+
+.grade-physical-table tr:last-child {
+  border-bottom: none;
+}
+
+.grade-physical-table td {
+  padding: 10px 12px;
+  font-size: 0.95rem;
+}
+
+.grade-physical-element {
+  font-weight: 600;
+  color: var(--dark-gray, #1a1a2e);
+  white-space: nowrap;
+  padding-right: 20px;
+}
+
+.grade-physical-value {
+  text-align: right;
+  color: var(--steel-gray, #4a4a5a);
+  font-weight: 500;
+  white-space: nowrap;
 }
 
 /* ============================================
@@ -261,12 +666,30 @@
   background: var(--off-white, #f7f9fc);
   border-radius: var(--radius-sm, 10px);
   padding: 16px 20px;
+  width: 100%;
+  box-sizing: border-box;
 }
 
-.grade-city-tag,
+.country-flag {
+  width: 24px;
+  height: 16px;
+  object-fit: cover;
+  border-radius: 2px;
+  border: 1px solid var(--light-gray, #eef0f2);
+  flex-shrink: 0;
+}
+
+.country-flag-fallback {
+  font-size: 1.1rem;
+  flex-shrink: 0;
+}
+
 .grade-country-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
   background: var(--white, #ffffff);
-  padding: 4px 14px;
+  padding: 4px 12px 4px 8px;
   border-radius: 50px;
   font-size: 0.85rem;
   color: var(--dark-gray, #1a1a2e);
@@ -274,7 +697,6 @@
   transition: all 0.2s ease;
 }
 
-.grade-city-tag:hover,
 .grade-country-tag:hover {
   background: var(--green-brand, #1a7a5a);
   color: var(--white, #ffffff);
@@ -283,62 +705,72 @@
   box-shadow: 0 4px 12px rgba(26, 122, 90, 0.2);
 }
 
+.grade-country-tag:hover .country-flag {
+  border-color: var(--white, #ffffff);
+}
+
+.grade-city-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  background: var(--white, #ffffff);
+  padding: 4px 12px 4px 8px;
+  border-radius: 50px;
+  font-size: 0.85rem;
+  color: var(--dark-gray, #1a1a2e);
+  border: 1px solid var(--light-gray, #eef0f2);
+  transition: all 0.2s ease;
+}
+
+.grade-city-tag:hover {
+  background: var(--green-brand, #1a7a5a);
+  color: var(--white, #ffffff);
+  border-color: var(--green-brand, #1a7a5a);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(26, 122, 90, 0.2);
+}
+
+.city-icon {
+  font-size: 0.85rem;
+}
+
 /* ============================================
-   RIGHT COLUMN - SIDEBAR
+   SIDEBAR - RIGHT COLUMN
    ============================================ */
 
-/* Chemical Composition Card */
-.grade-composition-card {
-  padding: 28px;
-  background: var(--white, #ffffff);
-  border-radius: var(--radius-md, 12px);
-  border: 1px solid var(--light-gray, #eef0f2);
-}
-
-.grade-composition-table {
+.grade-detail-sidebar {
   width: 100%;
-  border-collapse: collapse;
+  max-width: 100%;
 }
 
-.grade-composition-table tr {
-  border-bottom: 1px solid var(--light-gray, #eef0f2);
+/* Sidebar Sections */
+.grade-sidebar-section {
+  width: 100%;
+  margin-bottom: 24px;
 }
 
-.grade-composition-table tr:last-child {
-  border-bottom: none;
-}
-
-.grade-composition-table td {
-  padding: 10px 0;
-  font-size: 0.95rem;
-}
-
-.grade-composition-element {
-  font-weight: 600;
-  color: var(--dark-gray, #1a1a2e);
-}
-
-.grade-composition-value {
-  text-align: right;
-  color: var(--steel-gray, #4a4a5a);
-  font-weight: 500;
+.grade-sidebar-section:last-child {
+  margin-bottom: 0;
 }
 
 /* CTA Buttons */
-.grade-detail-cta {
-  margin-top: 24px;
+.grade-cta-wrapper .btn {
+  width: 100%;
+  justify-content: center;
 }
 
-/* ============================================
-   NAVIGATION TO OTHER GRADES
-   ============================================ */
+.grade-cta-wrapper .btn:last-of-type {
+  margin-top: 10px;
+}
 
+/* Navigation */
 .grade-navigation {
-  margin-top: 24px;
   padding: 20px;
   background: var(--off-white, #f7f9fc);
   border-radius: var(--radius-md, 12px);
   border: 1px solid var(--light-gray, #eef0f2);
+  width: 100%;
+  box-sizing: border-box;
 }
 
 .grade-nav-title {
@@ -399,526 +831,726 @@
 }
 
 /* ============================================
-   RESPONSIVE DESIGN
+   MOBILE - Show/Hide Sections
    ============================================ */
 
-/* Tablets & Small Desktops */
-@media (max-width: 992px) {
-  .grade-detail-grid {
-    grid-template-columns: 1fr;
-    gap: 32px;
+/* ✅ Show on Mobile Only */
+@media (max-width: 1024px) {
+  .mobile-only {
+    display: block !important;
   }
 
-  .grade-properties-list {
-    grid-template-columns: 1fr;
+  .desktop-only {
+    display: none !important;
   }
 }
 
-/* Mobile Devices */
-@media (max-width: 768px) {
+/* ✅ Show on Desktop Only */
+@media (min-width: 1025px) {
+  .mobile-only {
+    display: none !important;
+  }
+
+  .desktop-only {
+    display: block !important;
+  }
+}
+
+/* ============================================
+   DESKTOP - Right Side Alignment (1025px and above)
+   ============================================ */
+
+@media (min-width: 1025px) {
   .grade-detail-grid {
+    grid-template-columns: 60% 40% !important;
+    gap: 48px;
+  }
+
+  .grade-detail-sidebar {
+    position: sticky;
+    top: 100px;
+    align-self: start;
+    display: flex !important;
+    flex-direction: column;
     gap: 24px;
   }
 
-  .grade-composition-card {
-    padding: 20px;
+  /* Hide sidebar sections from main content on desktop */
+  .grade-detail-main .grade-composition-wrapper,
+  .grade-detail-main .grade-physical-wrapper,
+  .grade-detail-main .grade-navigation-wrapper,
+  .grade-detail-main .grade-cta-wrapper {
+    display: none !important;
+  }
+
+  /* Show sidebar sections */
+  .grade-detail-sidebar .grade-composition-wrapper,
+  .grade-detail-sidebar .grade-physical-wrapper,
+  .grade-detail-sidebar .grade-navigation-wrapper,
+  .grade-detail-sidebar .grade-cta-wrapper {
+    display: block !important;
+  }
+}
+
+/* ============================================
+   TABLETS & MOBILE - LEFT SIDE FIRST (1024px and below)
+   ============================================ */
+
+@media (max-width: 1024px) {
+  .grade-detail-grid {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 0 !important;
+  }
+
+  .grade-detail-main {
+    order: 1 !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    overflow: hidden !important;
+  }
+
+  .grade-detail-sidebar {
+    order: 2 !important;
+    position: static !important;
+    display: none !important; /* Sidebar hidden on mobile */
+    width: 100% !important;
+  }
+
+  /* ✅ Mobile: Show Chemical Composition, Physical Properties, Navigation, CTA in main content */
+  .grade-detail-main .grade-composition-wrapper,
+  .grade-detail-main .grade-physical-wrapper,
+  .grade-detail-main .grade-navigation-wrapper,
+  .grade-detail-main .grade-cta-wrapper {
+    display: block !important;
+  }
+
+  /* Mobile spacing for these sections */
+  .grade-detail-main .grade-composition-wrapper {
+    margin-top: 32px !important;
+  }
+
+  .grade-detail-main .grade-physical-wrapper {
+    margin-top: 32px !important;
+  }
+
+  .grade-detail-main .grade-navigation-wrapper {
+    margin-top: 32px !important;
+  }
+
+  .grade-detail-main .grade-cta-wrapper {
+    margin-top: 32px !important;
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 12px !important;
+  }
+
+  .grade-properties-list {
+    grid-template-columns: 1fr !important;
+  }
+}
+
+/* ============================================
+   MOBILE DEVICES (768px and below)
+   ============================================ */
+
+@media (max-width: 768px) {
+  /* Global */
+  body {
+    overflow-x: hidden;
+    width: 100%;
+  }
+
+  .container,
+  .container--narrow {
+    padding: 0 16px;
+    max-width: 100%;
+    overflow: hidden;
+  }
+
+  .section {
+    padding: 52px 0;
+  }
+
+  .page-hero {
+    padding: 72px 0 40px;
+  }
+
+  /* Mobile Order */
+  .grade-detail-grid {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 0 !important;
+  }
+
+  .grade-detail-main {
+    order: 1 !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    overflow: hidden !important;
+  }
+
+  .grade-detail-sidebar {
+    order: 2 !important;
+    position: static !important;
+    display: none !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    overflow: hidden !important;
+  }
+
+  /* Mobile spacing */
+  .grade-detail-main .grade-composition-wrapper {
+    margin-top: 24px !important;
+  }
+
+  .grade-detail-main .grade-physical-wrapper {
+    margin-top: 24px !important;
+  }
+
+  .grade-detail-main .grade-navigation-wrapper {
+    margin-top: 24px !important;
+  }
+
+  .grade-detail-main .grade-cta-wrapper {
+    margin-top: 24px !important;
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 12px !important;
+  }
+
+  /* Properties */
+  .grade-properties-list {
+    gap: 8px !important;
   }
 
   .grade-properties-list li {
-    font-size: 0.9rem;
-    padding: 8px 14px;
+    font-size: 0.9rem !important;
+    padding: 8px 14px !important;
+  }
+
+  /* Applications */
+  .grade-applications-tags {
+    gap: 8px !important;
   }
 
   .grade-application-tag {
-    font-size: 0.85rem;
-    padding: 5px 14px;
+    font-size: 0.85rem !important;
+    padding: 5px 14px !important;
+    white-space: normal !important;
+    word-break: break-word !important;
   }
 
-  /* Specifications Grid */
+  /* Specifications */
   .grade-specifications-grid {
-    grid-template-columns: 1fr;
-    padding: 16px;
+    grid-template-columns: 1fr !important;
+    padding: 16px !important;
   }
 
-  /* Mechanical Grid */
+  .grade-spec-item {
+    padding: 8px 12px !important;
+  }
+
+  .grade-spec-value {
+    font-size: 0.85rem !important;
+  }
+
+  /* Mechanical Properties */
   .grade-mechanical-grid {
-    grid-template-columns: 1fr 1fr;
-    padding: 16px;
+    grid-template-columns: 1fr 1fr !important;
+    padding: 16px !important;
+  }
+
+  .grade-mechanical-item {
+    padding: 8px 12px !important;
+  }
+
+  .grade-mechanical-value {
+    font-size: 0.85rem !important;
   }
 
   /* Equivalent Grades */
   .grade-equivalent-grid {
-    grid-template-columns: 1fr;
-    padding: 12px 16px;
+    grid-template-columns: 1fr !important;
+    padding: 12px 16px !important;
+  }
+
+  .grade-equivalent-value {
+    text-align: right !important;
   }
 
   /* Types List */
   .grade-types-list {
-    grid-template-columns: 1fr;
-    padding: 12px 16px;
+    grid-template-columns: 1fr !important;
+    padding: 12px 16px !important;
   }
 
-  /* Navigation */
-  .grade-navigation {
-    padding: 16px;
+  /* Types of Pipes */
+  .grade-types-of-pipes {
+    grid-template-columns: 1fr !important;
+    gap: 14px !important;
+    padding: 14px !important;
   }
 
-  .grade-nav-link {
-    font-size: 0.85rem;
-    padding: 6px 12px;
+  .grade-type-group {
+    padding: 14px 16px !important;
+  }
+
+  .grade-type-group-image {
+    height: 150px !important;
+  }
+
+  .grade-type-group-title {
+    font-size: 0.9rem !important;
+  }
+
+  .grade-type-group-list li {
+    font-size: 0.85rem !important;
+    padding: 3px 0 3px 18px !important;
+  }
+
+  /* Schedule Chart */
+  .grade-schedule-wrapper {
+    padding: 12px !important;
+  }
+
+  .grade-schedule-table {
+    font-size: 0.8rem !important;
+    min-width: 400px !important;
+  }
+
+  .grade-schedule-table thead th,
+  .grade-schedule-table tbody td {
+    padding: 6px 8px !important;
+  }
+
+  /* Weight Chart */
+  .grade-weight-wrapper {
+    padding: 12px !important;
+  }
+
+  .grade-weight-table {
+    font-size: 0.75rem !important;
+    min-width: 500px !important;
+  }
+
+  .grade-weight-table thead th,
+  .grade-weight-table tbody td {
+    padding: 5px 8px !important;
+  }
+
+  /* Pressure Rating */
+  .grade-pressure-wrapper {
+    padding: 12px !important;
+  }
+
+  .grade-pressure-table {
+    font-size: 0.75rem !important;
+    min-width: 500px !important;
+  }
+
+  .grade-pressure-table thead th,
+  .grade-pressure-table tbody td {
+    padding: 5px 6px !important;
+  }
+
+  /* Chemical Composition */
+  .grade-composition-card {
+    padding: 16px !important;
+  }
+
+  .grade-composition-table td {
+    font-size: 0.9rem !important;
+    padding: 8px 10px !important;
+  }
+
+  .grade-composition-element {
+    white-space: normal !important;
+  }
+
+  .grade-composition-value {
+    white-space: normal !important;
+  }
+
+  /* Physical Properties */
+  .grade-physical-card {
+    padding: 16px !important;
+  }
+
+  .grade-physical-table td {
+    font-size: 0.9rem !important;
+    padding: 8px 10px !important;
+  }
+
+  .grade-physical-element {
+    white-space: normal !important;
+  }
+
+  .grade-physical-value {
+    white-space: normal !important;
   }
 
   /* Cities & Countries */
   .grade-cities-tags,
   .grade-countries-tags {
-    max-height: 200px;
-    overflow-y: auto;
-    padding: 12px 16px;
+    max-height: 200px !important;
+    overflow-y: auto !important;
+    padding: 12px 16px !important;
+  }
+
+  .grade-country-tag,
+  .grade-city-tag {
+    font-size: 0.75rem !important;
+    padding: 3px 8px 3px 6px !important;
+  }
+
+  .country-flag {
+    width: 20px !important;
+    height: 14px !important;
+  }
+
+  /* Navigation in Main Content */
+  .grade-detail-main .grade-navigation {
+    padding: 16px !important;
+  }
+
+  .grade-detail-main .grade-nav-link {
+    font-size: 0.85rem !important;
+    padding: 6px 12px !important;
+  }
+
+  /* CTA Buttons in Main Content */
+  .grade-detail-main .grade-cta-wrapper .btn {
+    width: 100% !important;
+    justify-content: center !important;
   }
 }
 
-/* Small Mobile Devices */
+/* ============================================
+   SMALL MOBILE DEVICES (480px and below)
+   ============================================ */
+
 @media (max-width: 480px) {
-  .grade-composition-card {
-    padding: 16px;
+  /* Global */
+  .container,
+  .container--narrow {
+    padding: 0 12px;
   }
 
-  .grade-composition-table td {
-    font-size: 0.85rem;
-    padding: 8px 0;
+  .section {
+    padding: 40px 0;
+  }
+
+  .page-hero {
+    padding: 48px 0 32px;
+  }
+
+  .page-hero h1 {
+    font-size: 1.6rem;
+  }
+
+  .page-hero p {
+    font-size: 0.9rem;
+  }
+
+  /* Mobile Order */
+  .grade-detail-grid {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 0 !important;
+  }
+
+  .grade-detail-main {
+    order: 1 !important;
+    width: 100% !important;
+  }
+
+  .grade-detail-sidebar {
+    order: 2 !important;
+    position: static !important;
+    display: none !important;
+    width: 100% !important;
+  }
+
+  /* Mobile spacing */
+  .grade-detail-main .grade-composition-wrapper {
+    margin-top: 20px !important;
+  }
+
+  .grade-detail-main .grade-physical-wrapper {
+    margin-top: 20px !important;
+  }
+
+  .grade-detail-main .grade-navigation-wrapper {
+    margin-top: 20px !important;
+  }
+
+  .grade-detail-main .grade-cta-wrapper {
+    margin-top: 20px !important;
+  }
+
+  /* Properties */
+  .grade-properties-list {
+    gap: 6px !important;
   }
 
   .grade-properties-list li {
-    font-size: 0.85rem;
+    font-size: 0.85rem !important;
+    padding: 6px 12px !important;
   }
 
-  .grade-image-wrapper {
-    margin-bottom: 16px;
+  /* Applications */
+  .grade-application-tag {
+    font-size: 0.7rem !important;
+    padding: 4px 10px !important;
   }
 
-  /* Mechanical Grid - Single Column on Small Mobile */
+  /* Mechanical Properties */
   .grade-mechanical-grid {
-    grid-template-columns: 1fr;
+    grid-template-columns: 1fr !important;
+    gap: 8px !important;
+    padding: 12px !important;
   }
 
-  /* Spec Item */
-  .grade-spec-item {
-    padding: 8px 12px;
+  .grade-mechanical-item {
+    padding: 8px 12px !important;
   }
 
-  .grade-spec-value,
   .grade-mechanical-value {
-    font-size: 0.85rem;
+    font-size: 0.85rem !important;
   }
 
-  /* Navigation */
-  .grade-nav-link {
-    font-size: 0.8rem;
-    padding: 5px 10px;
+  /* Specifications */
+  .grade-specifications-grid {
+    padding: 12px !important;
+    gap: 8px !important;
   }
 
-  .grade-nav-title {
-    font-size: 0.75rem;
+  .grade-spec-item {
+    padding: 6px 10px !important;
   }
-}
-/* ============================================
-   SCHEDULE CHART
-   ============================================ */
 
-.grade-schedule-wrapper {
-  overflow-x: auto;
-  background: var(--off-white, #f7f9fc);
-  border-radius: var(--radius-sm, 10px);
-  padding: 16px;
-}
+  /* Types of Pipes */
+  .grade-types-of-pipes {
+    padding: 10px !important;
+    gap: 10px !important;
+  }
 
-.grade-schedule-table {
-  width: 100%;
-  border-collapse: collapse;
-  font-size: 0.9rem;
-  min-width: 500px;
-}
+  .grade-type-group {
+    padding: 10px 12px !important;
+  }
 
-.grade-schedule-table thead th {
-  background: var(--green-brand, #1a7a5a);
-  color: var(--white, #ffffff);
-  padding: 10px 12px;
-  text-align: center;
-  font-weight: 600;
-  font-size: 0.8rem;
-  text-transform: uppercase;
-  letter-spacing: 0.05em;
-}
+  .grade-type-group-image {
+    height: 250px !important;
+  }
 
-.grade-schedule-table tbody td {
-  padding: 8px 12px;
-  text-align: center;
-  border-bottom: 1px solid var(--light-gray, #eef0f2);
-  color: var(--dark-gray, #1a1a2e);
-}
+  .grade-type-group-title {
+    font-size: 0.8rem !important;
+  }
 
-.grade-schedule-table tbody tr:hover {
-  background: var(--green-pale, rgba(26, 122, 90, 0.05));
-}
+  .grade-type-group-list li {
+    font-size: 0.8rem !important;
+    padding: 2px 0 2px 16px !important;
+  }
 
-.grade-schedule-table .schedule-size {
-  font-weight: 600;
-  color: var(--dark-gray, #1a1a2e);
-  text-align: left;
-}
+  /* Types List */
+  .grade-types-list {
+    padding: 10px 12px !important;
+  }
 
-.grade-schedule-table tbody td:not(.schedule-size) {
-  color: var(--green-brand, #1a7a5a);
-  font-weight: 700;
-}
+  .grade-types-list li {
+    font-size: 0.8rem !important;
+    padding: 6px 10px 6px 14px !important;
+  }
 
-/* ============================================
-   PRESSURE RATING
-   ============================================ */
-
-.grade-pressure-wrapper {
-  background: var(--off-white, #f7f9fc);
-  border-radius: var(--radius-sm, 10px);
-  padding: 16px;
-}
-
-.grade-pressure-note {
-  background: var(--green-pale, rgba(26, 122, 90, 0.08));
-  padding: 10px 16px;
-  border-radius: 6px;
-  margin-bottom: 16px;
-  border-left: 3px solid var(--green-brand, #1a7a5a);
-}
-
-.grade-pressure-note p {
-  margin: 0;
-  color: var(--steel-gray, #4a4a5a);
-}
-
-.grade-pressure-size-group {
-  margin-bottom: 20px;
-}
-
-.grade-pressure-size-group:last-child {
-  margin-bottom: 0;
-}
-
-.grade-pressure-size-title {
-  font-size: 0.95rem;
-  font-weight: 600;
-  color: var(--dark-gray, #1a1a2e);
-  margin-bottom: 8px;
-  padding: 6px 12px;
-  background: var(--white, #ffffff);
-  border-radius: 6px;
-  display: inline-block;
-}
-
-.grade-pressure-table {
-  width: 100%;
-  border-collapse: collapse;
-  font-size: 0.85rem;
-  min-width: 600px;
-}
-
-.grade-pressure-table thead th {
-  background: var(--green-brand, #1a7a5a);
-  color: var(--white, #ffffff);
-  padding: 8px 10px;
-  text-align: center;
-  font-weight: 600;
-  font-size: 0.75rem;
-  text-transform: uppercase;
-  letter-spacing: 0.05em;
-}
-
-.grade-pressure-table tbody td {
-  padding: 6px 10px;
-  text-align: center;
-  border-bottom: 1px solid var(--light-gray, #eef0f2);
-  color: var(--dark-gray, #1a1a2e);
-}
-
-.grade-pressure-table tbody tr:hover {
-  background: var(--green-pale, rgba(26, 122, 90, 0.05));
-}
-
-.grade-pressure-table .schedule-label {
-  font-weight: 600;
-  color: var(--dark-gray, #1a1a2e);
-}
-
-/* ============================================
-   RESPONSIVE - SCHEDULE & PRESSURE
-   ============================================ */
-
-@media (max-width: 768px) {
-  .grade-schedule-wrapper,
-  .grade-pressure-wrapper {
-    padding: 12px;
+  /* Schedule Chart */
+  .grade-schedule-wrapper {
+    padding: 10px !important;
   }
 
   .grade-schedule-table {
-    font-size: 0.8rem;
-    min-width: 400px;
+    font-size: 0.7rem !important;
+    min-width: 320px !important;
   }
 
   .grade-schedule-table thead th,
   .grade-schedule-table tbody td {
-    padding: 6px 8px;
+    padding: 4px 6px !important;
+  }
+
+  /* Weight Chart */
+  .grade-weight-wrapper {
+    padding: 10px !important;
+  }
+
+  .grade-weight-table {
+    font-size: 0.65rem !important;
+    min-width: 400px !important;
+  }
+
+  .grade-weight-table thead th,
+  .grade-weight-table tbody td {
+    padding: 4px 6px !important;
+  }
+
+  /* Pressure Rating */
+  .grade-pressure-wrapper {
+    padding: 10px !important;
   }
 
   .grade-pressure-table {
-    font-size: 0.75rem;
-    min-width: 500px;
+    font-size: 0.65rem !important;
+    min-width: 400px !important;
   }
 
   .grade-pressure-table thead th,
   .grade-pressure-table tbody td {
-    padding: 5px 6px;
+    padding: 4px 5px !important;
+  }
+
+  /* Chemical Composition */
+  .grade-composition-card {
+    padding: 12px !important;
+  }
+
+  .grade-composition-table td {
+    font-size: 0.85rem !important;
+    padding: 6px 8px !important;
+  }
+
+  .grade-composition-element,
+  .grade-composition-value {
+    white-space: normal !important;
+  }
+
+  /* Physical Properties */
+  .grade-physical-card {
+    padding: 12px !important;
+  }
+
+  .grade-physical-table td {
+    font-size: 0.85rem !important;
+    padding: 6px 8px !important;
+  }
+
+  .grade-physical-element,
+  .grade-physical-value {
+    white-space: normal !important;
+  }
+
+  /* Cities & Countries */
+  .grade-cities-tags,
+  .grade-countries-tags {
+    padding: 10px 12px !important;
+    gap: 4px !important;
+    max-height: 150px !important;
+    overflow-y: auto !important;
+  }
+
+  .grade-city-tag,
+  .grade-country-tag {
+    font-size: 0.7rem !important;
+    padding: 2px 8px !important;
+  }
+
+  .country-flag {
+    width: 16px !important;
+    height: 12px !important;
+  }
+
+  /* Navigation in Main Content */
+  .grade-detail-main .grade-navigation {
+    padding: 14px !important;
+  }
+
+  .grade-detail-main .grade-nav-link {
+    font-size: 0.8rem !important;
+    padding: 5px 10px !important;
+  }
+
+  .grade-detail-main .grade-nav-title {
+    font-size: 0.75rem !important;
+  }
+
+  /* CTA Buttons */
+  .btn {
+    font-size: 0.75rem !important;
+    padding: 10px 16px !important;
+    width: 100% !important;
+    justify-content: center !important;
+  }
+
+  /* Grade Detail - Image */
+  .grade-image-wrapper {
+    margin-bottom: 16px !important;
+  }
+
+  /* Equivalent Grades */
+  .grade-equivalent-item {
+    flex-direction: column !important;
+    align-items: flex-start !important;
+    gap: 4px !important;
+  }
+
+  .grade-equivalent-value {
+    text-align: left !important;
   }
 }
 
-@media (max-width: 480px) {
+/* ============================================
+   EXTRA SMALL DEVICES (360px and below)
+   ============================================ */
+
+@media (max-width: 360px) {
+  .container,
+  .container--narrow {
+    padding: 0 8px;
+  }
+
   .grade-schedule-table {
-    font-size: 0.7rem;
-    min-width: 320px;
+    font-size: 0.6rem;
+    min-width: 280px;
   }
 
   .grade-pressure-table {
+    font-size: 0.55rem;
+    min-width: 340px;
+  }
+
+  .grade-weight-table {
+    font-size: 0.55rem;
+    min-width: 340px;
+  }
+
+  .grade-city-tag,
+  .grade-country-tag {
+    font-size: 0.6rem;
+    padding: 1px 6px;
+  }
+
+  .grade-composition-table td,
+  .grade-physical-table td {
+    font-size: 0.75rem;
+    padding: 4px 6px;
+  }
+
+  .grade-properties-list li {
+    font-size: 0.75rem;
+    padding: 4px 10px;
+  }
+
+  .grade-application-tag {
     font-size: 0.65rem;
-    min-width: 400px;
-  }
-}
-/* ============================================
-   TYPES OF PIPES SECTION
-   ============================================ */
-
-.grade-types-of-pipes {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 20px;
-  background: var(--off-white, #f7f9fc);
-  border-radius: var(--radius-md, 12px);
-  padding: 20px;
-}
-
-.grade-type-group {
-  background: var(--white, #ffffff);
-  border-radius: var(--radius-sm, 10px);
-  padding: 16px 20px;
-  border-left: 4px solid var(--green-brand, #1a7a5a);
-  transition: all 0.3s ease;
-  box-shadow: var(--shadow-sm, 0 2px 8px rgba(0, 0, 0, 0.04));
-}
-
-.grade-type-group:hover {
-  transform: translateY(-2px);
-  box-shadow: var(--shadow-md, 0 4px 16px rgba(0, 0, 0, 0.08));
-}
-
-.grade-type-group-title {
-  font-size: 1rem;
-  font-weight: 700;
-  color: var(--green-brand, #1a7a5a);
-  margin-bottom: 10px;
-  padding-bottom: 8px;
-  border-bottom: 2px solid var(--green-pale, rgba(26, 122, 90, 0.15));
-}
-
-.grade-type-group-list {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-}
-
-.grade-type-group-list li {
-  padding: 4px 0 4px 20px;
-  font-size: 0.9rem;
-  color: var(--dark-gray, #1a1a2e);
-  position: relative;
-  line-height: 1.4;
-}
-
-.grade-type-group-list li::before {
-  content: "▸";
-  color: var(--green-brand, #1a7a5a);
-  font-weight: 700;
-  position: absolute;
-  left: 0;
-}
-
-/* ============================================
-   RESPONSIVE - TYPES OF PIPES
-   ============================================ */
-
-@media (max-width: 768px) {
-  .grade-types-of-pipes {
-    grid-template-columns: 1fr;
-    gap: 14px;
-    padding: 14px;
+    padding: 3px 8px;
   }
 
-  .grade-type-group {
-    padding: 14px 16px;
+  .btn {
+    font-size: 0.7rem;
+    padding: 8px 12px;
   }
 
-  .grade-type-group-title {
-    font-size: 0.9rem;
-  }
-
-  .grade-type-group-list li {
-    font-size: 0.85rem;
-    padding: 3px 0 3px 18px;
-  }
-}
-
-@media (max-width: 480px) {
-  .grade-types-of-pipes {
-    padding: 10px;
-    gap: 10px;
-  }
-
-  .grade-type-group {
-    padding: 10px 12px;
-  }
-
-  .grade-type-group-title {
-    font-size: 0.8rem;
-  }
-
-  .grade-type-group-list li {
-    font-size: 0.8rem;
-    padding: 2px 0 2px 16px;
-  }
-}
-/* ============================================
-   TYPES OF PIPES SECTION WITH IMAGES
-   ============================================ */
-
-.grade-types-of-pipes {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 20px;
-  background: var(--off-white, #f7f9fc);
-  border-radius: var(--radius-md, 12px);
-  padding: 20px;
-}
-
-.grade-type-group {
-  background: var(--white, #ffffff);
-  border-radius: var(--radius-sm, 10px);
-  padding: 16px 20px;
-  border-left: 4px solid var(--green-brand, #1a7a5a);
-  transition: all 0.3s ease;
-  box-shadow: var(--shadow-sm, 0 2px 8px rgba(0, 0, 0, 0.04));
-}
-
-.grade-type-group:hover {
-  transform: translateY(-4px);
-  box-shadow: var(--shadow-md, 0 8px 24px rgba(0, 0, 0, 0.1));
-}
-
-.grade-type-group-image {
-  width: 100%;
-  height: 120px;
-  overflow: hidden;
-  border-radius: 6px;
-  margin-bottom: 12px;
-  background: var(--off-white, #f7f9fc);
-}
-
-.grade-type-group-image img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  transition: transform 0.3s ease;
-}
-
-.grade-type-group:hover .grade-type-group-image img {
-  transform: scale(1.05);
-}
-
-.grade-type-group-title {
-  font-size: 1rem;
-  font-weight: 700;
-  color: var(--green-brand, #1a7a5a);
-  margin-bottom: 10px;
-  padding-bottom: 8px;
-  border-bottom: 2px solid var(--green-pale, rgba(26, 122, 90, 0.15));
-}
-
-.grade-type-group-list {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-}
-
-.grade-type-group-list li {
-  padding: 4px 0 4px 20px;
-  font-size: 0.9rem;
-  color: var(--dark-gray, #1a1a2e);
-  position: relative;
-  line-height: 1.4;
-}
-
-.grade-type-group-list li::before {
-  content: "▸";
-  color: var(--green-brand, #1a7a5a);
-  font-weight: 700;
-  position: absolute;
-  left: 0;
-}
-
-/* ============================================
-   RESPONSIVE - TYPES OF PIPES
-   ============================================ */
-
-@media (max-width: 768px) {
-  .grade-types-of-pipes {
-    grid-template-columns: 1fr;
-    gap: 14px;
-    padding: 14px;
-  }
-
-  .grade-type-group {
-    padding: 14px 16px;
-  }
-
-  .grade-type-group-image {
-    height: 100px;
-  }
-
-  .grade-type-group-title {
-    font-size: 0.9rem;
-  }
-
-  .grade-type-group-list li {
-    font-size: 0.85rem;
-    padding: 3px 0 3px 18px;
-  }
-}
-
-@media (max-width: 480px) {
-  .grade-types-of-pipes {
-    padding: 10px;
-    gap: 10px;
-  }
-
-  .grade-type-group {
-    padding: 10px 12px;
-  }
-
-  .grade-type-group-image {
-    height: 80px;
-  }
-
-  .grade-type-group-title {
-    font-size: 0.8rem;
-  }
-
-  .grade-type-group-list li {
-    font-size: 0.8rem;
-    padding: 2px 0 2px 16px;
+  .grade-detail-main .grade-nav-link {
+    font-size: 0.7rem;
+    padding: 4px 8px;
   }
 }

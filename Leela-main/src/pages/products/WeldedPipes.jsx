@@ -36,36 +36,60 @@ const APPLICATIONS = [
   "Construction & Infrastructure",
 ];
 
-// Updated GRADES with individual page links
+// ✅ Complete Grades List with all stainless steel grades
 const GRADES = [
   {
-    category: "Austenitic Stainless Steels",
+    category: "Stainless Steels Welded Pipes",
     grades: [
-      { name: "304", slug: "304" },
-      { name: "304L", slug: "304L" },
-      { name: "310", slug: "310" },
-      { name: "316", slug: "316" },
-      { name: "316L", slug: "316L" },
-      { name: "321", slug: "321" },
-      
-    ],
-  },
-  {
-    category: "Chromium-Manganese Stainless Steels",
-    grades: [{ name: "202", slug: "202" }],
-  },
-  {
-    category: "Ferritic Stainless Steels",
-    grades: [
-      { name: "409", slug: "409" },
-      { name: "409M", slug: "409M" },
-    ],
-  },
-  {
-    category: "Super Austenitic Stainless Steels",
-    grades: [{ name: "904L", slug: "904L" }],
-  },
-];
+      {
+        name: "202",
+        slug: "202",
+        fullName: "Stainless Steel 202 Welded Pipes",
+      },
+      {
+        name: "304",
+        slug: "304",
+        fullName: "Stainless Steel 304 Welded Pipes",
+      },
+      {
+        name: "304L",
+        slug: "304L",
+        fullName: "Stainless Steel 304L Welded Pipes",
+      },
+      {
+        name: "310S",
+        slug: "310",
+        fullName: "Stainless Steel 310S Welded Pipes",
+      },
+      {
+        name: "316",
+        slug: "316",
+        fullName: "Stainless Steel 316 Welded Pipes",
+      },
+      {
+        name: "316L",
+        slug: "316L",
+        fullName: "Stainless Steel 316L Welded Pipes",
+      },
+      {
+        name: "321",
+        slug: "321",
+        fullName: "Stainless Steel 321/321H Welded Pipes",
+      },
+      {
+        name: "409",
+        slug: "409",
+        fullName: "Stainless Steel 409 Welded Pipes",
+      },
+      {
+        name: "904L",
+        slug: "904L",
+        fullName: "Stainless Steel 904L Welded Pipes",
+      },
+    ]
+  }
+]; 
+
 
 export default function WeldedPipes() {
   return (

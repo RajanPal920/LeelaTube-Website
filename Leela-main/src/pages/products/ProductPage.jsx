@@ -157,24 +157,45 @@ export default function ProductPage({ product }) {
             </h2>
             <p className="body-lg">{longDescription}</p>
 
-            {/* ============ GRADES SECTION ============ */}
+            {/* ============ GRADES SECTION - Complete List ============ */}
             {grades && grades.length > 0 && (
               <div className="product-grades-section">
-                <h3 className="heading-md" style={{ marginBottom: "20px" }}>
-                  Available Grades
-                </h3>
+                <div className="grade-section-header">
+                  <h3 className="heading-md" style={{ marginBottom: "0" }}>
+                    Available Welded Pipes
+                  </h3>
+                  <span className="grade-hint">
+                    <span className="grade-hint-icon">💡</span>
+                    Click any grade for details
+                  </span>
+                </div>
+
                 <div className="product-grades-grid">
                   {grades.map((group, index) => (
                     <div className="grade-group" key={index}>
-                      <h4 className="grade-category">{group.category}</h4>
+                      <div className="grade-group-header">
+                        <span className="grade-group-icon">
+                          {index === 0 && "🔬"}
+                          {index === 1 && "🔩"}
+                          {index === 2 && "⭐"}
+                        </span>
+                        <h4 className="grade-category">{group.category}</h4>
+                        <span className="grade-count">
+                          {group.grades.length} grades
+                        </span>
+                      </div>
                       <ul className="grade-list">
                         {group.grades.map((grade, i) => (
                           <li className="grade-item" key={i}>
                             <Link
                               to={`/products/welded-pipes/grade/${grade.slug}`}
                               className="grade-badge-link"
+                              title={grade.fullName || grade.name}
                             >
-                              <span className="grade-badge">{grade.name}</span>
+                              <span className="grade-badge">
+                                {grade.fullName || grade.name}
+                                <span className="grade-badge-arrow">→</span>
+                              </span>
                             </Link>
                           </li>
                         ))}
@@ -182,16 +203,18 @@ export default function ProductPage({ product }) {
                     </div>
                   ))}
                 </div>
-                <p
-                  className="body-sm"
-                  style={{ marginTop: "12px", color: "var(--steel-gray)" }}
-                >
-                  Click on any grade above to view detailed specifications.
-                  Other grades may be available upon request.
-                </p>
+
+                <div className="grade-section-footer">
+                  <span style={{ fontSize: "1rem" }}>📋</span>
+                  <p className="body-sm">
+                    <strong>Complete Grade Range:</strong> We offer a
+                    comprehensive range of stainless steel grades. Click on any
+                    grade above to view its complete specifications, chemical
+                    composition, physical properties, and technical data.
+                  </p>
+                </div>
               </div>
             )}
-
             {/* Spec Table */}
             <div className="product-spec-section">
               <h3 className="heading-md" style={{ marginBottom: "20px" }}>
@@ -251,7 +274,6 @@ export default function ProductPage({ product }) {
                 confirmed upon submission of technical enquiry.
               </p>
             </div>
-
             {/* Applications */}
             <div className="product-applications">
               <h3 className="heading-md" style={{ marginBottom: "20px" }}>
@@ -265,7 +287,6 @@ export default function ProductPage({ product }) {
                 ))}
               </div>
             </div>
-
             {/* Bottom CTA */}
             <div className="product-bottom-cta">
               <p className="body-lg">
