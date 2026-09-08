@@ -521,18 +521,23 @@
 
 @media (max-width: 768px) {
   .product-detail__grid {
-    grid-template-columns: 1fr;
-    gap: 24px;
-    padding: 0 20px;
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 24px !important;
+    padding: 0 20px !important;
   }
 
+  /* ✅ Left side pehle (order: 1) */
   .product-detail__aside {
-    order: 2;
-    position: static;
+    order: 1 !important;
+    position: static !important;
+    width: 100% !important;
   }
 
+  /* ✅ Right side baad mein (order: 2) */
   .product-detail__main {
-    order: 1;
+    order: 2 !important;
+    width: 100% !important;
   }
 
   .product-detail__sidebar-cta {
@@ -633,8 +638,23 @@
 
 @media (max-width: 480px) {
   .product-detail__grid {
-    gap: 16px;
-    padding: 0 16px;
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 16px !important;
+    padding: 0 16px !important;
+  }
+
+  /* ✅ Left side pehle (order: 1) */
+  .product-detail__aside {
+    order: 1 !important;
+    position: static !important;
+    width: 100% !important;
+  }
+
+  /* ✅ Right side baad mein (order: 2) */
+  .product-detail__main {
+    order: 2 !important;
+    width: 100% !important;
   }
 
   .product-detail__sidebar-cta {
@@ -763,7 +783,7 @@
 
 @media (max-width: 360px) {
   .product-detail__grid {
-    padding: 0 12px;
+    padding: 0 12px !important;
   }
 
   .product-detail__sidebar-cta {
