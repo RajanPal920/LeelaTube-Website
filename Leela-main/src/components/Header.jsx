@@ -14,6 +14,7 @@ const NAV_ITEMS = [
       { label: 'Square Tubes',      to: '/products/square-tubes' },
       { label: 'Rectangular Tubes', to: '/products/rectangular-tubes' },
       { label: 'Oval Tubes',        to: '/products/oval-tubes' },
+      {label: 'Welded Pipes',       to : '/products/welded-pipes'   }
     ],
   },
   { label: 'Manufacturing', to: '/manufacturing' },
