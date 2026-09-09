@@ -166,7 +166,7 @@ export default function ProductPage({ product }) {
                   </h3>
                   <span className="grade-hint">
                     <span className="grade-hint-icon">💡</span>
-                    Click any grade for details
+                    Click Any Grade Of Welded Pipes For Details
                   </span>
                 </div>
 

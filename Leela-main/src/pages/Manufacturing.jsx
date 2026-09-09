@@ -6,33 +6,47 @@ const CAPABILITIES = [
     icon: '🏭',
     title: 'High-Tech Manufacturing Plant',
     body: 'The manufacturing facility is located in Village Dabhel, Daman and is described as a high-tech plant designed to produce ERW stainless‑steel pipes and tubes to demanding industrial standards.',
+    image: '/images/manufacturing/high-tech-plant.jpg',
+    alt: 'High-Tech Manufacturing Plant'
   },
   {
     icon: '⚙️',
     title: 'Advanced Manufacturing Equipment',
     body: 'The facility is equipped with advanced manufacturing equipment capable of producing the full range of tube profiles — round, square, rectangular and oval — to customer-specified requirements.',
+    image: '/images/manufacturing/advanced-equipment.jpg',
+    alt: 'Advanced Manufacturing Equipment'
   },
   {
     icon: '🔬',
     title: 'Complete Testing Methods',
     body: 'The Daman plant is described as being equipped with complete testing methods, ensuring that products are verified against customer-specified requirements before dispatch.',
+    image: '/images/manufacturing/complete-testing.jpg',
+    alt: 'Complete Testing Laboratory'
   },
   {
     icon: '🏗️',
     title: 'Spacious Warehouse',
     body: 'A spacious warehouse is available at the Daman facility, capable of storing large quantities of finished products — supporting reliable availability and timely despatch.',
+    image: '/images/manufacturing/spacious-warehouse.jpg',
+    alt: 'Spacious Warehouse'
   },
   {
     icon: '👷',
     title: 'Qualified Engineers',
     body: 'Manufacturing is supported by qualified engineers with technical knowledge of stainless‑steel tube production, materials and customer application requirements.',
+    image: '/images/manufacturing/qualified-engineers.jpg',
+    alt: 'Qualified Engineers'
   },
   {
     icon: '🛠️',
     title: 'Experienced Technical Personnel',
     body: 'Highly experienced and trained technical personnel work across all stages of the manufacturing process, supporting consistent product quality and specification compliance.',
+    image: '/images/manufacturing/technical-personnel.jpg',
+    alt: 'Experienced Technical Personnel'
   },
 ];
+
+
 
 export default function Manufacturing() {
   return (
