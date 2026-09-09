@@ -52,6 +52,9 @@ export default function OvalTubes() {
           "Leela Tubes manufactures ERW stainless‑steel oval tubes at its high-tech facility in Daman, India. Oval (elliptical) tube profiles are used in applications requiring a distinctive form factor combined with the corrosion resistance and hygienic properties of stainless steel. All oval tube specifications — including major axis, minor axis, wall thickness, grade, finish and length — are confirmed per customer requirement.",
         grades: GRADES,
         otherProducts: otherProducts,
+        // Add hero image for mobile
+        heroImage: "/images/oval-tubes.jpg",
+        heroImageAlt: "ERW stainless steel oval tubes",
       }}
     />
   );

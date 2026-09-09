@@ -2,8 +2,7 @@
 import { Link } from "react-router-dom";
 import "./ProductPage.css";
 
-// Import data from utils (agar aapke paas alag file hai to import karein)
-// Otherwise ye data directly component mein bhi daal sakte hain
+// Import data from utils
 import {
   CHEMICAL_COMPOSITION,
   PRODUCT_RANGE,
@@ -20,12 +19,22 @@ export default function ProductPage({ product }) {
     longDescription,
     otherProducts,
     grades,
+    heroImage, // Naya prop - Hero ke liye image
+    heroImageAlt, // Naya prop - Hero image ka alt text
   } = product;
 
   return (
     <div className="product-page">
-      {/* Page hero */}
+      {/* ================= HERO SECTION (Image Background) ================= */}
       <section className="page-hero">
+        <div className="page-hero__image-wrap">
+          <img
+            src={heroImage || image} // Agar heroImage na ho to image use karein
+            alt={heroImageAlt || imageAlt}
+            className="page-hero__image"
+          />
+        </div>
+        <div className="page-hero__overlay"></div>
         <div className="container page-hero__content">
           <nav className="page-hero__breadcrumb" aria-label="Breadcrumb">
             <Link to="/">Home</Link>
@@ -39,7 +48,7 @@ export default function ProductPage({ product }) {
         </div>
       </section>
 
-      {/* Main content */}
+      {/* ================= MAIN CONTENT ================= */}
       <section className="section product-detail">
         <div className="container product-detail__grid">
           {/* Left: image + quote CTA */}
@@ -166,7 +175,7 @@ export default function ProductPage({ product }) {
               </div>
             )}
 
-            {/* ============ CHEMICAL COMPOSITION TABLE (Image 1) ============ */}
+            {/* ============ CHEMICAL COMPOSITION TABLE ============ */}
             <div
               className="chemical-composition-section"
               style={{ marginTop: "48px" }}
@@ -210,7 +219,7 @@ export default function ProductPage({ product }) {
               </div>
             </div>
 
-            {/* ============ PRODUCT RANGE TABLE (Image 1 Bottom) ============ */}
+            {/* ============ PRODUCT RANGE TABLE ============ */}
             <div
               className="product-range-section"
               style={{ marginTop: "48px" }}
@@ -240,7 +249,7 @@ export default function ProductPage({ product }) {
               </div>
             </div>
 
-            {/* ============ SIZE CHART GRID (Image 2) ============ */}
+            {/* ============ SIZE CHART GRID ============ */}
             <div className="size-chart-section" style={{ marginTop: "48px" }}>
               <h3 className="heading-md" style={{ marginBottom: "20px" }}>
                 Size Chart (OD / THK in mm)
