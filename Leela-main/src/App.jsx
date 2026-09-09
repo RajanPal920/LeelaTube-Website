@@ -12,8 +12,6 @@ import RoundTubes from "./pages/products/RoundTubes";
 import SquareTubes from "./pages/products/SquareTubes";
 import RectangularTubes from "./pages/products/RectangularTubes";
 import OvalTubes from "./pages/products/OvalTubes";
-import WeldedPipes from "./pages/products/WeldedPipes";
-import GradeDetail from "./pages/products/GradeDetail"; // ← NEW IMPORT
 import Manufacturing from "./pages/Manufacturing";
 import Quality from "./pages/Quality";
 import Industries from "./pages/Industries";
@@ -39,12 +37,8 @@ export default function App() {
               element={<RectangularTubes />}
             />
             <Route path="/products/oval-tubes" element={<OvalTubes />} />
-            <Route path="/products/welded-pipes" element={<WeldedPipes />} />
-            {/* Grade detail routes */}
-            <Route
-              path="/products/welded-pipes/grade/:gradeId"
-              element={<GradeDetail />}
-            />
+
+    
             <Route path="/manufacturing" element={<Manufacturing />} />
             <Route path="/quality" element={<Quality />} />
             <Route path="/industries" element={<Industries />} />

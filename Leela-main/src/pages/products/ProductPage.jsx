@@ -1,53 +1,14 @@
-// Shared reusable product page component — keeps all 4 product pages DRY
+// Shared reusable product page component — keeps all product pages DRY
 import { Link } from "react-router-dom";
 import "./ProductPage.css";
 
-const SPEC_ROWS = [
-  {
-    property: "Product Type",
-    value: null,
-    placeholder: "ERW Stainless Steel Tube",
-  },
-  {
-    property: "Manufacturing Type",
-    value: null,
-    placeholder: "ERW (Electric Resistance Welded)",
-  },
-  { property: "Shape", value: null }, // filled per product
-  {
-    property: "Size / OD",
-    value: null,
-    placeholder: "As per customer requirement",
-  },
-  {
-    property: "Wall Thickness",
-    value: null,
-    placeholder: "As per customer requirement",
-  },
-  { property: "Length", value: null, placeholder: "As specified by customer" },
-  { property: "Grade", value: null, placeholder: "As specified by customer" },
-  {
-    property: "Standard",
-    value: null,
-    placeholder: "As specified by customer",
-  },
-  { property: "Finish", value: null, placeholder: "As specified by customer" },
-  {
-    property: "Tolerances",
-    value: null,
-    placeholder: "As per applicable standard or customer specification",
-  },
-  {
-    property: "Testing",
-    value: null,
-    placeholder: "Complete testing as per facility capability",
-  },
-  {
-    property: "Packaging",
-    value: null,
-    placeholder: "As agreed with customer",
-  },
-];
+// Import data from utils (agar aapke paas alag file hai to import karein)
+// Otherwise ye data directly component mein bhi daal sakte hain
+import {
+  CHEMICAL_COMPOSITION,
+  PRODUCT_RANGE,
+  SIZE_CHART,
+} from "../../utils/productData";
 
 export default function ProductPage({ product }) {
   const {
@@ -57,9 +18,8 @@ export default function ProductPage({ product }) {
     imageAlt,
     description,
     longDescription,
-    applications,
     otherProducts,
-    grades, // ← ADD THIS
+    grades,
   } = product;
 
   return (
@@ -146,7 +106,7 @@ export default function ProductPage({ product }) {
             </div>
           </div>
 
-          {/* Right: description + spec table + applications */}
+          {/* Right: description + grades */}
           <div className="product-detail__main">
             <p className="section-label">Product Overview</p>
             <h2
@@ -157,109 +117,167 @@ export default function ProductPage({ product }) {
             </h2>
             <p className="body-lg">{longDescription}</p>
 
-            {/* ============ GRADES SECTION - Complete List ============ */}
+            {/* ============ GRADES SECTION - SINGLE TABLE ============ */}
             {grades && grades.length > 0 && (
               <div className="product-grades-section">
-                <div className="grade-section-header">
-                  <h3 className="heading-md" style={{ marginBottom: "0" }}>
-                    Available Welded Pipes
-                  </h3>
-                  <span className="grade-hint">
-                    <span className="grade-hint-icon">💡</span>
-                    Click Any Grade Of Welded Pipes For Details
-                  </span>
-                </div>
+                <h3 className="heading-md" style={{ marginBottom: "20px" }}>
+                  Available Grades
+                </h3>
 
-                <div className="product-grades-grid">
-                  {grades.map((group, index) => (
-                    <div className="grade-group" key={index}>
-                      <div className="grade-group-header">
-                        <span className="grade-group-icon">
-                          {index === 0 && "🔬"}
-                          {index === 1 && "🔩"}
-                          {index === 2 && "⭐"}
-                        </span>
-                        <h4 className="grade-category">{group.category}</h4>
-                        <span className="grade-count">
-                          {group.grades.length} grades
-                        </span>
-                      </div>
-                      <ul className="grade-list">
-                        {group.grades.map((grade, i) => (
-                          <li className="grade-item" key={i}>
-                            <Link
-                              to={`/products/welded-pipes/grade/${grade.slug}`}
-                              className="grade-badge-link"
-                              title={grade.fullName || grade.name}
-                            >
-                              <span className="grade-badge">
-                                {grade.fullName || grade.name}
-                                <span className="grade-badge-arrow">→</span>
-                              </span>
-                            </Link>
-                          </li>
-                        ))}
-                      </ul>
-                    </div>
-                  ))}
+                <div className="grades-table-wrapper">
+                  <table className="grades-table">
+                    <thead>
+                      <tr>
+                        <th>Category</th>
+                        <th>Grades</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      {grades.map((group, index) => (
+                        <tr key={index}>
+                          <td className="grade-category-cell">
+                            <span className="grade-category-badge">
+                              {group.category}
+                            </span>
+                          </td>
+                          <td>
+                            <div className="grade-tags">
+                              {group.grades.map((grade, i) => (
+                                <span className="grade-tag" key={i}>
+                                  {grade.fullName || grade.name}
+                                </span>
+                              ))}
+                            </div>
+                          </td>
+                        </tr>
+                      ))}
+                    </tbody>
+                  </table>
                 </div>
 
                 <div className="grade-section-footer">
                   <span style={{ fontSize: "1rem" }}>📋</span>
                   <p className="body-sm">
                     <strong>Complete Grade Range:</strong> We offer a
-                    comprehensive range of stainless steel grades. Click on any
-                    grade above to view its complete specifications, chemical
-                    composition, physical properties, and technical data.
+                    comprehensive range of stainless steel grades and nickel
+                    alloys. Contact us for detailed specifications.
                   </p>
                 </div>
               </div>
             )}
-            {/* Spec Table */}
-            <div className="product-spec-section">
+
+            {/* ============ CHEMICAL COMPOSITION TABLE (Image 1) ============ */}
+            <div
+              className="chemical-composition-section"
+              style={{ marginTop: "48px" }}
+            >
               <h3 className="heading-md" style={{ marginBottom: "20px" }}>
-                Technical Specifications
+                Chemical Composition
               </h3>
-              <div
-                className="product-spec-note badge"
-                style={{ marginBottom: "16px" }}
-              >
-                Specifications available on request — values supplied upon
-                enquiry
-              </div>
-              <div className="product-spec-table-wrap">
-                <table
-                  className="spec-table"
-                  aria-label={`${name} technical specifications`}
-                >
+              <div className="table-responsive">
+                <table className="data-table">
                   <thead>
                     <tr>
-                      <th scope="col">Property</th>
-                      <th scope="col">Information</th>
+                      <th>Grade AISI</th>
+                      <th>C</th>
+                      <th>Mn</th>
+                      <th>P</th>
+                      <th>S</th>
+                      <th>Si</th>
+                      <th>Cr</th>
+                      <th>Ni</th>
+                      <th>Mo</th>
+                      <th>Other</th>
                     </tr>
                   </thead>
                   <tbody>
-                    {SPEC_ROWS.map((row) => (
-                      <tr key={row.property}>
-                        <td
-                          style={{ fontWeight: 600, color: "var(--dark-gray)" }}
-                        >
-                          {row.property}
-                        </td>
-                        <td>
-                          {row.property === "Shape" ? (
-                            shape
-                          ) : (
-                            <span
-                              style={{
-                                color: "var(--mid-gray)",
-                                fontStyle: "italic",
-                              }}
-                            >
-                              {row.placeholder}
-                            </span>
-                          )}
-                        </td>
+                    {CHEMICAL_COMPOSITION.map((row, index) => (
+                      <tr key={index}>
+                        <td className="grade-name-cell">{row.grade}</td>
+                        <td>{row.C}</td>
+                        <td>{row.Mn}</td>
+                        <td>{row.P}</td>
+                        <td>{row.S}</td>
+                        <td>{row.Si}</td>
+                        <td>{row.Cr}</td>
+                        <td>{row.Ni}</td>
+                        <td>{row.Mo}</td>
+                        <td>{row.Other}</td>
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+              </div>
+            </div>
+
+            {/* ============ PRODUCT RANGE TABLE (Image 1 Bottom) ============ */}
+            <div
+              className="product-range-section"
+              style={{ marginTop: "48px" }}
+            >
+              <h3 className="heading-md" style={{ marginBottom: "20px" }}>
+                Product Range
+              </h3>
+              <div className="table-responsive">
+                <table className="data-table">
+                  <thead>
+                    <tr>
+                      <th>Items</th>
+                      <th>Size (all size in mm)</th>
+                      <th>Finish</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {PRODUCT_RANGE.map((row, index) => (
+                      <tr key={index}>
+                        <td className="product-item-cell">{row.items}</td>
+                        <td>{row.size}</td>
+                        <td>{row.finish.join(", ")}</td>
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+              </div>
+            </div>
+
+            {/* ============ SIZE CHART GRID (Image 2) ============ */}
+            <div className="size-chart-section" style={{ marginTop: "48px" }}>
+              <h3 className="heading-md" style={{ marginBottom: "20px" }}>
+                Size Chart (OD / THK in mm)
+              </h3>
+              <div className="table-responsive">
+                <table className="data-table">
+                  <thead>
+                    <tr>
+                      <th>OD / THK</th>
+                      <th>0.5</th>
+                      <th>0.6</th>
+                      <th>0.7</th>
+                      <th>0.8</th>
+                      <th>0.9</th>
+                      <th>1</th>
+                      <th>1.2</th>
+                      <th>1.5</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {SIZE_CHART.map((row, index) => (
+                      <tr key={index}>
+                        <td className="od-cell">{row.od}</td>
+                        {[
+                          "0.5",
+                          "0.6",
+                          "0.7",
+                          "0.8",
+                          "0.9",
+                          "1",
+                          "1.2",
+                          "1.5",
+                        ].map((thk) => (
+                          <td key={thk} className="text-center">
+                            {row.thicknesses.includes(thk) ? "✓" : "-"}
+                          </td>
+                        ))}
                       </tr>
                     ))}
                   </tbody>
@@ -267,28 +285,14 @@ export default function ProductPage({ product }) {
               </div>
               <p
                 className="body-sm"
-                style={{ marginTop: "12px", color: "var(--steel-gray)" }}
+                style={{ marginTop: "16px", color: "var(--steel-gray)" }}
               >
-                All values are subject to customer requirement. Exact
-                specifications, grades, tolerances and testing standards will be
-                confirmed upon submission of technical enquiry.
+                * Customised sizes available for bulk quantity
               </p>
             </div>
-            {/* Applications */}
-            <div className="product-applications">
-              <h3 className="heading-md" style={{ marginBottom: "20px" }}>
-                Applications
-              </h3>
-              <div className="application-tags">
-                {applications.map((app) => (
-                  <span className="application-tag" key={app}>
-                    {app}
-                  </span>
-                ))}
-              </div>
-            </div>
+
             {/* Bottom CTA */}
-            <div className="product-bottom-cta">
+            <div className="product-bottom-cta" style={{ marginTop: "48px" }}>
               <p className="body-lg">
                 Ready to submit a requirement for <strong>{name}</strong>? Our
                 team will review your specification and respond.

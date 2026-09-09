@@ -1,53 +1,57 @@
 import ProductPage from "./ProductPage";
+import { GRADES } from "../../utils/grades";
 
-const OTHER_PRODUCTS = [
-  {
-    name: "Round Tubes",
-    to: "/products/round-tubes",
-    img: "/images/round-tubes.webp",
-  },
-  {
-    name: "Square Tubes",
-    to: "/products/square-tubes",
-    img: "/images/square-tubes.jpg",
-  },
-  {
-    name: "Oval Tubes",
-    to: "/products/oval-tubes",
-    img: "/images/oval-tubes.jpg",
-  },
-  {
-    name: "Welded Pipes",
-    to: "/products/welded-pipes",
-    img: "/images/welded-pipes.jpg",
-  },
-];
+const getOtherProducts = (currentId) => {
+  const PRODUCTS = [
+    {
+      name: "ERW ROUND TUBES & PIPES",
+      img: "/images/round-tubes.webp",
+      to: "/products/round-tubes",
+      id: "round-tubes",
+    },
+    {
+      name: "ERW SQUARE PIPES",
+      img: "/images/square-tubes.jpg",
+      to: "/products/square-tubes",
+      id: "square-tubes",
+    },
+    {
+      name: "ERW RECTANGULAR PIPES",
+      img: "/images/rectangular-tubes.jpg",
+      to: "/products/rectangular-tubes",
+      id: "rectangular-tubes",
+    },
+    {
+      name: "ERW OVAL TUBES",
+      img: "/images/oval-tubes.jpg",
+      to: "/products/oval-tubes",
+      id: "oval-tubes",
+    },
+  ];
 
-const APPLICATIONS = [
-  "Structural Components",
-  "Handrail Systems",
-  "Petrochemical Equipment",
-  "Chemical Plant Fabrication",
-  "Pharmaceutical Installations",
-  "Agricultural Processing",
-  "Material Handling",
-  "General Engineering",
-];
+  return PRODUCTS.filter((p) => p.id !== currentId).map((p) => ({
+    name: p.name,
+    to: p.to,
+    img: p.img,
+  }));
+};
 
 export default function RectangularTubes() {
+  const otherProducts = getOtherProducts("rectangular-tubes");
+
   return (
     <ProductPage
       product={{
-        name: "Stainless Steel Rectangular Tubes",
-        shape: "Rectangular",
+        name: "ERW RECTANGULAR PIPES",
+        shape: "Rectangular (Hollow Section)",
         image: "/images/rectangular-tubes.jpg",
-        imageAlt: "ERW stainless steel rectangular hollow section tubes",
+        imageAlt: "ERW stainless steel rectangular tubes",
         description:
-          "ERW stainless‑steel rectangular tubes manufactured to customer requirements and specifications.",
+          "ERW stainless‑steel rectangular hollow section tubes for structural and fabrication applications.",
         longDescription:
-          "Leela Tubes manufactures ERW stainless‑steel rectangular tubes at its Daman plant. Rectangular hollow sections are suitable for a wide range of structural, fabrication and process applications. Products are manufactured to the specific dimensional, material and quality requirements defined by the customer. Specifications including OD, width, height, wall thickness, length, grade and finish are all confirmed per customer specification.",
-        applications: APPLICATIONS,
-        otherProducts: OTHER_PRODUCTS,
+          "Leela Tubes manufactures ERW stainless‑steel rectangular hollow section tubes at its high-tech facility in Daman, India. Rectangular tubes are ideal for structural, architectural and fabrication applications where a non-circular profile is required. Our products are manufactured to customer specifications, with size, wall thickness, grade, finish and length confirmed at the time of order.",
+        grades: GRADES,
+        otherProducts: otherProducts,
       }}
     />
   );

@@ -1,53 +1,57 @@
+import { GRADES } from "../../utils/grades";
 import ProductPage from "./ProductPage";
 
-const OTHER_PRODUCTS = [
-  {
-    name: "Round Tubes",
-    to: "/products/round-tubes",
-    img: "/images/round-tubes.webp",
-  },
-  {
-    name: "Rectangular Tubes",
-    to: "/products/rectangular-tubes",
-    img: "/images/rectangular-tubes.jpg",
-  },
-  {
-    name: "Oval Tubes",
-    to: "/products/oval-tubes",
-    img: "/images/oval-tubes.jpg",
-  },
-  {
-    name: "Welded Pipes",
-    to: "/products/welded-pipes",
-    img: "/images/welded-pipes.jpg",
-  },
-];
+const getOtherProducts = (currentId) => {
+  const PRODUCTS = [
+    {
+      name: "ERW ROUND TUBES & PIPES",
+      img: "/images/round-tubes.webp",
+      to: "/products/round-tubes",
+      id: "round-tubes",
+    },
+    {
+      name: "ERW SQUARE PIPES",
+      img: "/images/square-tubes.jpg",
+      to: "/products/square-tubes",
+      id: "square-tubes",
+    },
+    {
+      name: "ERW RECTANGULAR PIPES",
+      img: "/images/rectangular-tubes.jpg",
+      to: "/products/rectangular-tubes",
+      id: "rectangular-tubes",
+    },
+    {
+      name: "ERW OVAL TUBES",
+      img: "/images/oval-tubes.jpg",
+      to: "/products/oval-tubes",
+      id: "oval-tubes",
+    },
+  ];
 
-const APPLICATIONS = [
-  "Structural Frameworks",
-  "Chemical Processing Equipment",
-  "Pharmaceutical Infrastructure",
-  "Food & Dairy Processing",
-  "Automobile Body Parts",
-  "Hospital Furniture",
-  "Architectural Applications",
-  "General Industrial Use",
-];
+  return PRODUCTS.filter((p) => p.id !== currentId).map((p) => ({
+    name: p.name,
+    to: p.to,
+    img: p.img,
+  }));
+};
 
 export default function SquareTubes() {
+  const otherProducts = getOtherProducts("square-tubes");
+
   return (
     <ProductPage
       product={{
-        name: "Stainless Steel Square Tubes",
-        shape: "Square",
+        name: "ERW SQUARE PIPES",
+        shape: "Square (Hollow Section)",
         image: "/images/square-tubes.jpg",
-        imageAlt: "ERW stainless steel square hollow section tubes",
+        imageAlt: "ERW stainless steel square tubes",
         description:
-          "ERW stainless‑steel square tubes manufactured to customer requirements and specifications.",
+          "ERW stainless‑steel square hollow section tubes for structural and process applications.",
         longDescription:
-          "Leela Tubes produces ERW stainless‑steel square tubes to customer requirements at its Daman manufacturing facility. Square hollow sections are widely used in structural, architectural and industrial process applications where a clean profile and corrosion resistance are required. All dimensions, wall thicknesses, grades and standards are confirmed on the basis of the customer's specification.",
-        applications: APPLICATIONS,
-        otherProducts: OTHER_PRODUCTS,
+          "Leela Tubes manufactures ERW stainless‑steel square hollow section tubes at its high-tech facility in Daman, India. Square tubes are widely used in structural, architectural and process applications, offering excellent strength-to-weight ratio and aesthetic appeal. Each product is manufactured to meet customer-specific requirements for size, wall thickness, grade, finish and length.",
+        grades: GRADES,
+        otherProducts: otherProducts,
       }}
     />
   );

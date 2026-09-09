@@ -80,29 +80,29 @@ const TRUST_ITEMS = [
 const PRODUCTS = [
   {
     id: "round-tubes",
-    name: "Round Tubes",
-    desc: "ERW stainless‑steel round tubes manufactured to customer requirements and specifications.",
+    name: "ERW ROUND TUBES & PIPES",
+    desc: "ERW stainless steel round tubes pipes manufactured to customer requirements and specifications.",
     img: "/images/round-tubes.webp",
     to: "/products/round-tubes",
   },
   {
     id: "square-tubes",
-    name: "Square Tubes",
-    desc: "ERW stainless‑steel square tubes for structural and process applications.",
+    name: "ERW SQUARE PIPES",
+    desc: "ERW stainless steel square pipes for structural and process industry applications.",
     img: "/images/square-tubes.jpg",
     to: "/products/square-tubes",
   },
   {
     id: "rectangular-tubes",
-    name: "Rectangular Tubes",
-    desc: "ERW stainless‑steel rectangular tubes engineered to specified dimensions.",
+    name: "ERW RECTANGULAR PIPES",
+    desc: "ERW stainless steel rectangular pipes engineered to specified dimensions for fabrication.",
     img: "/images/rectangular-tubes.jpg",
     to: "/products/rectangular-tubes",
   },
   {
     id: "oval-tubes",
-    name: "Oval Tubes",
-    desc: "ERW stainless‑steel oval tubes for specialised applications and requirements.",
+    name: "ERW OVAL TUBES",
+    desc: "ERW stainless steel oval tubes for specialised applications requiring distinctive profiles.",
     img: "/images/oval-tubes.jpg",
     to: "/products/oval-tubes",
   },
@@ -323,13 +323,15 @@ export default function Home() {
                     loading="lazy"
                   />
                   <div className="product-card__img-overlay" />
+                  <span className="product-card__badge">Featured</span>
                 </div>
                 <div className="product-card__body">
-                  <h3 className="heading-sm product-card__name">{p.name}</h3>
-                  <p className="body-sm product-card__desc">{p.desc}</p>
+                  <h3 className="product-card__name">{p.name}</h3>
+                  <p className="product-card__desc">{p.desc}</p>
                   <div className="product-card__footer">
                     <Link to={p.to} className="product-card__link">
-                      View Details <span>→</span>
+                      View Details{" "}
+                      <span className="product-card__link-arrow">→</span>
                     </Link>
                     <Link
                       to="/quote"

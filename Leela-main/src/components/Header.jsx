@@ -3,64 +3,6 @@ import { Link, NavLink, useLocation } from "react-router-dom";
 import Logo from "./Logo";
 import "./Header.css";
 
-// ✅ Welded Pipes Grades - Grouped by Series
-const WELDED_PIPES_GRADES = [
-  {
-    label: "SS 202 Welded Pipes",
-    to: "/products/welded-pipes/grade/202",
-    series: "200 SERIES",
-  },
-  {
-    label: "SS 304 Welded Pipes",
-    to: "/products/welded-pipes/grade/304",
-    series: "300 SERIES",
-  },
-  {
-    label: "SS 304L Welded Pipes",
-    to: "/products/welded-pipes/grade/304L",
-    series: "300 SERIES",
-  },
-  {
-    label: "SS 310S Welded Pipes",
-    to: "/products/welded-pipes/grade/310",
-    series: "300 SERIES",
-  },
-  {
-    label: "SS 316 Welded Pipes",
-    to: "/products/welded-pipes/grade/316",
-    series: "300 SERIES",
-  },
-  {
-    label: "SS 316L Welded Pipes",
-    to: "/products/welded-pipes/grade/316L",
-    series: "300 SERIES",
-  },
-  {
-    label: "SS 321/321H Welded Pipes",
-    to: "/products/welded-pipes/grade/321",
-    series: "300 SERIES",
-  },
-  {
-    label: "SS 409 Welded Pipes",
-    to: "/products/welded-pipes/grade/409",
-    series: "400 SERIES",
-  },
-  {
-    label: "SS 904L Welded Pipes",
-    to: "/products/welded-pipes/grade/904L",
-    series: "HIGH ALLOY / SPECIALTY",
-  },
-];
-
-// Group grades by series
-const groupedGrades = WELDED_PIPES_GRADES.reduce((acc, grade) => {
-  if (!acc[grade.series]) {
-    acc[grade.series] = [];
-  }
-  acc[grade.series].push(grade);
-  return acc;
-}, {});
-
 const NAV_ITEMS = [
   { label: "Home", to: "/" },
   { label: "About Us", to: "/about" },
@@ -68,16 +10,10 @@ const NAV_ITEMS = [
     label: "Products",
     to: "/products",
     children: [
-      {
-        label: "Welded Pipes",
-        to: "/products/welded-pipes",
-        hasGrades: true,
-        grades: groupedGrades,
-      },
-      { label: "Round Tubes", to: "/products/round-tubes" },
-      { label: "Square Tubes", to: "/products/square-tubes" },
-      { label: "Rectangular Tubes", to: "/products/rectangular-tubes" },
-      { label: "Oval Tubes", to: "/products/oval-tubes" },
+      { label: "ERW ROUND TUBES & PIPES", to: "/products/round-tubes" },
+      { label: "ERW SQUARE PIPES", to: "/products/square-tubes" },
+      { label: "ERW RECTANGULAR PIPES", to: "/products/rectangular-tubes" },
+      { label: "ERW OVAL TUBES & PIPES", to: "/products/oval-tubes" },
     ],
   },
   { label: "Manufacturing", to: "/manufacturing" },

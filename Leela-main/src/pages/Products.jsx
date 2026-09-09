@@ -3,44 +3,36 @@ import "./Products.css";
 
 const PRODUCTS = [
   {
-    name: "Round Tubes",
-    shape: "Round",
+    name: "ERW ROUND TUBES & PIPES",
+    shape: "ERW Round Tubes & Pipes",
     img: "/images/round-tubes.webp",
     to: "/products/round-tubes",
     desc: "ERW stainless‑steel round tubes manufactured to customer requirements and specifications. The most widely used tube profile across process industries.",
     id: "round-tubes",
   },
   {
-    name: "Square Tubes",
-    shape: "Square",
+    name: "ERW SQUARE PIPES",
+    shape: "ERW Square Pipes",
     img: "/images/square-tubes.jpg",
     to: "/products/square-tubes",
     desc: "ERW stainless‑steel square hollow section tubes for structural, architectural and process applications.",
     id: "square-tubes",
   },
   {
-    name: "Rectangular Tubes",
-    shape: "Rectangular",
+    name: "ERW RECTANGULAR PIPES",
+    shape: "ERW Rectangular Pipes",
     img: "/images/rectangular-tubes.jpg",
     to: "/products/rectangular-tubes",
     desc: "ERW stainless‑steel rectangular hollow section tubes for structural and fabrication applications.",
     id: "rectangular-tubes",
   },
   {
-    name: "Oval Tubes",
-    shape: "Oval / Elliptical",
+    name: "ERW OVAL TUBES",
+    shape: "ERW Oval Tubes",
     img: "/images/oval-tubes.jpg",
     to: "/products/oval-tubes",
     desc: "ERW stainless‑steel oval tubes for specialised applications requiring distinctive profiles with corrosion resistance.",
     id: "oval-tubes",
-  },
-  {
-    name: "Welded Pipes",
-    shape: "Welded",
-    img: "/images/welded-pipes.jpg",
-    to: "/products/welded-pipes",
-    desc: "High-quality ERW welded stainless‑steel pipes manufactured to stringent quality standards. Suitable for high-pressure, structural and general engineering applications.",
-    id: "welded-pipes",
   },
 ];
 
@@ -49,6 +41,19 @@ export default function Products() {
     <div className="products-page">
       {/* Hero */}
       <section className="page-hero">
+        {/* Background Image */}
+        <div className="page-hero__image-wrap">
+          <img
+            src="/images/factoryImg/img1.png"
+            alt="ERW Stainless Steel Pipes and Tubes"
+            className="page-hero__image"
+          />
+        </div>
+
+        {/* Dark Overlay (Text readable) */}
+        <div className="page-hero__overlay"></div>
+
+        {/* Content */}
         <div className="container page-hero__content">
           <nav className="page-hero__breadcrumb" aria-label="Breadcrumb">
             <Link to="/">Home</Link>
