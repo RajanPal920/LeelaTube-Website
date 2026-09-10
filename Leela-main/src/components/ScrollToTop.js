@@ -6,7 +6,7 @@ export default function ScrollToTop() {
 
   useEffect(() => {
     const startPosition = window.pageYOffset;
-    const duration = 600; // 600ms — smooth aur tez
+    const duration = 500; // 600ms — smooth aur tez
     const startTime = performance.now();
 
     const animateScroll = (currentTime) => {
