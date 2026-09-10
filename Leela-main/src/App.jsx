@@ -19,10 +19,12 @@ import Resources from "./pages/Resources";
 import Contact from "./pages/Contact";
 import Quote from "./pages/Quote";
 import NotFound from "./pages/NotFound";
+import ScrollToTop from "./components/ScrollToTop";
 
 export default function App() {
   return (
     <BrowserRouter>
+      <ScrollToTop />
       <div className="app">
         <Header />
         <main className="main-content">
@@ -38,7 +40,6 @@ export default function App() {
             />
             <Route path="/products/oval-tubes" element={<OvalTubes />} />
 
-    
             <Route path="/manufacturing" element={<Manufacturing />} />
             <Route path="/quality" element={<Quality />} />
             <Route path="/industries" element={<Industries />} />

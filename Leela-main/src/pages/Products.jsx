@@ -62,7 +62,7 @@ export default function Products() {
           </nav>
           <h1 className="display-lg">Our Products</h1>
           <p>
-            ERW stainless‑steel pipes and tubes in four profiles — all
+            ERW stainless‑steel pipes and tubes in four profiles all
             engineered to customer requirements.
           </p>
         </div>
@@ -92,8 +92,8 @@ export default function Products() {
                 specified by customers for the intended application.
               </p>
               <p className="body-lg" style={{ marginTop: "14px" }}>
-                Specifications — including grade, dimensions, wall thickness,
-                finish, length and applicable standard — are confirmed at the
+                Specifications including grade, dimensions, wall thickness,
+                finish, length and applicable standard are confirmed at the
                 point of enquiry. Where technical documentation is not yet
                 available on this website, specification details are available
                 on request.
@@ -203,7 +203,7 @@ export default function Products() {
               }}
             >
               Our manufacturing process ensures the highest quality standards at
-              every stage — from raw material to finished product.
+              every stage from raw material to finished product.
             </p>
           </div>
 
@@ -250,19 +250,19 @@ export default function Products() {
               </div>
               <div className="process-step">
                 <span className="process-step-number">7</span>
-                <span className="process-step-name">100% Hydro Testing</span>
+                <span className="process-step-name">Cold Drawing</span>
               </div>
               <div className="process-step">
                 <span className="process-step-number">8</span>
-                <span className="process-step-name">Straightening</span>
-              </div>
-              <div className="process-step">
-                <span className="process-step-number">9</span>
                 <span className="process-step-name">Annealing</span>
               </div>
               <div className="process-step">
+                <span className="process-step-number">9</span>
+                <span className="process-step-name">Straightening</span>
+              </div>
+              <div className="process-step">
                 <span className="process-step-number">10</span>
-                <span className="process-step-name">Cold Drawing</span>
+                <span className="process-step-name">100% Hydro Testing</span>
               </div>
               <div className="process-step">
                 <span className="process-step-number">11</span>
@@ -270,7 +270,7 @@ export default function Products() {
               </div>
               <div className="process-step">
                 <span className="process-step-number">12</span>
-                <span className="process-step-name">Packing</span>
+                <span className="process-step-name">Pickling & passivation</span>
               </div>
               <div className="process-step">
                 <span className="process-step-number">13</span>
@@ -288,6 +288,12 @@ export default function Products() {
                   100% Visual Inspection
                 </span>
               </div>
+              <div className="process-step">
+                <span className="process-step-number">16</span>
+                <span className="process-step-name">
+                  Packing
+                </span>
+              </div>
             </div>
           </div>
         </div>
@@ -302,9 +308,9 @@ export default function Products() {
               Technical Specifications Available on Request
             </h3>
             <p className="body-md">
-              Detailed technical specifications — including available grades,
+              Detailed technical specifications  including available grades,
               size ranges, wall thicknesses, tolerances and applicable standards
-              — will be provided upon submission of your enquiry. Our team will
+               will be provided upon submission of your enquiry. Our team will
               review your requirement and respond with the relevant information.
             </p>
           </div>

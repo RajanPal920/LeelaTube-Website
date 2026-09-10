@@ -75,7 +75,7 @@ export default function Quality() {
           </nav>
           <h1 className="display-lg">Quality Assurance</h1>
           <p>
-            Quality at every stage — technology, experience and enduring values.
+            Quality at every stage technology, experience and enduring values.
           </p>
         </div>
       </section>
@@ -100,7 +100,7 @@ export default function Quality() {
               specifications supplied by the customer, with the objective of
               satisfying the criteria defined for the intended application.
               Testing at the Daman facility verifies that each product meets
-              those customer-specified standards.
+              those customer specified standards.
             </p>
           </div>
           <div className="quality-stat-box">

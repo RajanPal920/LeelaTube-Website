@@ -277,8 +277,14 @@ textarea.form-control {
 
 .contact-map-header .section-label {
   display: inline-block;
-  margin-bottom: 12px;
-  
+  background: var(--green-pale, #e8f5ec);
+  color: var(--green-brand, #1a7a5a);
+  padding: 6px 20px;
+  border-radius: 50px;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
 }
 
 .contact-map-header .display-md {

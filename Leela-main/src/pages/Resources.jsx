@@ -146,8 +146,8 @@ export default function Resources() {
           style={{ textAlign: "center", maxWidth: "680px", margin: "0 auto" }}
         >
           <p className="body-lg">
-            All technical documentation — including product catalogues,
-            specification sheets, testing records and quality documents — will
+            All technical documentation including product catalogues,
+            specification sheets, testing records and quality documents will
             be provided upon receipt of a formal enquiry or order. Please use
             the RFQ form or contact us directly.
           </p>

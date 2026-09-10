@@ -377,13 +377,13 @@ export default function Home() {
             <p className="about-teaser__para">
               Incorporated in 2000, Leela Tubes Private Limited has developed
               its core competence in the manufacture of ERW stainless‑steel
-              pipes and tubes. Our Daman-based manufacturing facility is
+              pipes and tubes. Our Daman based manufacturing facility is
               equipped with advanced manufacturing equipment and supported by
               qualified engineers and highly experienced technical personnel.
             </p>
             <p className="about-teaser__para">
               Quality is achieved through the implementation of latest
-              technology, decades of experience and enduring values — an
+              technology, decades of experience and enduring values an
               approach that has helped us retain and grow our customer base.
             </p>
             <ul className="about-teaser__bullets">
@@ -424,7 +424,7 @@ export default function Home() {
               World-Class Manufacturing Capabilities
             </h2>
             <p className="body-lg home-mfg__sub">
-              Our state-of-the-art facility in Daman is equipped with advanced
+              Our state of the art facility in Daman is equipped with advanced
               machinery and staffed by qualified professionals to deliver
               exceptional quality.
             </p>
@@ -511,7 +511,7 @@ export default function Home() {
               <p className="body-lg">
                 Quality is achieved through the implementation of latest
                 technology, decades of manufacturing experience and enduring
-                values. Every product is manufactured to customer-specified
+                values. Every product is manufactured to customer specified
                 criteria.
               </p>
               <Link

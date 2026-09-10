@@ -128,6 +128,19 @@ Sent from Leela Tubes Website — Request a Quote Form
   return (
     <div className="quote-page">
       <section className="page-hero">
+        {/* Background Image */}
+        <div className="page-hero__image-wrap">
+          <img
+            src="/images/quote.png" // ← Direct path
+            alt="Leela Tubes Facility - Request a Quote"
+            className="page-hero__image"
+          />
+        </div>
+
+        {/* Dark Overlay (Text readable) */}
+        <div className="page-hero__overlay"></div>
+
+        {/* Content */}
         <div className="container page-hero__content">
           <nav className="page-hero__breadcrumb" aria-label="Breadcrumb">
             <Link to="/">Home</Link>

@@ -1,3 +1,8 @@
+/* ✅ SAHI - Sirf heading class */
+.about-cta__heading {
+  color: #ffffff !important;
+}
+
 /* ============================================
    GLOBAL RESET - SECTION PADDING MINIMUM
    ============================================ */
@@ -238,7 +243,6 @@
     width: calc(100% - 24px); /* 12px margin left-right */
     height: 220px;
     margin: 12px 12px 0;
-   
   }
 
   .page-hero__content {

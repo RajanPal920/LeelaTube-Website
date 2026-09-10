@@ -13,7 +13,7 @@ const CAPABILITIES = [
   {
     icon: "⚙️",
     title: "Advanced Manufacturing Equipment",
-    body: "The facility is equipped with advanced manufacturing equipment capable of producing the full range of tube profiles — round, square, rectangular and oval — to customer-specified requirements.",
+    body: "The facility is equipped with advanced manufacturing equipment capable of producing the full range of tube profiles — round, square, rectangular and oval to customer specified requirements.",
     image: "/images/factoryImg/Advanced%20Equipment.png",
     alt: "Advanced Manufacturing Equipment",
   },
@@ -91,7 +91,7 @@ export default function Manufacturing() {
             </h2>
             <p className="body-lg">
               Leela Tubes Pvt. Ltd. operates a high-tech manufacturing facility
-              located at Village Dabhel, Daman — a Union Territory of India with
+              located at Village Dabhel, Daman a Union Territory of India with
               a strong industrial manufacturing base. The plant is designed to
               produce ERW stainless‑steel pipes and tubes that satisfy demanding
               user requirements across multiple industries.
