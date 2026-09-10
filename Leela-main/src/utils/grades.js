@@ -17,7 +17,7 @@ export const GRADES = [
     category: "Nickel Alloys",
     grades: [
       { name: "Alloy 600", slug: "600", fullName: "Nickel Alloy 600" },
-      { name: "Alloy 620", slug: "620", fullName: "Nickel Alloy 620" },
+      { name: "Alloy 620", slug: "625", fullName: "Nickel Alloy 625" },
       { name: "Alloy 800", slug: "800", fullName: "Nickel Alloy 800" },
       { name: "Alloy 825", slug: "825", fullName: "Nickel Alloy 825" },
     ],

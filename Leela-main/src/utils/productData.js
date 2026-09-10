@@ -1,7 +1,9 @@
 // utils/productData.js
 
-// Image 1 - Full Chemical Composition Table
+// utils/productData.js
+
 export const CHEMICAL_COMPOSITION = [
+  // ══════════ Stainless Steel Grades (Existing) ══════════
   {
     grade: "J7",
     C: "≤0.10",
@@ -36,7 +38,7 @@ export const CHEMICAL_COMPOSITION = [
     Cr: "16.00-18.00",
     Ni: "3.50-5.50",
     Mo: "-",
-    Other: "N≤0.25",
+    Other: "N ≤ 0.25",
   },
   {
     grade: "202",
@@ -48,7 +50,7 @@ export const CHEMICAL_COMPOSITION = [
     Cr: "17.00-19.00",
     Ni: "4.00-6.00",
     Mo: "-",
-    Other: "N≤0.25",
+    Other: "N ≤ 0.25",
   },
   {
     grade: "301",
@@ -96,7 +98,7 @@ export const CHEMICAL_COMPOSITION = [
     Cr: "17.00-19.00",
     Ni: "8.00-10.00",
     Mo: "-",
-    Other: "Se≤0.15",
+    Other: "Se ≤ 0.15",
   },
   {
     grade: "304",
@@ -240,7 +242,7 @@ export const CHEMICAL_COMPOSITION = [
     Cr: "16.00-18.00",
     Ni: "10.00-14.00",
     Mo: "2.00-2.50",
-    Other: "Ti5*C.Min",
+    Other: "Ti ≥ 5×C",
   },
   {
     grade: "317",
@@ -276,7 +278,7 @@ export const CHEMICAL_COMPOSITION = [
     Cr: "17.00-20.00",
     Ni: "9.00-13.00",
     Mo: "-",
-    Other: "Ti≤5xC%",
+    Other: "Ti ≤ 5×C",
   },
   {
     grade: "347",
@@ -288,7 +290,7 @@ export const CHEMICAL_COMPOSITION = [
     Cr: "17.00-20.00",
     Ni: "9.00-13.00",
     Mo: "-",
-    Other: "Na+Ta≤10xC%",
+    Other: "Nb+Ta ≤ 10×C",
   },
   {
     grade: "409 L",
@@ -300,7 +302,7 @@ export const CHEMICAL_COMPOSITION = [
     Cr: "10.50-11.70",
     Ni: "≤0.50",
     Mo: "-",
-    Other: "Ti 6x(C=N)min",
+    Other: "Ti ≥ 6×(C+N)",
   },
   {
     grade: "410",
@@ -348,7 +350,7 @@ export const CHEMICAL_COMPOSITION = [
     Cr: "16.00-18.00",
     Ni: "-",
     Mo: "-",
-    Other: "Ti≤0.75",
+    Other: "Ti ≤ 0.75",
   },
   {
     grade: "441",
@@ -360,7 +362,69 @@ export const CHEMICAL_COMPOSITION = [
     Cr: "17.50-19.50",
     Ni: "≤1.00",
     Mo: "-",
-    Other: "Ti 0.10 to 0.50",
+    Other: "Ti 0.10-0.50",
+  },
+
+  // ══════════ Nickel Alloys (NEW — Images se data) ══════════
+  {
+    grade: "904L",
+    C: "≤0.02",
+    Mn: "≤2.00",
+    P: "≤0.045",
+    S: "≤0.035",
+    Si: "≤1.00",
+    Cr: "19.00-23.00",
+    Ni: "23.00-28.00",
+    Mo: "4.00-5.00",
+    Other: "Cu: 1.00-2.00; Fe: Balance",
+  },
+  {
+    grade: "Inconel 600",
+    C: "≤0.15",
+    Mn: "≤1.00",
+    P: "-",
+    S: "≤0.015",
+    Si: "≤0.50",
+    Cr: "14.00-17.00",
+    Ni: "≥72.00 (Ni+Co)",
+    Mo: "-",
+    Other: "Fe: 6.00-10.00; Cu: ≤0.50",
+  },
+  {
+    grade: "Inconel 625",
+    C: "≤0.10",
+    Mn: "≤0.50",
+    P: "≤0.015",
+    S: "≤0.015",
+    Si: "≤0.50",
+    Cr: "20.00-23.00",
+    Ni: "≥58.00 (Ni+Co)",
+    Mo: "8.00-10.00",
+    Other: "Nb+Ta: 3.15-4.15; Fe: ≤5.00; Al: ≤0.40; Ti: ≤0.40",
+  },
+  {
+    grade: "Inconel 800",
+    C: "≤0.10",
+    Mn: "≤1.50",
+    P: "-",
+    S: "≤0.015",
+    Si: "≤1.00",
+    Cr: "19.00-23.00",
+    Ni: "30.00-35.00",
+    Mo: "-",
+    Other: "Fe: ≥39.50; Al: 0.15-0.60; Ti: 0.15-0.60; Cu: ≤0.75",
+  },
+  {
+    grade: "Inconel 825",
+    C: "≤0.05",
+    Mn: "≤1.00",
+    P: "-",
+    S: "≤0.03",
+    Si: "≤0.50",
+    Cr: "19.50-23.50",
+    Ni: "38.00-46.00",
+    Mo: "2.50-3.50",
+    Other: "Fe: ≥22.00; Cu: 1.50-3.00; Ti: 0.60-1.20; Al: ≤0.20",
   },
 ];
 
