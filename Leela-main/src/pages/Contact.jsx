@@ -1,11 +1,52 @@
 import { Link } from "react-router-dom";
+import { useState } from "react";
 import "./Contact.css";
 
 export default function Contact() {
+  const [formData, setFormData] = useState({
+    name: "",
+    company: "",
+    email: "",
+    phone: "",
+    subject: "",
+    message: "",
+  });
+
+  const handleChange = (e) => {
+    const { id, value } = e.target;
+    setFormData((prev) => ({ ...prev, [id.replace("contact-", "")]: value }));
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+
+    const emailTo = "info@leelatubes.com";
+    const emailSubject = formData.subject || "New Contact Form Submission";
+
+    const emailBody = `
+Name: ${formData.name}
+Company: ${formData.company || "N/A"}
+Email: ${formData.email}
+Phone: ${formData.phone || "N/A"}
+
+Message:
+${formData.message}
+
+---
+Sent from Leela Tubes Website Contact Form
+    `.trim();
+
+    const mailtoLink = `mailto:${emailTo}?subject=${encodeURIComponent(
+      emailSubject,
+    )}&body=${encodeURIComponent(emailBody)}`;
+
+    window.location.href = mailtoLink;
+  };
+
   return (
     <div className="contact-page">
+      {/* ================= HERO ================= */}
       <section className="page-hero">
-        {/* Background Image */}
         <div className="page-hero__image-wrap">
           <img
             src="/images/factoryImg/image.png"
@@ -13,11 +54,7 @@ export default function Contact() {
             className="page-hero__image"
           />
         </div>
-
-        {/* Dark Overlay (Text readable) */}
         <div className="page-hero__overlay"></div>
-
-        {/* Content */}
         <div className="container page-hero__content">
           <nav className="page-hero__breadcrumb" aria-label="Breadcrumb">
             <Link to="/">Home</Link>
@@ -32,6 +69,7 @@ export default function Contact() {
         </div>
       </section>
 
+      {/* ================= CONTACT INFO + FORM ================= */}
       <section className="section contact-main">
         <div className="container contact-main__grid">
           {/* Info column */}
@@ -263,7 +301,7 @@ export default function Contact() {
               <form
                 className="contact-form"
                 id="contact-form"
-                onSubmit={(e) => e.preventDefault()}
+                onSubmit={handleSubmit}
                 noValidate
               >
                 <div className="form-row">
@@ -276,6 +314,8 @@ export default function Contact() {
                       type="text"
                       className="form-control"
                       placeholder="Your name"
+                      value={formData.name}
+                      onChange={handleChange}
                       required
                     />
                   </div>
@@ -288,6 +328,8 @@ export default function Contact() {
                       type="text"
                       className="form-control"
                       placeholder="Company name"
+                      value={formData.company}
+                      onChange={handleChange}
                     />
                   </div>
                 </div>
@@ -301,6 +343,8 @@ export default function Contact() {
                       type="email"
                       className="form-control"
                       placeholder="your@email.com"
+                      value={formData.email}
+                      onChange={handleChange}
                       required
                     />
                   </div>
@@ -313,6 +357,8 @@ export default function Contact() {
                       type="tel"
                       className="form-control"
                       placeholder="+91 ..."
+                      value={formData.phone}
+                      onChange={handleChange}
                     />
                   </div>
                 </div>
@@ -325,6 +371,8 @@ export default function Contact() {
                     type="text"
                     className="form-control"
                     placeholder="How can we help?"
+                    value={formData.subject}
+                    onChange={handleChange}
                   />
                 </div>
                 <div className="form-group">
@@ -336,6 +384,8 @@ export default function Contact() {
                     className="form-control"
                     rows="5"
                     placeholder="Your message or requirement..."
+                    value={formData.message}
+                    onChange={handleChange}
                     required
                   />
                 </div>
@@ -348,6 +398,35 @@ export default function Contact() {
                 </button>
               </form>
             </div>
+          </div>
+        </div>
+      </section>
+
+      {/* ================= FULL WIDTH MAP SECTION (Grid ke Bahar) ================= */}
+      <section className="section contact-map-section">
+        <div className="container">
+          {/* Address Header */}
+          <div className="contact-map-header">
+            <p className="section-label">Our Location</p>
+            <h2 className="display-md">Corporate Office (Mumbai)</h2>
+            <p className="contact-map-address">
+              Balkrishna Niwas, 1st Floor, 2nd Panjarapole Lane, C. P. Tank
+              Road, Mumbai - 400 004. India.
+            </p>
+          </div>
+
+          {/* Map */}
+          <div className="contact-map-embed-full">
+            <iframe
+              title="Leela Tubes Corporate Office - Mumbai"
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3773.448946779821!2d72.81862031489844!3d18.95745698716746!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be7ce1e3b3b3b3b%3A0x3b3b3b3b3b3b3b3b!2sC.P.%20Tank%20Road%2C%20Mumbai!5e0!3m2!1sen!2sin!4v1234567890"
+              width="100%"
+              height="450"
+              style={{ border: 0 }}
+              allowFullScreen=""
+              loading="lazy"
+              referrerPolicy="no-referrer-when-downgrade"
+            ></iframe>
           </div>
         </div>
       </section>

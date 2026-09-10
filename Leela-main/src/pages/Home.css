@@ -1,3 +1,12 @@
+/* ══════════ DEBUG TEST ══════════ */
+.section-label.section-label--white {
+  color: #ffffff !important;
+}
+
+/* ✅ SAHI - Dono classes ek hi element par hain */
+.display-md.about-teaser__heading {
+  color: #3d9e5c !important;
+}
 /* ══════════ HERO ══════════════════════════════════════════ */
 .hero {
   position: relative;
@@ -37,15 +46,16 @@
   margin-right: auto;
   text-align: left;
   padding-left: 40px;
+  color: white;
 }
 .hero__heading {
-  color: var(--white);
+  color: white;
   margin: 16px 0 24px;
   text-shadow: 0 2px 24px rgba(0, 0, 0, 0.3);
 }
 .hero__sub {
   font-size: 1.1rem;
-  color: rgba(255, 255, 255, 0.82);
+  color: #ffffff; /* ← White color */
   line-height: 1.75;
   max-width: 580px;
   margin-bottom: 36px;
@@ -171,7 +181,7 @@
 .home-products__header .display-md {
   font-size: 2.4rem;
   font-weight: 700;
-  color: var(--dark-gray, #1a1a2e);
+  color: white;
   margin-top: 12px;
 }
 
@@ -569,6 +579,9 @@
   border-radius: var(--radius-lg);
   overflow: hidden;
 }
+.about-cta p {
+  color: rgba(255, 255, 255, 0.85); /* ← White color */
+}
 .about-teaser__img {
   width: 100%;
   aspect-ratio: 4/5;
@@ -606,7 +619,7 @@
 }
 .about-teaser__para {
   font-size: 0.95rem;
-  color: rgba(255, 255, 255, 0.72);
+  color: rgba(255, 255, 255, 0.85); /* ← White color */
   line-height: 1.75;
   margin-bottom: 16px;
 }
@@ -1003,11 +1016,11 @@
   flex-wrap: wrap;
 }
 .custom-spec__heading {
-  color: var(--white);
+  color: rgba(255, 255, 255, 0.82);
   margin: 12px 0 16px;
 }
 .custom-spec__para {
-  color: rgba(255, 255, 255, 0.82);
+  color: rgba(255, 255, 255, 0.9); /* ← White color */
   font-size: 0.95rem;
   line-height: 1.75;
   max-width: 560px;

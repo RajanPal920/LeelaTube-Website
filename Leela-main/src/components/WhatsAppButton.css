@@ -15,13 +15,17 @@
   width: 58px;
   height: 58px;
   border-radius: 50%;
-  background: #25D366;
+  background: #25d366;
   color: #ffffff;
   display: flex;
   align-items: center;
   justify-content: center;
-  box-shadow: 0 4px 18px rgba(37, 211, 102, 0.45), 0 2px 8px rgba(0, 0, 0, 0.15);
-  transition: transform 0.25s cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow 0.25s ease;
+  box-shadow:
+    0 4px 18px rgba(37, 211, 102, 0.45),
+    0 2px 8px rgba(0, 0, 0, 0.15);
+  transition:
+    transform 0.25s cubic-bezier(0.34, 1.56, 0.64, 1),
+    box-shadow 0.25s ease;
   position: relative;
   z-index: 2;
 }
@@ -33,7 +37,9 @@
 
 .whatsapp-float:hover .whatsapp-float__btn {
   transform: scale(1.08) translateY(-2px);
-  box-shadow: 0 8px 24px rgba(37, 211, 102, 0.55), 0 4px 12px rgba(0, 0, 0, 0.2);
+  box-shadow:
+    0 8px 24px rgba(37, 211, 102, 0.55),
+    0 4px 12px rgba(0, 0, 0, 0.2);
 }
 
 .whatsapp-float__tooltip {
@@ -47,7 +53,9 @@
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
   opacity: 0;
   transform: translateX(8px);
-  transition: opacity 0.25s ease, transform 0.25s ease;
+  transition:
+    opacity 0.25s ease,
+    transform 0.25s ease;
   pointer-events: none;
 }
 
@@ -63,7 +71,7 @@
   width: 58px;
   height: 58px;
   border-radius: 50%;
-  background: #25D366;
+  background: #25d366;
   opacity: 0.6;
   animation: whatsappPulse 2.2s infinite ease-out;
   z-index: 1;
@@ -104,5 +112,217 @@
   }
   .whatsapp-float__tooltip {
     display: none;
+  }
+}
+/* ============================================
+   FLOATING CTA - PHONE + WHATSAPP
+   ============================================ */
+
+.floating-cta {
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  z-index: 9999;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  align-items: flex-end;
+}
+
+/* ============================================
+   BUTTON BASE
+   ============================================ */
+
+.floating-cta__btn {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  color: #ffffff;
+  text-decoration: none;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease,
+    background 0.3s ease;
+  cursor: pointer;
+}
+
+.floating-cta__btn:hover {
+  transform: scale(1.08);
+  box-shadow: 0 10px 28px rgba(0, 0, 0, 0.28);
+}
+
+.floating-cta__btn:active {
+  transform: scale(0.98);
+}
+
+/* ============================================
+   PHONE BUTTON - BLUE
+   ============================================ */
+
+.floating-cta__btn--phone {
+  background: linear-gradient(135deg, #2563eb 0%, #1d4ed8 100%);
+}
+
+.floating-cta__btn--phone:hover {
+  background: linear-gradient(135deg, #1d4ed8 0%, #1e40af 100%);
+}
+
+.floating-cta__btn--phone .floating-cta__ping {
+  background: #2563eb;
+}
+
+/* ============================================
+   WHATSAPP BUTTON - GREEN
+   ============================================ */
+
+.floating-cta__btn--whatsapp {
+  background: linear-gradient(135deg, #25d366 0%, #1ebe5d 100%);
+}
+
+.floating-cta__btn--whatsapp:hover {
+  background: linear-gradient(135deg, #1ebe5d 0%, #17a852 100%);
+}
+
+.floating-cta__btn--whatsapp .floating-cta__ping {
+  background: #25d366;
+}
+
+/* ============================================
+   ICON WRAP
+   ============================================ */
+
+.floating-cta__icon-wrap {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  position: relative;
+  z-index: 2;
+}
+
+.floating-cta__icon {
+  width: 28px;
+  height: 28px;
+  color: #ffffff;
+  display: block;
+}
+
+/* ============================================
+   TOOLTIP
+   ============================================ */
+
+.floating-cta__tooltip {
+  position: absolute;
+  right: calc(100% + 12px);
+  top: 50%;
+  transform: translateY(-50%) translateX(8px);
+  background: #1a1a2e;
+  color: #ffffff;
+  font-size: 13px;
+  font-weight: 600;
+  padding: 8px 14px;
+  border-radius: 8px;
+  white-space: nowrap;
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transition:
+    opacity 0.3s ease,
+    transform 0.3s ease,
+    visibility 0.3s ease;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.floating-cta__tooltip::after {
+  content: "";
+  position: absolute;
+  left: 100%;
+  top: 50%;
+  transform: translateY(-50%);
+  border: 6px solid transparent;
+  border-left-color: #1a1a2e;
+}
+
+.floating-cta__btn:hover .floating-cta__tooltip {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(-50%) translateX(0);
+}
+
+/* ============================================
+   PING ANIMATION
+   ============================================ */
+
+.floating-cta__ping {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 1;
+  animation: ping 2s cubic-bezier(0, 0, 0.2, 1) infinite;
+}
+
+@keyframes ping {
+  0% {
+    transform: scale(1);
+    opacity: 0.6;
+  }
+  75%,
+  100% {
+    transform: scale(1.6);
+    opacity: 0;
+  }
+}
+
+/* ============================================
+   RESPONSIVE - MOBILE
+   ============================================ */
+
+@media (max-width: 768px) {
+  .floating-cta {
+    bottom: 16px;
+    right: 16px;
+    gap: 12px;
+  }
+
+  .floating-cta__btn {
+    width: 52px;
+    height: 52px;
+  }
+
+  .floating-cta__icon {
+    width: 24px;
+    height: 24px;
+  }
+
+  .floating-cta__tooltip {
+    display: none;
+  }
+}
+
+@media (max-width: 480px) {
+  .floating-cta {
+    bottom: 12px;
+    right: 12px;
+    gap: 10px;
+  }
+
+  .floating-cta__btn {
+    width: 48px;
+    height: 48px;
+  }
+
+  .floating-cta__icon {
+    width: 22px;
+    height: 22px;
   }
 }
