@@ -1601,3 +1601,33 @@
     font-size: 0.7rem;
   }
 }
+/* ══════════ ABOUT CTA - WHITE TEXT (MOBILE) ══════════ */
+.about-cta__heading {
+  color: #ffffff !important;
+}
+
+/* Mobile-specific override */
+@media (max-width: 768px) {
+  .about-cta__heading {
+    color: #ffffff !important;
+  }
+
+  .about-cta h2 {
+    color: #ffffff !important;
+  }
+
+  .about-cta .display-md {
+    color: #ffffff !important;
+  }
+}
+
+/* Small mobile */
+@media (max-width: 480px) {
+  .about-cta__heading {
+    color: #ffffff !important;
+  }
+
+  .about-cta h2 {
+    color: #ffffff !important;
+  }
+}

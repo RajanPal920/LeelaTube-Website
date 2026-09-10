@@ -1,11 +1,23 @@
-/* ══════════ DEBUG TEST ══════════ */
+/* ══════════ CUSTOM SPEC - WHITE TEXT ══════════ */
+
+/* Section Label — "Your Specifications" */
 .section-label.section-label--white {
   color: #ffffff !important;
 }
 
+/* Heading — "Engineered to Your Requirements" */
+.display-md.custom-spec__heading {
+  color: #ffffff !important;
+}
+
+/* Paragraph */
+.custom-spec__para {
+  color: rgba(255, 255, 255, 0.92) !important;
+}
+
 /* ✅ SAHI - Dono classes ek hi element par hain */
 .display-md.about-teaser__heading {
-  color: #3d9e5c !important;
+  color: #ffffff !important;
 }
 /* ══════════ HERO ══════════════════════════════════════════ */
 .hero {
