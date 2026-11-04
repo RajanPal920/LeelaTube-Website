@@ -100,18 +100,11 @@ const PRODUCTS = [
     to: "/products/pipe-dimension",
   },
   {
-    id: "PIPE DIMENSION",
-    name: "PIPE DIMENSION",
-    desc: "Stainless steel round and oval tubes for automotive, marine and structural applications.",
-    img: "/images/oval-tubes.jpg",
-    to: "/products/pipe-dimension",
-  },
-  {
     id: "SECTION PIPE",
-    name: "TUBULAR SECTIONS",
+    name: "SECTIONS PIPE",
     desc: "Stainless steel oval tubes designed for specialised applications requiring distinctive profiles.",
     img: "/images/oval-tubes.jpg",
-    to: "/products/section-dimension",
+    to: "/products/section-pipe",
   },
 ];
 
