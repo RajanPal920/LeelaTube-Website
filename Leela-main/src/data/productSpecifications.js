@@ -660,7 +660,7 @@ export const PIPE_DIMENSION_DATA = [
   },
 ];
 
-// Product Category Cards Configuration for the 5 categories
+// Product Category Cards Configuration (Tube Dimension, Heating Element, Pipe Dimension, Section Pipe)
 export const PRODUCT_CATEGORIES = [
   {
     id: "tube-dimension",
@@ -695,12 +695,12 @@ export const PRODUCT_CATEGORIES = [
   {
     id: "pipe-dimension",
     title: "Pipe Dimension",
-    subtitle: "ANSI / ASME Process Pipes",
+    subtitle: "ANSI / ASME B36.19 Process Pipes",
     to: "/products/pipe-dimension",
     image: "/images/welded-pipes.jpg",
     badge: "Schedule & Weight Chart",
     description:
-      "Standard and heavy-wall stainless steel pipe schedule chart including Sch. 5S, 10S, 20S, 40S, 80S, and 160S specifications.",
+      "Standard and heavy-wall stainless steel process pipe schedule chart covering Sch. 5S, 10S, 20S, 40S, 80S, and 160S specifications.",
     specs: [
       { label: "Nominal Size", value: '1/8" to 24" NPS' },
       { label: "Schedules", value: "Sch. 5S to 160S" },
@@ -708,33 +708,18 @@ export const PRODUCT_CATEGORIES = [
     ],
   },
   {
-    id: "square-pipe",
-    title: "Square Pipe",
-    subtitle: "ERW Square Hollow Sections",
-    to: "/products/square-pipe",
+    id: "section-pipe",
+    title: "Section Pipe",
+    subtitle: "Square, Rectangle & Oval Hollow Profiles",
+    to: "/products/section-pipe",
     image: "/images/square-tubes.jpg",
-    badge: "Custom Hollow Sections",
+    badge: "3 Specification Tables",
     description:
-      "High-precision ERW stainless steel square pipes engineered for architectural, structural, automotive, and process applications.",
+      "Complete technical specification tables for ERW stainless steel Square Pipes, Rectangle Pipes, and Oval Hollow Profiles.",
     specs: [
-      { label: "Profile", value: "Square Hollow Section" },
-      { label: "Finishes", value: "HR, Matt, Mirror 600#" },
-      { label: "Supply", value: "Custom Cut & Specified" },
-    ],
-  },
-  {
-    id: "oval-pipe",
-    title: "Oval Pipe",
-    subtitle: "Specialty Elliptical Hollow Sections",
-    to: "/products/oval-pipe",
-    image: "/images/oval-tubes.jpg",
-    badge: "Specialty Form Factors",
-    description:
-      "Specialty ERW stainless steel oval and elliptical hollow tubes designed for architectural railing, heat exchangers, and bespoke engineering.",
-    specs: [
-      { label: "Profile", value: "Oval / Elliptical" },
-      { label: "Forming", value: "High Precision Forming" },
-      { label: "Supply", value: "Custom Cut & Specified" },
+      { label: "Profiles", value: "Square, Rectangle & Oval" },
+      { label: "Standards", value: "ASTM A554 / EN 10296-2" },
+      { label: "Finishes", value: "HR, Matt (Hairline), Mirror" },
     ],
   },
 ];

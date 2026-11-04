@@ -1,4 +1,3 @@
-import { useState } from "react";
 import { Link } from "react-router-dom";
 import PipeDimensionTable from "./tables/PipeDimensionTable";
 import "./ProductPage.css";
@@ -7,45 +6,42 @@ import "./ProductSpecifications.css";
 export default function PipeDimension() {
   return (
     <div className="product-spec-page">
-      {/* Screenshot-Matching Hero Banner */}
-      <section className="exact-image-hero">
-        <img
-          src="/images/factoryImg/img1.png"
-          alt="ERW Stainless Steel Manufacturing Facility"
-          className="exact-image-hero__bg"
-        />
-        <div className="exact-image-hero__overlay"></div>
-        <div className="exact-image-hero__content">
-          <h1 className="exact-image-hero__title">PIPE DIMENSION</h1>
-          <p className="exact-image-hero__sub">
-            ANSI / ASME B36.19 Stainless Steel Process Pipe Schedule, Wall Thickness &amp; Weight Chart
-          </p>
+      {/* Hero Banner matching Manufacturing Page exactly */}
+      <section className="page-hero">
+        <div className="page-hero__image-wrap">
+          <img
+            src="/images/welded-pipes.jpg"
+            alt="Stainless Steel Process Pipe Manufacturing Facility"
+            className="page-hero__image"
+          />
         </div>
-      </section>
-
-      {/* Breadcrumb Bar */}
-      <div style={{ background: "#f8fafc", borderBottom: "1px solid #e2e8f0", padding: "12px 0" }}>
-        <div className="exact-table-container">
-          <nav className="page-hero__breadcrumb" aria-label="Breadcrumb" style={{ margin: 0 }}>
+        <div className="page-hero__overlay"></div>
+        <div className="container page-hero__content">
+          <nav className="page-hero__breadcrumb" aria-label="Breadcrumb">
             <Link to="/">Home</Link>
             <span>/</span>
             <Link to="/products">Products</Link>
             <span>/</span>
-            <span style={{ color: "var(--green-brand)", fontWeight: 600 }}>Pipe Dimension</span>
+            <span>Pipe Dimension</span>
           </nav>
+          <h1 className="display-lg">Pipe Dimension</h1>
+          <p>
+            ANSI / ASME B36.19 Stainless Steel Process Pipe Schedule, Wall Thickness &amp; Weight Chart.
+          </p>
         </div>
-      </div>
+      </section>
 
       {/* Main Full-Width Table Section */}
-      <section className="exact-table-section">
+      <section className="exact-table-section" style={{ background: "#ffffff", padding: "60px 0" }}>
         <div className="exact-table-container">
           <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", flexWrap: "wrap", gap: "12px", marginBottom: "20px" }}>
             <div>
-              <h2 style={{ fontSize: "1.35rem", fontWeight: 700, color: "#0f172a", margin: 0 }}>
+              <span className="spec-category-badge">ASME B36.19 Standard</span>
+              <h2 style={{ fontSize: "1.45rem", fontWeight: 700, color: "var(--green-brand, #1f6635)", margin: "8px 0 4px" }}>
                 Pipe Dimension – Schedule, Wall Thickness &amp; Weight Chart
               </h2>
-              <p style={{ fontSize: "0.88rem", color: "#64748b", margin: "4px 0 0" }}>
-                Nominal Pipe Size from 1/8&quot; to 24&quot; NPS across Sch. 5S, 10S, 20S, 40S, 80S &amp; 160S
+              <p style={{ fontSize: "0.9rem", color: "#64748b", margin: 0 }}>
+                Nominal Pipe Size from 1/8&quot; to 24&quot; NPS across Sch. 5S, 10S, 20S, 40S, 80S &amp; 160S • Weights in kg/meter
               </p>
             </div>
             <div className="table-scroll-cue">
@@ -53,13 +49,13 @@ export default function PipeDimension() {
             </div>
           </div>
 
-          {/* Screenshot-Matching Table */}
+          {/* Full Process Pipe Table */}
           <PipeDimensionTable />
 
           {/* Quick Technical Specs Note */}
           <div
             className="spec-note-inner"
-            style={{ marginTop: "32px", background: "#f8fafc" }}
+            style={{ marginTop: "36px", background: "#f8fafc" }}
           >
             <div className="spec-note-icon">📋</div>
             <div style={{ flex: 1 }}>

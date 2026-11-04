@@ -15,7 +15,6 @@ const NAV_ITEMS = [
       { label: "Heating Element", to: "/products/heating-element" },
       { label: "Pipe Dimension", to: "/products/pipe-dimension" },
       { label: "Section Pipe", to: "/products/section-pipe" },
-
     ],
   },
   {

@@ -9,15 +9,11 @@ import Home from "./pages/Home";
 import About from "./pages/About";
 import Products from "./pages/Products";
 
-// The 5 primary product category routes
+// Primary product category routes
 import TubeDimension from "./pages/products/TubeDimension";
 import HeatingElement from "./pages/products/HeatingElement";
+import SectionPipe from "./pages/products/SectionPipe";
 import PipeDimension from "./pages/products/PipeDimension";
-import SquarePipe from "./pages/products/SquarePipe";
-import OvalPipe from "./pages/products/OvalPipe";
-
-// Existing auxiliary pages
-import RectangularTubes from "./pages/products/RectangularTubes";
 import Manufacturing from "./pages/Manufacturing";
 import Technical from "./pages/Technical";
 import AstmStandards from "./pages/technical/AstmStandards";
@@ -47,18 +43,19 @@ export default function App() {
             <Route path="/about" element={<About />} />
             <Route path="/products" element={<Products />} />
 
-            {/* The 5 new Product Category Routes */}
+            {/* Product Category Routes */}
             <Route path="/products/tube-dimension" element={<TubeDimension />} />
             <Route path="/products/heating-element" element={<HeatingElement />} />
+            <Route path="/products/section-pipe" element={<SectionPipe />} />
             <Route path="/products/pipe-dimension" element={<PipeDimension />} />
-            <Route path="/products/square-pipe" element={<SquarePipe />} />
-            <Route path="/products/oval-pipe" element={<OvalPipe />} />
 
             {/* Backwards-compatible legacy route aliases */}
+            <Route path="/products/square-pipe" element={<Navigate to="/products/section-pipe" replace />} />
+            <Route path="/products/oval-pipe" element={<Navigate to="/products/section-pipe" replace />} />
             <Route path="/products/round-tubes" element={<Navigate to="/products/tube-dimension" replace />} />
-            <Route path="/products/square-tubes" element={<Navigate to="/products/square-pipe" replace />} />
-            <Route path="/products/oval-tubes" element={<Navigate to="/products/oval-pipe" replace />} />
-            <Route path="/products/rectangular-tubes" element={<RectangularTubes />} />
+            <Route path="/products/square-tubes" element={<Navigate to="/products/section-pipe" replace />} />
+            <Route path="/products/oval-tubes" element={<Navigate to="/products/section-pipe" replace />} />
+            <Route path="/products/rectangular-tubes" element={<Navigate to="/products/section-pipe" replace />} />
 
             <Route path="/manufacturing" element={<Manufacturing />} />
 

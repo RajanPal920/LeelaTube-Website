@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import { PRODUCT_CATEGORIES } from "../data/productSpecifications";
 import TubeDimensionTable from "./products/tables/TubeDimensionTable";
 import HeatingElementTable from "./products/tables/HeatingElementTable";
+import PipeDimensionTable from "./products/tables/PipeDimensionTable";
 import SquarePipeTable from "./products/tables/SquarePipeTable";
 import RectanglePipeTable from "./products/tables/RectanglePipeTable";
 import OvalPipeTable from "./products/tables/OvalPipeTable";
@@ -47,7 +48,7 @@ export default function Products() {
               Technical Specification Charts &amp; Dimension Tables
             </h2>
             <p className="body-lg">
-              Select any of the five product categories below to review its complete dimensional
+              Select any of the product categories below to review its complete dimensional
               weight chart, wall thickness schedule, and manufacturing scope.
             </p>
           </div>
@@ -77,17 +78,10 @@ export default function Products() {
             </button>
             <button
               type="button"
-              className={`product-table-tab-btn ${activeTab === "square-pipe" ? "active" : ""}`}
-              onClick={() => setActiveTab("square-pipe")}
+              className={`product-table-tab-btn ${activeTab === "section-pipe" ? "active" : ""}`}
+              onClick={() => setActiveTab("section-pipe")}
             >
-              4. Square Pipe
-            </button>
-            <button
-              type="button"
-              className={`product-table-tab-btn ${activeTab === "oval-pipe" ? "active" : ""}`}
-              onClick={() => setActiveTab("oval-pipe")}
-            >
-              5. Oval Pipe
+              4. Section Pipe
             </button>
             <button
               type="button"
@@ -140,20 +134,41 @@ export default function Products() {
             </div>
           )}
 
-          {/* 3. PIPE DIMENSIONS & PROFILES (3 Tables: Square, Rectangle, Oval) */}
+          {/* 3. PIPE DIMENSION TABLE (ASME B36.19 Schedule Chart) */}
           {(activeTab === "pipe-dimension" || activeTab === "all") && (
             <div id="pipe-dimension-section" style={{ marginBottom: "64px" }}>
+              {activeTab === "all" && <div className="table-section-divider"></div>}
+              <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", flexWrap: "wrap", gap: "12px", marginBottom: "16px" }}>
+                <div>
+                  <h3 style={{ fontSize: "1.35rem", fontWeight: 700, color: "var(--green-brand, #1f6635)", margin: 0 }}>
+                    Pipe Dimension – Schedule, Wall Thickness &amp; Weight Chart
+                  </h3>
+                  <p style={{ fontSize: "0.88rem", color: "#64748b", margin: "4px 0 0" }}>
+                    Nominal Pipe Size from 1/8&quot; to 24&quot; NPS across Sch. 5S, 10S, 20S, 40S, 80S &amp; 160S
+                  </p>
+                </div>
+                <Link to="/products/pipe-dimension" className="btn btn--outline-green" style={{ padding: "8px 18px", fontSize: "0.78rem" }}>
+                  Dedicated Page →
+                </Link>
+              </div>
+              <PipeDimensionTable />
+            </div>
+          )}
+
+          {/* 4. SECTION PIPE (3 Tables: Square, Rectangle, Oval) */}
+          {(activeTab === "section-pipe" || activeTab === "all") && (
+            <div id="section-pipe-section" style={{ marginBottom: "64px" }}>
               {activeTab === "all" && <div className="table-section-divider"></div>}
               <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", flexWrap: "wrap", gap: "12px", marginBottom: "20px" }}>
                 <div>
                   <h3 style={{ fontSize: "1.35rem", fontWeight: 700, color: "var(--green-brand, #1f6635)", margin: 0 }}>
-                    Pipe Dimensions &amp; Profiles (Square, Rectangle &amp; Oval)
+                    Section Pipe (Square, Rectangle &amp; Oval Tables)
                   </h3>
                   <p style={{ fontSize: "0.88rem", color: "#64748b", margin: "4px 0 0" }}>
-                    Complete technical tables for ERW stainless steel Square Pipes, Rectangle Pipes, and Oval Pipes
+                    Complete technical specification tables for ERW stainless steel Square Pipes, Rectangle Pipes, and Oval Pipes
                   </p>
                 </div>
-                <Link to="/products/pipe-dimension" className="btn btn--outline-green" style={{ padding: "8px 18px", fontSize: "0.78rem" }}>
+                <Link to="/products/section-pipe" className="btn btn--outline-green" style={{ padding: "8px 18px", fontSize: "0.78rem" }}>
                   Dedicated Page →
                 </Link>
               </div>
@@ -184,54 +199,12 @@ export default function Products() {
             </div>
           )}
 
-          {/* 4. SQUARE PIPE TABLE */}
-          {(activeTab === "square-pipe" || activeTab === "all") && (
-            <div id="square-pipe-section" style={{ marginBottom: "64px" }}>
-              {activeTab === "all" && <div className="table-section-divider"></div>}
-              <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", flexWrap: "wrap", gap: "12px", marginBottom: "16px" }}>
-                <div>
-                  <h3 style={{ fontSize: "1.35rem", fontWeight: 700, color: "#0f172a", margin: 0 }}>
-                    Square Pipe – Dimensional Specification Chart
-                  </h3>
-                  <p style={{ fontSize: "0.88rem", color: "#64748b", margin: "4px 0 0" }}>
-                    ERW Square Hollow Section (SHS) available profiles, wall thickness ranges &amp; finishes
-                  </p>
-                </div>
-                <Link to="/products/square-pipe" className="btn btn--outline-green" style={{ padding: "8px 18px", fontSize: "0.78rem" }}>
-                  Dedicated Page →
-                </Link>
-              </div>
-              <SquarePipeTable />
-            </div>
-          )}
-
-          {/* 5. OVAL PIPE TABLE */}
-          {(activeTab === "oval-pipe" || activeTab === "all") && (
-            <div id="oval-pipe-section" style={{ marginBottom: "64px" }}>
-              {activeTab === "all" && <div className="table-section-divider"></div>}
-              <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", flexWrap: "wrap", gap: "12px", marginBottom: "16px" }}>
-                <div>
-                  <h3 style={{ fontSize: "1.35rem", fontWeight: 700, color: "#0f172a", margin: 0 }}>
-                    Oval Pipe – Dimensional Specification Chart
-                  </h3>
-                  <p style={{ fontSize: "0.88rem", color: "#64748b", margin: "4px 0 0" }}>
-                    ERW Oval &amp; Elliptical tube profiles, major/minor axis dimensions &amp; finishes
-                  </p>
-                </div>
-                <Link to="/products/oval-pipe" className="btn btn--outline-green" style={{ padding: "8px 18px", fontSize: "0.78rem" }}>
-                  Dedicated Page →
-                </Link>
-              </div>
-              <OvalPipeTable />
-            </div>
-          )}
-
           {/* Bottom Inquiries Box */}
           <div className="spec-inquiry-box">
             <div>
               <h3>Need Custom Engineering Specifications or Direct Mill Pricing?</h3>
               <p>
-                All five product profiles are manufactured to strict industrial standards with 100%
+                All our stainless steel tube and section pipe profiles are manufactured to strict industrial standards with 100%
                 material traceability and EN 10204 3.1 test certificates.
               </p>
             </div>
@@ -260,7 +233,7 @@ export default function Products() {
           <div style={{ textAlign: "center", maxWidth: "800px", margin: "0 auto 40px" }}>
             <span className="spec-category-badge">Quick Category Access</span>
             <h2 className="display-md" style={{ marginTop: "8px", marginBottom: "12px" }}>
-              Our 5 Dedicated Product Divisions
+              Our Dedicated Product Divisions
             </h2>
             <p className="body-lg">
               Explore individual category hubs with specialized technical data and custom inquiries.

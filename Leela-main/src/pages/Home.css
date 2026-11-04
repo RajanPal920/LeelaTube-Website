@@ -193,7 +193,7 @@
 .home-products__header .display-md {
   font-size: 2.4rem;
   font-weight: 700;
-  color: white;
+  color: var(--black, #0f172a);
   margin-top: 12px;
 }
 
@@ -208,7 +208,7 @@
 .product-grid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  gap: 30px;
+  gap: 24px;
 }
 
 /* ── Product Card ────────────────────────────────────────────────────────── */
