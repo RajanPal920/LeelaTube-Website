@@ -1,5 +1,5 @@
-import { Link } from "react-router-dom";
 import { useState } from "react";
+import { Link } from "react-router-dom";
 import "./Quality.css";
 
 const QUALITY_PILLARS = [
@@ -47,14 +47,40 @@ const QUALITY_PILLARS = [
   },
 ];
 
+const QUALITY_CATEGORIES = [
+  {
+    title: "Our Quality Policy",
+    to: "/quality/quality-policy",
+    image: "/images/square-tubes.jpg",
+    badge: "Policy & Standards",
+    desc: "Official corporate quality policy of Leela Tubes Private Limited, covering commitment to product quality, zero defects, continuous improvement, and employee workplace safety.",
+    actionText: "View Quality Policy",
+  },
+  {
+    title: "Quality Equipment (10 Tests)",
+    to: "/quality/quality-equipment",
+    image: "/images/factoryImg/Complete-Testing.png",
+    badge: "Testing Facilities",
+    desc: "Comprehensive testing facilities including PMI, Eddy Current, Hydrostatic, Tensile, Hardness, Flaring, Flattening, Flange, Reverse Bend, and Corrosion testing.",
+    actionText: "View Testing Facilities",
+  },
+  {
+    title: "Inspection Process Flow Table",
+    to: "/quality/process-flow-table",
+    image: "/images/factoryImg/img1.png",
+    badge: "QA Matrix",
+    desc: "Combined 10-stage process inspection schedule detailing reference standards, characteristics to be checked, sample quorum, testing instruments, and acceptance criteria.",
+    actionText: "View Process Flow Table",
+  },
+];
+
 export default function Quality() {
   const [activePillar, setActivePillar] = useState(null);
 
   return (
     <div className="quality-page">
-      {/* Hero */}
+      {/* Hero Banner matching Manufacturing Page exactly */}
       <section className="page-hero">
-        {/* Background Image */}
         <div className="page-hero__image-wrap">
           <img
             src="/images/factoryImg/Experienced-Technical.png"
@@ -62,71 +88,112 @@ export default function Quality() {
             className="page-hero__image"
           />
         </div>
-
-        {/* Dark Overlay (Text readable) */}
         <div className="page-hero__overlay"></div>
-
-        {/* Content */}
         <div className="container page-hero__content">
           <nav className="page-hero__breadcrumb" aria-label="Breadcrumb">
             <Link to="/">Home</Link>
             <span>/</span>
-            <span>Quality Assurance</span>
+            <span>Quality</span>
           </nav>
           <h1 className="display-lg">Quality Assurance</h1>
           <p>
-            Quality at every stage technology, experience and enduring values.
+            Precision engineering, comprehensive metallurgical testing &amp; certified stage-wise process control.
           </p>
         </div>
       </section>
 
-      {/* Philosophy */}
-      <section className="section quality-philosophy">
-        <div className="container quality-philosophy__grid">
-          <div>
-            <p className="section-label">Our Philosophy</p>
-            <h2 className="display-md" style={{ margin: "12px 0 24px" }}>
-              Quality at Every Stage
+      {/* 3 Quality Categories Dedicated Navigation Cards */}
+      <section className="section" style={{ background: "#ffffff", padding: "72px 0" }}>
+        <div className="container">
+          <div style={{ textAlign: "center", maxWidth: "800px", margin: "0 auto 48px" }}>
+            <span className="section-label">Quality Infrastructure</span>
+            <h2 className="display-md" style={{ marginTop: "12px", marginBottom: "16px" }}>
+              Quality Assurance Sections
             </h2>
             <p className="body-lg">
-              At Leela Tubes, quality is achieved through the implementation of
-              latest technology, decades of manufacturing experience and
-              enduring moral values. This approach has helped the company retain
-              and multiply its customers over more than two decades of
-              operation.
-            </p>
-            <p className="body-lg" style={{ marginTop: "16px" }}>
-              Every product is manufactured to the requirements and
-              specifications supplied by the customer, with the objective of
-              satisfying the criteria defined for the intended application.
-              Testing at the Daman facility verifies that each product meets
-              those customer specified standards.
+              Explore our corporate quality commitments, in-house metallurgical testing laboratories,
+              and 10-stage stage-wise manufacturing inspection protocols.
             </p>
           </div>
-          <div className="quality-stat-box">
-            <div className="quality-stat">
-              <span className="quality-stat__value">2000</span>
-              <span className="quality-stat__label">Year Established</span>
-            </div>
-            <div className="quality-stat-divider" />
-            <div className="quality-stat">
-              <span className="quality-stat__value">ERW</span>
-              <span className="quality-stat__label">Manufacturing Method</span>
-            </div>
-            <div className="quality-stat-divider" />
-            <div className="quality-stat">
-              <span className="quality-stat__value">4</span>
-              <span className="quality-stat__label">Tube Profiles</span>
-            </div>
+
+          <div
+            style={{
+              display: "grid",
+              gridTemplateColumns: "repeat(auto-fit, minmax(320px, 1fr))",
+              gap: "28px",
+            }}
+          >
+            {QUALITY_CATEGORIES.map((cat) => (
+              <div
+                key={cat.title}
+                className="card"
+                style={{
+                  display: "flex",
+                  flexDirection: "column",
+                  borderRadius: "12px",
+                  overflow: "hidden",
+                  border: "1px solid #e2e8f0",
+                  boxShadow: "0 4px 16px rgba(0, 0, 0, 0.05)",
+                  transition: "transform 0.3s ease, box-shadow 0.3s ease",
+                  background: "#ffffff",
+                }}
+              >
+                <div style={{ position: "relative", height: "200px", overflow: "hidden" }}>
+                  <img
+                    src={cat.image}
+                    alt={cat.title}
+                    style={{
+                      width: "100%",
+                      height: "100%",
+                      objectFit: "cover",
+                      display: "block",
+                      transition: "transform 0.4s ease",
+                    }}
+                  />
+                  <span
+                    style={{
+                      position: "absolute",
+                      top: "12px",
+                      left: "12px",
+                      background: "rgba(31, 102, 53, 0.92)",
+                      color: "#ffffff",
+                      fontSize: "0.72rem",
+                      fontWeight: 700,
+                      padding: "4px 10px",
+                      borderRadius: "4px",
+                      textTransform: "uppercase",
+                      letterSpacing: "0.06em",
+                    }}
+                  >
+                    {cat.badge}
+                  </span>
+                </div>
+
+                <div style={{ padding: "24px", display: "flex", flexDirection: "column", flexGrow: 1 }}>
+                  <h3 style={{ fontSize: "1.25rem", fontWeight: 700, color: "var(--green-brand, #1f6635)", marginBottom: "10px" }}>
+                    {cat.title}
+                  </h3>
+                  <p style={{ fontSize: "0.88rem", color: "#64748b", lineHeight: 1.6, marginBottom: "20px", flexGrow: 1 }}>
+                    {cat.desc}
+                  </p>
+                  <div>
+                    <Link
+                      to={cat.to}
+                      className="btn btn--primary"
+                      style={{ width: "100%", textAlign: "center", display: "block" }}
+                    >
+                      {cat.actionText} →
+                    </Link>
+                  </div>
+                </div>
+              </div>
+            ))}
           </div>
         </div>
       </section>
 
-      {/* Quality pillars - WITH IMAGES */}
-      <section
-        className="section quality-pillars"
-        style={{ background: "var(--off-white)" }}
-      >
+      {/* Quality Framework / Pillars */}
+      <section className="section quality-pillars" style={{ background: "var(--off-white)" }}>
         <div className="container">
           <div style={{ textAlign: "center", marginBottom: "48px" }}>
             <p className="section-label">Quality Framework</p>
@@ -143,12 +210,9 @@ export default function Quality() {
                   setActivePillar(activePillar === index ? null : index)
                 }
               >
-                {/* Background Image */}
                 <div className="quality-pillar-card__bg">
-                  <img src={p.image} alt={p.alt} />
+                  <img src={p.image} alt={p.alt} loading="lazy" />
                 </div>
-
-                {/* Overlay - Initially Hidden */}
                 <div className="quality-pillar-card__overlay">
                   <div className="quality-pillar-card__icon">{p.icon}</div>
                   <h3 className="heading-sm quality-pillar-card__title">
@@ -163,7 +227,7 @@ export default function Quality() {
       </section>
 
       {/* Certifications showcase */}
-      <section className="section quality-certs">
+      <section className="section quality-certs" id="certifications">
         <div className="container">
           <div
             style={{ textAlign: "center", maxWidth: "680px", margin: "0 auto" }}
@@ -227,7 +291,7 @@ export default function Quality() {
         </div>
       </section>
 
-      {/* CTA */}
+      {/* CTA Banner */}
       <section
         className="section--sm quality-cta"
         style={{ background: "var(--green-dark)" }}
@@ -246,11 +310,16 @@ export default function Quality() {
               fontSize: "1rem",
             }}
           >
-            Let's discuss your requirements.
+            All products are 100% tested and certified before dispatch from our Daman works.
           </p>
-          <Link to="/quote" className="btn btn--primary">
-            Send a Message <span className="btn-icon">→</span>
-          </Link>
+          <div style={{ display: "flex", gap: "14px", justifyContent: "center", flexWrap: "wrap" }}>
+            <Link to="/quote" className="btn btn--primary">
+              Request Quality Documents <span className="btn-icon">→</span>
+            </Link>
+            <Link to="/contact" className="btn btn--outline-white">
+              Contact Quality Head
+            </Link>
+          </div>
         </div>
       </section>
     </div>

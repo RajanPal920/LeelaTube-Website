@@ -6,20 +6,33 @@ import "./Header.css";
 const NAV_ITEMS = [
   { label: "Home", to: "/" },
   { label: "About Us", to: "/about" },
+  { label: "Manufacturing", to: "/manufacturing" },
   {
     label: "Products",
     to: "/products",
     children: [
-      { label: "ERW ROUND TUBES & PIPES", to: "/products/round-tubes" },
-      { label: "ERW SQUARE PIPES", to: "/products/square-tubes" },
-      { label: "ERW RECTANGULAR PIPES", to: "/products/rectangular-tubes" },
-      { label: "ERW OVAL TUBES & PIPES", to: "/products/oval-tubes" },
+      { label: "Tube Dimension", to: "/products/tube-dimension" },
+      { label: "Heating Element", to: "/products/heating-element" },
+      { label: "Pipe Dimension", to: "/products/pipe-dimension" },
+      { label: "Section Pipe", to: "/products/section-pipe" },
+
     ],
   },
-  { label: "Manufacturing", to: "/manufacturing" },
-  { label: "Quality", to: "/quality" },
-  { label: "Industries", to: "/industries" },
-  { label: "Resources", to: "/resources" },
+  {
+    label: "Technical", to: "/technical", children: [
+      { label: "ASTM Standards", to: "/technical/astm-standards" },
+      { label: "Chemical Composition", to: "/technical/chemical-composition" },
+      { label: "Weight Calculator", to: "/technical/weight-calculator" }
+    ]
+  },
+  {
+    label: "Quality", to: "/quality", children: [
+      { label: "Quality Policy", to: "/quality/quality-policy" },
+      { label: "Quality Equipment", to: "/quality/quality-equipment" },
+      { label: "Inspection Process FlowTable", to: "/quality/process-flow-table" }
+    ]
+  },
+  { label: "Gallery", to: "/gallery" },
   { label: "Contact Us", to: "/contact" },
 ];
 
