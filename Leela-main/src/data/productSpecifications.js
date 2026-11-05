@@ -667,7 +667,7 @@ export const PRODUCT_CATEGORIES = [
     title: "Tube Dimension",
     subtitle: "Precision ERW Stainless Steel Tubes",
     to: "/products/tube-dimension",
-    image: "/images/round-tubes.webp",
+    image: "/images/tubes.webp",
     badge: "Weight & Dimension Chart",
     description:
       "Comprehensive weight chart specifications for precision ERW stainless steel tubes with wall thicknesses from 0.5 mm to 3.6 mm.",
@@ -682,7 +682,7 @@ export const PRODUCT_CATEGORIES = [
     title: "Heating Element",
     subtitle: "High-Temperature Precision Tubes",
     to: "/products/heating-element",
-    image: "/images/tubes-sizes.webp",
+    image: "/heating-bar.jpeg",
     badge: "Technical Specification Chart",
     description:
       "Engineered stainless steel heating element tubes manufactured for exceptional thermal conductivity, corrosion resistance, and mechanical strength.",
@@ -712,7 +712,7 @@ export const PRODUCT_CATEGORIES = [
     title: "Section Pipe",
     subtitle: "Square, Rectangle & Oval Hollow Profiles",
     to: "/products/section-pipe",
-    image: "/images/square-tubes.jpg",
+    image: "/images/round-tubes.webp",
     badge: "3 Specification Tables",
     description:
       "Complete technical specification tables for ERW stainless steel Square Pipes, Rectangle Pipes, and Oval Hollow Profiles.",

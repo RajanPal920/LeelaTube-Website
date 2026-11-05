@@ -15,7 +15,7 @@ export default function SectionPipe() {
       <section className="page-hero">
         <div className="page-hero__image-wrap">
           <img
-            src="/images/factoryImg/img1.png"
+            src="/images/round-tubes.webp"
             alt="Stainless Steel Section Pipe Manufacturing"
             className="page-hero__image"
           />

@@ -10,7 +10,7 @@ export default function TubeDimension() {
       <section className="page-hero">
         <div className="page-hero__image-wrap">
           <img
-            src="/images/factoryImg/img1.png"
+            src="/images/tubes.webp"
             alt="ERW Stainless Steel Manufacturing Facility"
             className="page-hero__image"
           />

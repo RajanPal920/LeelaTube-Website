@@ -10,8 +10,8 @@ export default function HeatingElement() {
       <section className="page-hero">
         <div className="page-hero__image-wrap">
           <img
-            src="/images/factoryImg/img1.png"
-            alt="ERW Stainless Steel Manufacturing Facility"
+            src="/heating-bar.jpeg"
+            alt="Stainless Steel Heating Element Manufacturing"
             className="page-hero__image"
           />
         </div>

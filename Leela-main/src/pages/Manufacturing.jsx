@@ -173,37 +173,37 @@ export default function Manufacturing() {
           <div style={{ textAlign: "center", marginBottom: "48px" }}>
             <p className="section-label">Products Manufactured</p>
             <h2 className="display-md" style={{ marginTop: "12px" }}>
-              ERW Stainless Steel Tube Profiles
+              ERW Stainless Steel Products &amp; Profiles
             </h2>
             <p
               className="body-lg"
-              style={{ maxWidth: "580px", margin: "16px auto 0" }}
+              style={{ maxWidth: "600px", margin: "16px auto 0" }}
             >
-              The facility manufactures four tube profiles, each to
+              The facility manufactures four primary product lines, each to
               customer-specified dimensions and requirements.
             </p>
           </div>
           <div className="mfg-profiles-grid">
             {[
               {
-                name: "Round Tubes",
+                name: "Tube Dimension",
+                image: "/images/tubes.webp",
+                to: "/products/tube-dimension",
+              },
+              {
+                name: "Heating Element",
+                image: "/heating-bar.jpeg",
+                to: "/products/heating-element",
+              },
+              {
+                name: "Pipe Dimension",
+                image: "/images/welded-pipes.jpg",
+                to: "/products/pipe-dimension",
+              },
+              {
+                name: "Section Pipe",
                 image: "/images/round-tubes.webp",
-                to: "/products/round-tubes",
-              },
-              {
-                name: "Square Tubes",
-                image: "/images/square-tubes.jpg",
-                to: "/products/square-tubes",
-              },
-              {
-                name: "Rectangular Tubes",
-                image: "/images/rectangular-tubes.jpg",
-                to: "/products/rectangular-tubes",
-              },
-              {
-                name: "Oval Tubes",
-                image: "/images/oval-tubes.jpg",
-                to: "/products/oval-tubes",
+                to: "/products/section-pipe",
               },
             ].map((p) => (
               <Link to={p.to} key={p.name} className="mfg-profile-card card">

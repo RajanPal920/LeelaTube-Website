@@ -88,7 +88,7 @@ const PRODUCTS = [
   {
     id: "square-tubes",
     name: "HEATING ELEMENTS",
-    desc: "ERW stainless steel square pipes engineered for structural and process industry applications.",
+    desc: "High-temperature stainless steel heating element tubes engineered for electric heating & thermal applications.",
     img: "/heating-bar.jpeg",
     to: "/products/heating-element",
   },
@@ -102,7 +102,7 @@ const PRODUCTS = [
   {
     id: "SECTION PIPE",
     name: "SECTIONS PIPE",
-    desc: "Stainless steel oval tubes designed for specialised applications requiring distinctive profiles.",
+    desc: "ERW stainless steel Square, Rectangular, and Oval hollow profile pipes for industrial & architectural use.",
     img: "/images/round-tubes.webp",
     to: "/products/section-pipe",
   },
