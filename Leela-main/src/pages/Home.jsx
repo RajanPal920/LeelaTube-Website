@@ -82,14 +82,14 @@ const PRODUCTS = [
     id: "round-tubes",
     name: "TUBE DIMENSION",
     desc: "ERW stainless steel round tubes manufactured to exact customer requirements and specifications.",
-    img: "/images/round-tubes.webp",
+    img: "/images/tubes.webp",
     to: "/products/tube-dimension",
   },
   {
     id: "square-tubes",
     name: "HEATING ELEMENTS",
     desc: "ERW stainless steel square pipes engineered for structural and process industry applications.",
-    img: "/images/square-tubes.jpg",
+    img: "/heating-bar.jpeg",
     to: "/products/heating-element",
   },
   {
@@ -103,7 +103,7 @@ const PRODUCTS = [
     id: "SECTION PIPE",
     name: "SECTIONS PIPE",
     desc: "Stainless steel oval tubes designed for specialised applications requiring distinctive profiles.",
-    img: "/images/oval-tubes.jpg",
+    img: "/images/round-tubes.webp",
     to: "/products/section-pipe",
   },
 ];
