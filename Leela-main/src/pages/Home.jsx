@@ -109,35 +109,33 @@ const PRODUCTS = [
 ];
 
 const CAPABILITIES = [
+
   {
-    title: "High-Tech Plant",
-    desc: "Manufacturing facility located in Daman equipped with advanced machinery and equipment.",
-    image: "/images/manufacturing/high-tech-plant.jpg",
-    alt: "High-Tech Manufacturing Plant",
+    title: "ERW Round Tubes",
+    desc: "Precision ERW stainless steel round tubes manufactured with tight dimensional tolerances.",
+    image: "/images/factoryImg/round-tubes-stock.jpg",
+    alt: "ERW Stainless Steel Round Tubes",
   },
   {
-    title: "Complete Testing",
-    desc: "The Daman facility is equipped with complete testing methods to ensure product quality.",
-    image: "/images/manufacturing/complete-testing.jpg",
-    alt: "Complete Testing Laboratory",
+    title: "ERW Square Pipes",
+    desc: "Structural-grade stainless steel square pipes with sharp clean corners and high strength.",
+    image: "/images/factoryImg/square-pipes-stock.jpg",
+    alt: "ERW Stainless Steel Square Pipes",
   },
   {
-    title: "Finished Tube Inventory",
-    desc: "Large warehouse inventory of finished ERW stainless steel round tubes and pipes ready for immediate dispatch.",
-    image: "/images/manufacturing/spacious-warehouse.jpg",
-    alt: "Finished stainless steel round tubes in warehouse",
+    title: "ERW Rectangular Pipes",
+    desc: "Engineered rectangular hollow sections fabricated to exacting ASTM industrial specifications.",
+    image: "/images/factoryImg/rectangular-pipes-stock.jpg",
+    alt: "ERW Stainless Steel Rectangular Pipes",
   },
-  {
-    title: "Industrial Process Pipes",
-    desc: "Heavy-wall industrial process pipes manufactured to ASTM & ASME standards, bundled for engineering projects.",
-    image: "/images/factoryImg/Qualified-Engineers.png",
-    alt: "Bundled industrial stainless steel process pipes",
-  },
+
 ];
 
 // Capability Card Component
 const CapabilityCard = ({ capability }) => (
-  <div className="capability-card">
+  <div
+    className={`capability-card ${capability.isProcessFlow ? "is-process-flow" : ""}`}
+  >
     <div className="capability-card__image-wrap">
       <img
         src={capability.image}

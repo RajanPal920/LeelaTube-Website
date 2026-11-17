@@ -172,11 +172,22 @@
 
 .mfg-cap-grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr); /* 3 columns */
+  grid-template-columns: repeat(6, 1fr);
   gap: 20px;
   justify-items: stretch;
   max-width: 1200px;
   margin: 0 auto;
+}
+
+.mfg-cap-grid > .mfg-cap-card:nth-child(1),
+.mfg-cap-grid > .mfg-cap-card:nth-child(2),
+.mfg-cap-grid > .mfg-cap-card:nth-child(3) {
+  grid-column: span 2;
+}
+
+.mfg-cap-grid > .mfg-cap-card:nth-child(4),
+.mfg-cap-grid > .mfg-cap-card:nth-child(5) {
+  grid-column: span 3;
 }
 
 /* Card Base */
@@ -193,6 +204,31 @@
   transition:
     box-shadow var(--transition),
     transform var(--transition);
+}
+
+/* Process Flow Chart card styling for crisp clear display */
+.mfg-cap-card.is-process-flow {
+  background: #ffffff;
+  border: 1.5px solid #d1fae5;
+}
+
+.mfg-cap-card.is-process-flow .mfg-cap-card__bg {
+  background: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 16px;
+}
+
+.mfg-cap-card.is-process-flow .mfg-cap-card__bg img {
+  object-fit: contain;
+  width: 100%;
+  height: 100%;
+  background: #ffffff;
+}
+
+.mfg-cap-card.is-process-flow:hover .mfg-cap-card__bg img {
+  transform: scale(1.02);
 }
 
 .mfg-cap-card:hover {
@@ -397,6 +433,17 @@
     gap: 20px;
   }
 
+  .mfg-cap-grid > .mfg-cap-card:nth-child(1),
+  .mfg-cap-grid > .mfg-cap-card:nth-child(2),
+  .mfg-cap-grid > .mfg-cap-card:nth-child(3),
+  .mfg-cap-grid > .mfg-cap-card:nth-child(4) {
+    grid-column: span 1;
+  }
+
+  .mfg-cap-grid > .mfg-cap-card:nth-child(5) {
+    grid-column: span 2;
+  }
+
   .mfg-profiles-grid {
     grid-template-columns: repeat(2, 1fr);
     gap: 16px;
@@ -497,6 +544,14 @@
   .mfg-cap-grid {
     grid-template-columns: 1fr;
     gap: 16px;
+  }
+
+  .mfg-cap-grid > .mfg-cap-card:nth-child(1),
+  .mfg-cap-grid > .mfg-cap-card:nth-child(2),
+  .mfg-cap-grid > .mfg-cap-card:nth-child(3),
+  .mfg-cap-grid > .mfg-cap-card:nth-child(4),
+  .mfg-cap-grid > .mfg-cap-card:nth-child(5) {
+    grid-column: span 1;
   }
 
   .mfg-cap-card {

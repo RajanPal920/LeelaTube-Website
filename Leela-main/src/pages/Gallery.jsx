@@ -59,40 +59,32 @@ const FACTORY_IMAGES = [
   },
   {
     id: 7,
-    image: "/images/factoryImg/Advanced Equipment.png",
-    title: "Pipe Seam Welding on Motorized Turning Rollers",
-    category: "machinery",
-    categoryLabel: "Machinery & Mills",
-    badge: "Seam Welding Station",
-    desc: "Automated heavy-duty pipe rotators and longitudinal seam welding station fabricating large-diameter industrial stainless steel pipe with certified operator supervision.",
+    image: "/images/factoryImg/round-tubes-stock.jpg",
+    title: "Finished ERW Stainless Steel Round Tubes",
+    category: "inventory",
+    categoryLabel: "Finished Inventory",
+    badge: "Round Tubes",
+    desc: "Precision ERW stainless steel round tubes manufactured with tight dimensional tolerances, deburred ends, and uniform weld beads, bundled for dispatch.",
   },
   {
     id: 8,
-    image: "/images/factoryImg/Experienced-Technical.png",
-    title: "Precision Welded Pipe Quality Inspection Bay",
+    image: "/images/factoryImg/square-pipes-stock.jpg",
+    title: "Finished ERW Stainless Steel Square Pipes",
     category: "inventory",
     categoryLabel: "Finished Inventory",
-    badge: "Finished Welded Pipes",
-    desc: "Uniform alignment of completed longitudinal welded stainless steel pipes on the shop floor, prepared for 100% weld verification and dimensional check.",
+    badge: "Square Pipes",
+    desc: "Structural-grade stainless steel square hollow sections and pipes with sharp, clean corners and high structural rigidity, neatly stacked in warehouse.",
   },
   {
     id: 9,
-    image: "/images/factoryImg/Qualified-Engineers.png",
-    title: "Heavy-Duty Industrial Process Pipes Bundling",
+    image: "/images/factoryImg/rectangular-pipes-stock.jpg",
+    title: "Finished ERW Stainless Steel Rectangular Pipes",
     category: "inventory",
     categoryLabel: "Finished Inventory",
-    badge: "Process Pipes Stock",
-    desc: "Bundled large-diameter, heavy-wall stainless steel process pipes manufactured to ASTM/ASME specifications, tied with heavy ropes ready for dispatch.",
+    badge: "Rectangular Pipes",
+    desc: "Engineered rectangular hollow section pipes fabricated to exacting ASTM specifications for architectural, structural, and industrial applications.",
   },
-  {
-    id: 10,
-    image: "/images/factoryImg/Spacious Warehouse.png",
-    title: "Finished ERW Round Tube Warehouse Inventory",
-    category: "inventory",
-    categoryLabel: "Finished Inventory",
-    badge: "Warehouse Inventory",
-    desc: "Extensive finished goods stock of stainless steel round tubes with deburred ends and clean internal weld beads stored systematically in the Daman warehouse.",
-  },
+
 ];
 
 const FILTER_CATEGORIES = [
@@ -256,9 +248,8 @@ export default function Gallery() {
                   type="button"
                   role="tab"
                   aria-selected={activeFilter === cat.id}
-                  className={`gallery-filter-btn ${
-                    activeFilter === cat.id ? "is-active" : ""
-                  }`}
+                  className={`gallery-filter-btn ${activeFilter === cat.id ? "is-active" : ""
+                    }`}
                   onClick={() => setActiveFilter(cat.id)}
                 >
                   <span>{cat.label}</span>
@@ -272,7 +263,7 @@ export default function Gallery() {
           <div className="gallery-grid">
             {filteredImages.map((item, index) => (
               <article
-                className="gallery-card"
+                className={`gallery-card ${item.isProcessFlow ? "is-process-flow" : ""}`}
                 key={item.id}
                 onClick={() => openModal(index)}
               >
@@ -423,7 +414,8 @@ export default function Gallery() {
               <img
                 src={activeModalItem.image}
                 alt={activeModalItem.title}
-                className="gallery-modal-img"
+                className={`gallery-modal-img ${activeModalItem.isProcessFlow ? "is-process-flow" : ""
+                  }`}
               />
 
               {/* Prev Button */}

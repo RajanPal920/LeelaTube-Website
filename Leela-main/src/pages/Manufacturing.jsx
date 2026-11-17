@@ -3,47 +3,41 @@ import { useState } from "react";
 import "./Manufacturing.css";
 
 const CAPABILITIES = [
+
   {
-    icon: "🏭",
+
+    title: "ERW Round Tubes",
+    body: "Precision ERW stainless steel round tubes produced to exacting dimensional standards, with uniform weld integrity and surface finish for industrial applications.",
+    image: "/images/factoryImg/round-tubes-stock.jpg",
+    alt: "ERW Stainless Steel Round Tubes",
+  },
+  {
+
+    title: "ERW Square Pipes",
+    body: "High-integrity stainless steel square structural pipes with precise corner radii and consistent wall thickness, engineered for architectural and process frameworks.",
+    image: "/images/factoryImg/square-pipes-stock.jpg",
+    alt: "ERW Stainless Steel Square Pipes",
+  },
+  {
+
+    title: "ERW Rectangular Pipes",
+    body: "Durable rectangular stainless steel hollow profiles manufactured for structural load-bearing and specialized fabrication across diverse industries.",
+    image: "/images/factoryImg/rectangular-pipes-stock.jpg",
+    alt: "ERW Stainless Steel Rectangular Pipes",
+  },
+  {
+
+    image: "/images/factoryImg/img2.png",
+    alt: "Precision Strip Decoiler Reels & Feeding Line",
+    title: "Precision Strip Decoiler Reels & Feeding Line",
+    body: "Heavy-duty motorized strip uncoiler stations continuously feeding precision stainless steel slit coils into the active ERW forming production line.",
+  },
+  {
+
     title: "High-Tech Manufacturing Plant",
     body: "The manufacturing facility is located in Village Dabhel, Daman and is described as a high-tech plant designed to produce ERW stainless‑steel pipes and tubes to demanding industrial standards.",
     image: "/images/factoryImg/img4.png",
     alt: "High-Tech Manufacturing Plant",
-  },
-  {
-    icon: "⚙️",
-    title: "Advanced Pipe Forming & Welding Machinery",
-    body: "The facility is equipped with automated motorized rolling rotators and longitudinal seam welding machinery, enabling precision fabrication of large-diameter stainless steel pipes.",
-    image: "/images/factoryImg/Advanced%20Equipment.png",
-    alt: "Heavy-duty motorized pipe rolling and longitudinal seam welding machinery",
-  },
-  {
-    icon: "🔬",
-    title: "Complete Testing Methods",
-    body: "The Daman plant is described as being equipped with complete testing methods, ensuring that products are verified against customer-specified requirements before dispatch.",
-    image: "/images/factoryImg/Complete-Testing.png",
-    alt: "Complete Testing Laboratory",
-  },
-  {
-    icon: "🏗️",
-    title: "Finished Tube Inventory & Warehouse",
-    body: "A spacious warehouse facility at Daman storing large quantities of finished precision stainless steel tubes and pipes, ensuring ready stock and prompt dispatch.",
-    image: "/images/manufacturing/spacious-warehouse.jpg",
-    alt: "Stacked finished ERW stainless steel round tubes in warehouse",
-  },
-  {
-    icon: "📏",
-    title: "Heavy-Duty Process Pipes",
-    body: "Production of heavy-duty, large-bore stainless steel process pipes, manufactured with strict dimensional tolerances and bundled securely for industrial process piping.",
-    image: "/images/factoryImg/Qualified-Engineers.png",
-    alt: "Bundled heavy-wall stainless steel industrial process pipes",
-  },
-  {
-    icon: "✨",
-    title: "Finished Welded Pipe Inspection",
-    body: "Uniform rows of longitudinal welded stainless steel pipes produced with clean deburred ends and uniform seam consistency, staged for comprehensive quality inspection.",
-    image: "/images/factoryImg/Experienced-Technical.png",
-    alt: "Finished longitudinal welded stainless steel pipes staged for inspection",
   },
 ];
 
@@ -142,7 +136,7 @@ export default function Manufacturing() {
           <div className="mfg-cap-grid">
             {CAPABILITIES.map((cap, index) => (
               <div
-                className={`mfg-cap-card ${activeCard === index ? "is-active" : ""}`}
+                className={`mfg-cap-card ${cap.isProcessFlow ? "is-process-flow" : ""} ${activeCard === index ? "is-active" : ""}`}
                 key={cap.title}
                 onClick={() =>
                   setActiveCard(activeCard === index ? null : index)

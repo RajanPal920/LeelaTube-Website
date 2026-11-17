@@ -672,9 +672,20 @@
 /* ── Capability Grid ────────────────────────────────────────────────────────── */
 .capability-grid {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(6, 1fr);
   gap: 24px;
   margin-bottom: 48px;
+}
+
+.capability-grid > .capability-card:nth-child(1),
+.capability-grid > .capability-card:nth-child(2),
+.capability-grid > .capability-card:nth-child(3) {
+  grid-column: span 2;
+}
+
+.capability-grid > .capability-card:nth-child(4),
+.capability-grid > .capability-card:nth-child(5) {
+  grid-column: span 3;
 }
 
 /* ── Capability Card ────────────────────────────────────────────────────────── */
@@ -689,6 +700,40 @@
   transition:
     transform 0.4s cubic-bezier(0.4, 0, 0.2, 1),
     box-shadow 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Process flow card display */
+.capability-card.is-process-flow {
+  background: #ffffff;
+  border: 1.5px solid #d1fae5;
+}
+
+.capability-card.is-process-flow .capability-card__image-wrap {
+  background: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 14px;
+}
+
+.capability-card.is-process-flow .capability-card__image {
+  object-fit: contain;
+  width: 100%;
+  height: 100%;
+  background: #ffffff;
+}
+
+.capability-card.is-process-flow:hover .capability-card__image {
+  transform: scale(1.03);
+}
+
+.capability-card.is-process-flow .capability-card__overlay {
+  background: linear-gradient(
+    to top,
+    rgba(10, 46, 26, 0.95) 0%,
+    rgba(10, 46, 26, 0.6) 45%,
+    rgba(255, 255, 255, 0) 100%
+  );
 }
 
 .capability-card:hover {
@@ -878,6 +923,17 @@
     grid-template-columns: repeat(2, 1fr);
     gap: 20px;
   }
+
+  .capability-grid > .capability-card:nth-child(1),
+  .capability-grid > .capability-card:nth-child(2),
+  .capability-grid > .capability-card:nth-child(3),
+  .capability-grid > .capability-card:nth-child(4) {
+    grid-column: span 1;
+  }
+
+  .capability-grid > .capability-card:nth-child(5) {
+    grid-column: span 2;
+  }
 }
 
 /* Mobile Devices */
@@ -887,9 +943,17 @@
   }
 
   .capability-grid {
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: 1fr;
     gap: 16px;
     margin-bottom: 36px;
+  }
+
+  .capability-grid > .capability-card:nth-child(1),
+  .capability-grid > .capability-card:nth-child(2),
+  .capability-grid > .capability-card:nth-child(3),
+  .capability-grid > .capability-card:nth-child(4),
+  .capability-grid > .capability-card:nth-child(5) {
+    grid-column: span 1;
   }
 
   .capability-card {

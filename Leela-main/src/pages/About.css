@@ -327,8 +327,19 @@
 
 .about-infra__grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(6, 1fr);
   gap: 24px;
+}
+
+.about-infra__grid > .infra-card:nth-child(1),
+.about-infra__grid > .infra-card:nth-child(2),
+.about-infra__grid > .infra-card:nth-child(3) {
+  grid-column: span 2;
+}
+
+.about-infra__grid > .infra-card:nth-child(4),
+.about-infra__grid > .infra-card:nth-child(5) {
+  grid-column: span 3;
 }
 
 /* Card Base */
@@ -344,6 +355,31 @@
   transition:
     box-shadow var(--transition),
     transform var(--transition);
+}
+
+/* Process flow diagram card styling for high visibility */
+.infra-card.is-process-flow {
+  background: #ffffff;
+  border: 1.5px solid #d1fae5;
+}
+
+.infra-card.is-process-flow .infra-card__bg {
+  background: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 18px;
+}
+
+.infra-card.is-process-flow .infra-card__bg img {
+  object-fit: contain;
+  width: 100%;
+  height: 100%;
+  background: #ffffff;
+}
+
+.infra-card.is-process-flow:hover .infra-card__bg img {
+  transform: scale(1.02);
 }
 
 .infra-card:hover {
@@ -457,8 +493,34 @@
     gap: 20px;
   }
 
+  .about-infra__grid > .infra-card:nth-child(1),
+  .about-infra__grid > .infra-card:nth-child(2),
+  .about-infra__grid > .infra-card:nth-child(3),
+  .about-infra__grid > .infra-card:nth-child(4) {
+    grid-column: span 1;
+  }
+
+  .about-infra__grid > .infra-card:nth-child(5) {
+    grid-column: span 2;
+  }
+
   .infra-card {
     height: 300px;
+  }
+}
+
+@media (max-width: 768px) {
+  .about-infra__grid {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+
+  .about-infra__grid > .infra-card:nth-child(1),
+  .about-infra__grid > .infra-card:nth-child(2),
+  .about-infra__grid > .infra-card:nth-child(3),
+  .about-infra__grid > .infra-card:nth-child(4),
+  .about-infra__grid > .infra-card:nth-child(5) {
+    grid-column: span 1;
   }
 }
 

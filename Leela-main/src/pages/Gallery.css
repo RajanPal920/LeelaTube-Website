@@ -195,6 +195,21 @@
   transform: scale(1.06);
 }
 
+/* Process Flow diagram special styling */
+.gallery-card.is-process-flow .gallery-card__img-wrap {
+  background: #ffffff;
+  padding: 10px;
+}
+
+.gallery-card.is-process-flow .gallery-card__img {
+  object-fit: contain;
+  background: #ffffff;
+}
+
+.gallery-card.is-process-flow:hover .gallery-card__img {
+  transform: scale(1.02);
+}
+
 /* Frosted Badge */
 .gallery-card__badge {
   position: absolute;
@@ -463,6 +478,12 @@
   height: auto;
   object-fit: contain;
   display: block;
+}
+
+.gallery-modal-img.is-process-flow {
+  background: #ffffff;
+  padding: 16px;
+  border-radius: 8px;
 }
 
 .gallery-modal-nav-btn {

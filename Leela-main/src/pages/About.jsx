@@ -394,44 +394,44 @@ export default function About() {
           </div>
           <div className="about-infra__grid">
             {[
+
               {
-                icon: "🏭",
+
+                title: "ERW Round Tubes",
+                image: "/images/factoryImg/round-tubes-stock.jpg",
+                desc: "Precision ERW stainless steel round tubes manufactured with tight dimensional tolerances, smooth surface finish, and high corrosion resistance.",
+              },
+              {
+
+                title: "ERW Rectangular Pipes",
+                image: "/images/factoryImg/rectangular-pipes-stock.jpg",
+                desc: "Standard and custom rectangular stainless steel hollow sections fabricated for architectural, engineering, and industrial process applications.",
+              },
+              {
+
+                title: "ERW Square Pipes",
+                image: "/images/factoryImg/square-pipes-stock.jpg",
+                desc: "Engineered stainless steel square pipes and hollow structural sections with uniform wall thickness and sharp outer corner radii.",
+              },
+
+              {
+
                 title: "High-Tech Manufacturing Plant",
                 image: "/images/factoryImg/High-Tech Manufacturing Plant.png",
                 desc: "The facility in Daman is described as a high-tech manufacturing plant equipped with advanced manufacturing equipment.",
               },
               {
-                icon: "🏗️",
-                title: "Finished Tube Inventory",
-                image: "/images/factoryImg/Spacious Warehouse.png",
-                desc: "Extensive warehouse inventory of finished ERW stainless steel round tubes and pipes at our Daman facility, ensuring rapid dispatch.",
-              },
-              {
-                icon: "⚙️",
-                title: "Advanced Pipe Forming & Welding",
-                image: "/images/factoryImg/Advanced Equipment.png",
-                desc: "Equipped with heavy-duty motorized turning rollers and precision longitudinal seam welding machinery for large-diameter stainless steel pipes.",
-              },
-              {
-                icon: "🔬",
-                title: "Complete Testing Methods",
+
+                title: "10-Stage Process Flow & Quality Inspection",
                 image: "/images/process-flow-chart.png",
-                desc: "Complete testing methods are in place at the Daman facility to verify that products meet customer-specified requirements.",
+
+                desc: "Comprehensive 10-stage manufacturing and inspection protocol: slitting, roll forming, ERW welding, sizing, hydrostatic & eddy current testing.",
               },
-              {
-                icon: "📏",
-                title: "Industrial Process Pipes",
-                image: "/images/factoryImg/Qualified-Engineers.png",
-                desc: "Large-diameter, heavy-wall industrial process pipes manufactured to ASTM & ASME standards, bundled for heavy engineering projects.",
-              },
-              {
-                icon: "✨",
-                title: "Precision Welded Pipes",
-                image: "/images/factoryImg/Experienced-Technical.png",
-                desc: "Finished batches of longitudinal welded stainless steel pipes with uniform weld seams and clean deburred ends, staged for quality inspection.",
-              },
-            ].map((item, index) => (
-              <div className="infra-card" key={item.title}>
+            ].map((item) => (
+              <div
+                className={`infra-card ${item.isProcessFlow ? "is-process-flow" : ""}`}
+                key={item.title}
+              >
                 {/* Background Image */}
                 <div className="infra-card__bg">
                   <img src={item.image} alt={item.title} />
