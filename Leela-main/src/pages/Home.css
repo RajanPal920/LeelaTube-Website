@@ -683,11 +683,6 @@
   grid-column: span 2;
 }
 
-.capability-grid > .capability-card:nth-child(4),
-.capability-grid > .capability-card:nth-child(5) {
-  grid-column: span 3;
-}
-
 /* ── Capability Card ────────────────────────────────────────────────────────── */
 .capability-card {
   position: relative;
@@ -920,19 +915,20 @@
 /* Tablets & Small Desktops */
 @media (max-width: 1024px) {
   .capability-grid {
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(4, 1fr);
     gap: 20px;
   }
 
-  .capability-grid > .capability-card:nth-child(1),
-  .capability-grid > .capability-card:nth-child(2),
-  .capability-grid > .capability-card:nth-child(3),
-  .capability-grid > .capability-card:nth-child(4) {
-    grid-column: span 1;
+  .capability-grid > .capability-card:nth-child(1) {
+    grid-column: 1 / span 2;
   }
 
-  .capability-grid > .capability-card:nth-child(5) {
-    grid-column: span 2;
+  .capability-grid > .capability-card:nth-child(2) {
+    grid-column: 3 / span 2;
+  }
+
+  .capability-grid > .capability-card:nth-child(3) {
+    grid-column: 2 / span 2;
   }
 }
 
@@ -943,17 +939,21 @@
   }
 
   .capability-grid {
-    grid-template-columns: 1fr;
+    grid-template-columns: repeat(4, 1fr);
     gap: 16px;
     margin-bottom: 36px;
   }
 
-  .capability-grid > .capability-card:nth-child(1),
-  .capability-grid > .capability-card:nth-child(2),
-  .capability-grid > .capability-card:nth-child(3),
-  .capability-grid > .capability-card:nth-child(4),
-  .capability-grid > .capability-card:nth-child(5) {
-    grid-column: span 1;
+  .capability-grid > .capability-card:nth-child(1) {
+    grid-column: 1 / span 2;
+  }
+
+  .capability-grid > .capability-card:nth-child(2) {
+    grid-column: 3 / span 2;
+  }
+
+  .capability-grid > .capability-card:nth-child(3) {
+    grid-column: 2 / span 2;
   }
 
   .capability-card {
@@ -975,9 +975,21 @@
 
 @media (max-width: 640px) {
   .capability-grid {
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(4, 1fr);
     gap: 12px;
     margin-bottom: 32px;
+  }
+
+  .capability-grid > .capability-card:nth-child(1) {
+    grid-column: 1 / span 2;
+  }
+
+  .capability-grid > .capability-card:nth-child(2) {
+    grid-column: 3 / span 2;
+  }
+
+  .capability-grid > .capability-card:nth-child(3) {
+    grid-column: 2 / span 2;
   }
 
   .capability-card__title {
@@ -997,9 +1009,21 @@
 /* Small Mobile Devices */
 @media (max-width: 480px) {
   .capability-grid {
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(4, 1fr);
     gap: 10px;
     margin-bottom: 28px;
+  }
+
+  .capability-grid > .capability-card:nth-child(1) {
+    grid-column: 1 / span 2;
+  }
+
+  .capability-grid > .capability-card:nth-child(2) {
+    grid-column: 3 / span 2;
+  }
+
+  .capability-grid > .capability-card:nth-child(3) {
+    grid-column: 2 / span 2;
   }
 
   .capability-card {
@@ -1062,8 +1086,20 @@
 /* Extra Small Mobile Devices */
 @media (max-width: 360px) {
   .capability-grid {
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: repeat(4, 1fr);
     gap: 8px;
+  }
+
+  .capability-grid > .capability-card:nth-child(1) {
+    grid-column: 1 / span 2;
+  }
+
+  .capability-grid > .capability-card:nth-child(2) {
+    grid-column: 3 / span 2;
+  }
+
+  .capability-grid > .capability-card:nth-child(3) {
+    grid-column: 2 / span 2;
   }
 
   .capability-card__title {
@@ -1642,8 +1678,7 @@
 
 /* Tablets & Small Desktops */
 @media (max-width: 1200px) {
-  .product-grid,
-  .capability-grid {
+  .product-grid {
     grid-template-columns: repeat(2, 1fr);
   }
 }
@@ -1752,10 +1787,6 @@
   .product-grid {
     grid-template-columns: 1fr;
   }
-  .capability-grid {
-    grid-template-columns: 1fr 1fr;
-    gap: 16px;
-  }
   .industry-grid {
     grid-template-columns: repeat(2, 1fr);
   }
@@ -1846,9 +1877,6 @@
 }
 
 @media (max-width: 360px) {
-  .capability-grid {
-    grid-template-columns: 1fr;
-  }
   .hero {
     min-height: 40vh;
   }
