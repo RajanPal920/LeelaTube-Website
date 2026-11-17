@@ -122,16 +122,16 @@ const CAPABILITIES = [
     alt: "Complete Testing Laboratory",
   },
   {
-    title: "Spacious Warehouse",
-    desc: "A dedicated warehouse capable of storing large quantities of finished products.",
+    title: "Finished Tube Inventory",
+    desc: "Large warehouse inventory of finished ERW stainless steel round tubes and pipes ready for immediate dispatch.",
     image: "/images/manufacturing/spacious-warehouse.jpg",
-    alt: "Spacious Warehouse",
+    alt: "Finished stainless steel round tubes in warehouse",
   },
   {
-    title: "Qualified Engineers",
-    desc: "Supported by qualified engineers and highly experienced, trained technical personnel.",
-    image: "/images/manufacturing/qualified-engineers.jpg",
-    alt: "Qualified Engineers",
+    title: "Industrial Process Pipes",
+    desc: "Heavy-wall industrial process pipes manufactured to ASTM & ASME standards, bundled for engineering projects.",
+    image: "/images/factoryImg/Qualified-Engineers.png",
+    alt: "Bundled industrial stainless steel process pipes",
   },
 ];
 

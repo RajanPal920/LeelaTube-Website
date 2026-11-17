@@ -402,15 +402,15 @@ export default function About() {
               },
               {
                 icon: "🏗️",
-                title: "Spacious Warehouse",
+                title: "Finished Tube Inventory",
                 image: "/images/factoryImg/Spacious Warehouse.png",
-                desc: "A spacious warehouse capable of storing large quantities of finished products, supporting reliable delivery to customers.",
+                desc: "Extensive warehouse inventory of finished ERW stainless steel round tubes and pipes at our Daman facility, ensuring rapid dispatch.",
               },
               {
                 icon: "⚙️",
-                title: "Advanced Equipment",
+                title: "Advanced Pipe Forming & Welding",
                 image: "/images/factoryImg/Advanced Equipment.png",
-                desc: "The plant is equipped with advanced manufacturing equipment to ensure consistent product quality and dimensional accuracy.",
+                desc: "Equipped with heavy-duty motorized turning rollers and precision longitudinal seam welding machinery for large-diameter stainless steel pipes.",
               },
               {
                 icon: "🔬",
@@ -419,16 +419,16 @@ export default function About() {
                 desc: "Complete testing methods are in place at the Daman facility to verify that products meet customer-specified requirements.",
               },
               {
-                icon: "👷",
-                title: "Qualified Engineers",
+                icon: "📏",
+                title: "Industrial Process Pipes",
                 image: "/images/factoryImg/Qualified-Engineers.png",
-                desc: "A team of qualified engineers with deep technical knowledge of stainless‑steel manufacturing and application requirements.",
+                desc: "Large-diameter, heavy-wall industrial process pipes manufactured to ASTM & ASME standards, bundled for heavy engineering projects.",
               },
               {
-                icon: "🛠️",
-                title: "Experienced Technical Staff",
+                icon: "✨",
+                title: "Precision Welded Pipes",
                 image: "/images/factoryImg/Experienced-Technical.png",
-                desc: "Highly experienced and trained technical personnel support every stage of the manufacturing and quality process.",
+                desc: "Finished batches of longitudinal welded stainless steel pipes with uniform weld seams and clean deburred ends, staged for quality inspection.",
               },
             ].map((item, index) => (
               <div className="infra-card" key={item.title}>
