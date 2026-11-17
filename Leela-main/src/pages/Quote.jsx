@@ -164,7 +164,7 @@ Sent from Leela Tubes Website — Request a Quote Form
                 Why Enquire With Us?
               </h3>
               {[
-                "ISO 9001 : 2008 Certified Company",
+                "ISO 9001 : 2015 Certified Company",
                 "Products engineered to your specifications",
                 "ERW stainless-steel manufacturing",
                 "High-tech Daman facility with testing lab",

@@ -4,42 +4,41 @@ import "./Quality.css";
 
 const QUALITY_PILLARS = [
   {
-    icon: "📐",
     title: "Customer Specifications",
     desc: "Products are manufactured according to customer requirements and specifications. The criteria specified by the customer for the intended application are the primary quality benchmark.",
     image: "/images/factoryImg/Customer-Specifications.png",
     alt: "Customer Specifications",
   },
   {
-    icon: "🔬",
+
     title: "Complete Testing Methods",
     desc: "The Daman facility is equipped with complete testing methods. Finished products are tested to verify that they conform to customer-specified requirements before despatch.",
     image: "/images/factoryImg/Complete-Testing.png",
     alt: "Complete Testing Methods",
   },
   {
-    icon: "💡",
+
     title: "Latest Technology",
     desc: "Quality is achieved through the implementation of latest manufacturing technology, applied consistently across production to maintain product standards.",
     image: "/images/factoryImg/Advanced-Equipment.png",
     alt: "Latest Technology",
   },
   {
-    icon: "🏅",
+
     title: "Decades of Experience",
     desc: "Accumulated manufacturing experience since 2000 informs every aspect of the production and quality assurance process.",
     image: "/images/factoryImg/High-Tech-Manufacturing.png",
     alt: "Decades of Experience",
   },
   {
-    icon: "👷",
+
     title: "Technical Expertise",
     desc: "Qualified engineers and highly experienced, trained technical personnel support manufacturing and quality at every stage.",
     image: "/images/factoryImg/Technical-Expertise.png",
     alt: "Technical Expertise",
   },
   {
-    icon: "🤝",
+
     title: "Enduring Values",
     desc: "Consistent quality delivered through enduring moral values has helped Leela Tubes retain and multiply its customer base over many years.",
     image: "/images/factoryImg/Enduring-Values.png",
@@ -48,6 +47,14 @@ const QUALITY_PILLARS = [
 ];
 
 const QUALITY_CATEGORIES = [
+  {
+    title: "ISO 9001:2015 Certificate",
+    to: "/quality/certificate",
+    image: "/images/certificates/iso-9001-2015-certificate.png",
+    badge: "Official Certificate",
+    desc: "Official Certificate of Registration (Cert No. 26MEQWL63) conforming to ISO 9001:2015 for manufacturing and supply of stainless steel pipes and tubes.",
+    actionText: "View Certificate",
+  },
   {
     title: "Our Quality Policy",
     to: "/quality/quality-policy",
@@ -238,7 +245,7 @@ export default function Quality() {
             </h2>
             <p className="body-lg">
               Leela Tubes Private Limited is an{" "}
-              <strong>ISO 9001 : 2008 Certified Company</strong>, operating with
+              <strong>ISO 9001 : 2015 Certified Company</strong>, operating with
               established quality management practices covering manufacturing,
               inspection, and verification of stainless steel pipes and tubes.
             </p>
@@ -270,23 +277,30 @@ export default function Quality() {
                   Quality Management System Standard
                 </span>
                 <h3 className="heading-lg quality-iso-title">
-                  ISO 9001 : 2008 Certified
+                  ISO 9001 : 2015 Certified
                 </h3>
                 <p className="body-sm quality-iso-desc">
                   Certified for manufacturing and supply of high-grade ERW
                   stainless steel pipes and tubes engineered to rigorous
-                  customer specifications.
+                  customer specifications (Certificate No. 26MEQWL63).
                 </p>
               </div>
             </div>
 
-            <Link
-              to="/quote"
-              className="btn btn--primary"
-              style={{ marginTop: "32px" }}
-            >
-              Request Quality Documents →
-            </Link>
+            <div style={{ display: "flex", gap: "12px", flexWrap: "wrap", marginTop: "32px" }}>
+              <Link
+                to="/quality/certificate"
+                className="btn btn--primary"
+              >
+                View Official ISO Certificate →
+              </Link>
+              <Link
+                to="/quote"
+                className="btn btn--outline"
+              >
+                Request Quality Documents
+              </Link>
+            </div>
           </div>
         </div>
       </section>

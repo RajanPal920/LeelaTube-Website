@@ -25,7 +25,7 @@ export default function QualityPolicy() {
           </nav>
           <h1 className="display-lg">Our Quality Policy</h1>
           <p>
-            Commitment to Zero-Defect Manufacturing, ISO 9001:2008 Compliance &amp; Customer Satisfaction.
+            Commitment to Zero-Defect Manufacturing, ISO 9001:2015 Compliance &amp; Customer Satisfaction.
           </p>
         </div>
       </section>
@@ -40,6 +40,9 @@ export default function QualityPolicy() {
             Explore Other Quality Assurance Areas
           </h3>
           <div style={{ display: "flex", justifyContent: "center", gap: "16px", flexWrap: "wrap" }}>
+            <Link to="/quality/certificate" className="btn btn--outline-green" style={{ padding: "10px 22px", fontSize: "0.85rem" }}>
+              🏆 ISO 9001:2015 Certificate →
+            </Link>
             <Link to="/quality/quality-equipment" className="btn btn--outline-green" style={{ padding: "10px 22px", fontSize: "0.85rem" }}>
               🔬 10 Quality Testing Equipment →
             </Link>

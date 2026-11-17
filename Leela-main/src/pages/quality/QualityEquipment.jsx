@@ -40,6 +40,9 @@ export default function QualityEquipment() {
             Explore Other Quality Assurance Areas
           </h3>
           <div style={{ display: "flex", justifyContent: "center", gap: "16px", flexWrap: "wrap" }}>
+            <Link to="/quality/certificate" className="btn btn--outline-green" style={{ padding: "10px 22px", fontSize: "0.85rem" }}>
+              🏆 ISO 9001:2015 Certificate →
+            </Link>
             <Link to="/quality/quality-policy" className="btn btn--outline-green" style={{ padding: "10px 22px", fontSize: "0.85rem" }}>
               📜 Our Quality Policy →
             </Link>

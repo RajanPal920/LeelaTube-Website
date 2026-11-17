@@ -1,0 +1,267 @@
+/* ==========================================================================
+   ISO 9001:2015 CERTIFICATE PAGE (Medium Centered View)
+   ========================================================================== */
+
+.iso-cert-page {
+  background-color: #fbfcfb;
+  min-height: 100vh;
+}
+
+/* ─── Main Certificate Section ───────────────────────────────────────────── */
+.iso-cert-main-section {
+  padding: 40px 0 60px;
+}
+
+.iso-cert-centered-wrap {
+  max-width: 520px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* ─── Top Actions & Header ────────────────────────────────────────────────── */
+.iso-cert-top-bar {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 16px;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.iso-cert-badge-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: var(--green-pale, #e8f5ec);
+  color: var(--green-brand, #1f6635);
+  font-size: 12px;
+  font-weight: 700;
+  padding: 5px 12px;
+  border-radius: 999px;
+  letter-spacing: 0.3px;
+}
+
+.iso-cert-top-actions {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.iso-cert-top-actions .btn {
+  padding: 7px 14px;
+  font-size: 12.5px;
+  border-radius: 6px;
+}
+
+/* ─── Certificate Card & Frame (Medium Size) ────────────────────────────── */
+.iso-cert-card {
+  width: 100%;
+  background: #ffffff;
+  border: 1px solid #e5e9e6;
+  border-radius: 14px;
+  padding: 16px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+}
+
+.iso-cert-frame {
+  position: relative;
+  width: 100%;
+  background: #ffffff;
+  border: 6px solid #f8fafc;
+  outline: 1px solid #cbd5e1;
+  border-radius: 6px;
+  overflow: hidden;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.iso-cert-frame:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 14px 34px rgba(10, 46, 26, 0.18);
+}
+
+.iso-cert-img {
+  width: 100%;
+  height: auto;
+  max-height: 640px;
+  object-fit: contain;
+  display: block;
+  transition: transform 0.4s ease;
+}
+
+.iso-cert-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(10, 46, 26, 0.55);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  color: #ffffff;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.iso-cert-frame:hover .iso-cert-overlay {
+  opacity: 1;
+}
+
+.iso-cert-overlay-icon {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: #ffffff;
+  color: var(--green-brand, #1f6635);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.2);
+}
+
+.iso-cert-overlay span {
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+}
+
+/* ─── Bottom Info Bar ────────────────────────────────────────────────────── */
+.iso-cert-bottom-info {
+  margin-top: 14px;
+  padding-top: 12px;
+  border-top: 1px solid #f3f4f6;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 8px;
+  color: #6b7280;
+  font-size: 12px;
+  line-height: 1.4;
+}
+
+.iso-cert-bottom-info strong {
+  color: #111827;
+}
+
+/* ─── Lightbox Modal (For full enlargement on click) ─────────────────────── */
+.iso-cert-modal-backdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(5, 18, 11, 0.9);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  z-index: 99999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  animation: certFadeIn 0.25s ease-out;
+}
+
+@keyframes certFadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.iso-cert-modal-box {
+  position: relative;
+  max-width: 720px;
+  max-height: 92vh;
+  background: #ffffff;
+  border-radius: 14px;
+  overflow: hidden;
+  box-shadow: 0 24px 60px rgba(0, 0, 0, 0.5);
+  display: flex;
+  flex-direction: column;
+}
+
+.iso-cert-modal-close {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  background: rgba(0, 0, 0, 0.6);
+  border: none;
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  z-index: 10;
+  transition: all 0.2s ease;
+  font-size: 15px;
+}
+
+.iso-cert-modal-close:hover {
+  background: #ef4444;
+  transform: rotate(90deg);
+}
+
+.iso-cert-modal-img {
+  max-height: 80vh;
+  width: auto;
+  object-fit: contain;
+  display: block;
+  margin: 0 auto;
+}
+
+.iso-cert-modal-footer {
+  padding: 12px 20px;
+  background: #f8fafc;
+  border-top: 1px solid #e2e8f0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+/* ─── Responsive ─────────────────────────────────────────────────────────── */
+@media (max-width: 768px) {
+  .iso-cert-main-section {
+    padding: 30px 0 50px;
+  }
+  .iso-cert-centered-wrap {
+    max-width: 100%;
+    padding: 0 12px;
+  }
+  .iso-cert-card {
+    padding: 12px;
+    border-radius: 12px;
+  }
+  .iso-cert-frame {
+    border-width: 5px;
+  }
+  .iso-cert-top-bar {
+    flex-direction: column;
+    align-items: stretch;
+    text-align: center;
+  }
+  .iso-cert-badge-tag {
+    justify-content: center;
+  }
+  .iso-cert-top-actions {
+    width: 100%;
+  }
+  .iso-cert-top-actions .btn {
+    flex: 1;
+    text-align: center;
+    justify-content: center;
+  }
+  .iso-cert-bottom-info {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}

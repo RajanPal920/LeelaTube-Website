@@ -211,7 +211,7 @@ export default function Gallery() {
           <div className="gallery-highlights__item">
             <div className="gallery-highlights__icon">🛡️</div>
             <div className="gallery-highlights__text">
-              <h4>ISO 9001 : 2008 Certified</h4>
+              <h4>ISO 9001 : 2015 Certified</h4>
               <p>Stage-wise quality verification standards</p>
             </div>
           </div>
@@ -365,7 +365,7 @@ export default function Gallery() {
               </div>
               <div className="gallery-facility-spec-item">
                 <strong>Certifications</strong>
-                <span>ISO 9001 : 2008 &bull; ASTM A554 / A269 / A312 Compliance</span>
+                <span>ISO 9001 : 2015 &bull; ASTM A554 / A269 / A312 Compliance</span>
               </div>
             </div>
           </div>

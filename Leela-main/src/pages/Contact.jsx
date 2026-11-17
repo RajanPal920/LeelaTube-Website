@@ -88,7 +88,7 @@ Sent from Leela Tubes Website Contact Form
                 marginBottom: "28px",
               }}
             >
-              An ISO 9001 : 2008 Certified Company
+              An ISO 9001 : 2015 Certified Company
             </p>
 
             {/* Key Personnel Card */}

@@ -38,7 +38,7 @@ const TRUST_ITEMS = [
       </svg>
     ),
     label: "Quality Certification",
-    value: "ISO 9001 : 2008",
+    value: "ISO 9001 : 2015",
   },
   {
     icon: (
@@ -243,7 +243,7 @@ export default function Home() {
         <div className="container hero__content">
           <div className="hero__text animate-fade-in-up">
             <p className="section-label section-label--white">
-              An ISO 9001 : 2008 Certified Company
+              An ISO 9001 : 2015 Certified Company
             </p>
             <h1 className="display-xl hero__heading">
               Precision Engineered

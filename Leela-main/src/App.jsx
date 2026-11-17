@@ -24,6 +24,7 @@ import Quality from "./pages/Quality";
 import QualityPolicy from "./pages/quality/QualityPolicy";
 import QualityEquipment from "./pages/quality/QualityEquipment";
 import ProcessFlowTable from "./pages/quality/ProcessFlowTable";
+import IsoCertificate from "./pages/quality/IsoCertificate";
 import Industries from "./pages/Industries";
 import Resources from "./pages/Resources";
 import Gallery from "./pages/Gallery";
@@ -68,6 +69,8 @@ export default function App() {
 
             {/* Quality Hub and Dedicated Sub-Routes */}
             <Route path="/quality" element={<Quality />} />
+            <Route path="/quality/certificate" element={<IsoCertificate />} />
+            <Route path="/quality/iso-certificate" element={<Navigate to="/quality/certificate" replace />} />
             <Route path="/quality/quality-policy" element={<QualityPolicy />} />
             <Route path="/quality/quality-equipment" element={<QualityEquipment />} />
             <Route path="/quality/process-flow-table" element={<ProcessFlowTable />} />

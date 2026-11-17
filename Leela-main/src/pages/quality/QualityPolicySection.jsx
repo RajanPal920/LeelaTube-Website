@@ -31,7 +31,7 @@ export default function QualityPolicySection() {
 
               <p className="quality-policy-paragraph">
                 Our Quality Policy emphasizes continuous process improvement and compliance with
-                applicable international standards, including <strong>ISO 9001:2008</strong> and
+                applicable international standards, including <strong>ISO 9001:2015</strong> and
                 rigorous <strong>ASTM, ASME, DIN, and EN specifications</strong>. We systematically
                 monitor quality metrics throughout forming, TIG welding, annealing, straightening,
                 and testing to maximize efficiency and customer satisfaction.

@@ -26,6 +26,7 @@ const NAV_ITEMS = [
   },
   {
     label: "Quality", to: "/quality", children: [
+      { label: "ISO 9001:2015 Certificate", to: "/quality/certificate" },
       { label: "Quality Policy", to: "/quality/quality-policy" },
       { label: "Quality Equipment", to: "/quality/quality-equipment" },
       { label: "Inspection Process FlowTable", to: "/quality/process-flow-table" }
@@ -134,7 +135,7 @@ export default function Header() {
               Manufacturers of Stainless Steel Pipes &amp; Tubes
             </span>
             <span className="header-topbar__badge">
-              ISO 9001 : 2008 Certified
+              ISO 9001 : 2015 Certified
             </span>
           </div>
           <div className="header-topbar__contact">

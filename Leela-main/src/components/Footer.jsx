@@ -13,6 +13,7 @@ const COMPANY_LINKS = [
   { label: 'About Us', to: '/about' },
   { label: 'Manufacturing', to: '/manufacturing' },
   { label: 'Quality Assurance', to: '/quality' },
+  { label: 'ISO 9001:2015 Certificate', to: '/quality/certificate' },
   { label: 'Technical Specifications', to: '/technical' },
   { label: 'Factory Gallery', to: '/gallery' },
   { label: 'Contact Us', to: '/contact' },
@@ -34,7 +35,7 @@ export default function Footer() {
               Products engineered to customer requirements and specifications.
             </p>
             <div className="footer-brand__tags">
-              <span className="footer-tag">ISO 9001 : 2008</span>
+              <span className="footer-tag">ISO 9001 : 2015</span>
               <span className="footer-tag">ERW Manufacturing</span>
               <span className="footer-tag">Daman Works</span>
               <span className="footer-tag">Mumbai HQ</span>
