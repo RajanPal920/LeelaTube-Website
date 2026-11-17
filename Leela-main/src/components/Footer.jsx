@@ -14,6 +14,7 @@ const COMPANY_LINKS = [
   { label: 'Manufacturing', to: '/manufacturing' },
   { label: 'Quality Assurance', to: '/quality' },
   { label: 'Technical Specifications', to: '/technical' },
+  { label: 'Factory Gallery', to: '/gallery' },
   { label: 'Contact Us', to: '/contact' },
 ];
 

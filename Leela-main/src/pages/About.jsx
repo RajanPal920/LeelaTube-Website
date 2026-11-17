@@ -585,6 +585,12 @@ export default function About() {
           </div>
 
           <PremiumGalleryGrid />
+
+          <div style={{ textAlign: "center", marginTop: "40px" }}>
+            <Link to="/gallery" className="btn btn--primary">
+              View All Factory &amp; Facility Photos →
+            </Link>
+          </div>
         </div>
       </section>
 

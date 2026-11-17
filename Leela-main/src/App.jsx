@@ -26,6 +26,7 @@ import QualityEquipment from "./pages/quality/QualityEquipment";
 import ProcessFlowTable from "./pages/quality/ProcessFlowTable";
 import Industries from "./pages/Industries";
 import Resources from "./pages/Resources";
+import Gallery from "./pages/Gallery";
 import Contact from "./pages/Contact";
 import Quote from "./pages/Quote";
 import NotFound from "./pages/NotFound";
@@ -72,6 +73,7 @@ export default function App() {
             <Route path="/quality/process-flow-table" element={<ProcessFlowTable />} />
             <Route path="/industries" element={<Industries />} />
             <Route path="/resources" element={<Resources />} />
+            <Route path="/gallery" element={<Gallery />} />
             <Route path="/contact" element={<Contact />} />
             <Route path="/quote" element={<Quote />} />
             <Route path="*" element={<NotFound />} />
